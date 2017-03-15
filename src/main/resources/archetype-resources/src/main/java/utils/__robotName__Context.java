@@ -15,15 +15,15 @@ public class ${robotName}Context extends Context {
      */
     private static final Logger logger = Logger.getLogger(${robotName}Context.class);
 
-    public static final String ${targetApplication.toUpperCase()}_KEY = "${targetApplication}";
-    public static final String ${targetApplication.toUpperCase()}_HOME = "${targetApplication.toUpperCase()}_HOME";
-    public static final String ${targetApplication.toUpperCase()}_APP = "${targetApplication}.app";
+    public static final String ${targetApplicationId.toUpperCase()}_KEY = "${targetApplicationId}";
+    public static final String ${targetApplicationId.toUpperCase()}_HOME = "${targetApplicationId.toUpperCase()}_HOME";
+    public static final String ${targetApplicationId.toUpperCase()}_APP = "${targetApplicationId}.app";
 
-    public static final String GO_TO_${targetApplication.toUpperCase()}_HOME = "GO_TO_${targetApplication.toUpperCase()}_HOME";
-    public static final String CLOSE_WINDOW_AND_SWITCH_TO_${targetApplication.toUpperCase()}_HOME = "CLOSE_WINDOW_AND_SWITCH_TO_${targetApplication.toUpperCase()}_HOME";
-    public static final String CLOSE_ALL_WINDOWS_AND_SWITCH_TO_${targetApplication.toUpperCase()}_HOME = "CLOSE_ALL_WINDOWS_AND_SWITCH_TO_${targetApplication.toUpperCase()}_HOME";
+    public static final String GO_TO_${targetApplicationId.toUpperCase()}_HOME = "GO_TO_${targetApplicationId.toUpperCase()}_HOME";
+    public static final String CLOSE_WINDOW_AND_SWITCH_TO_${targetApplicationId.toUpperCase()}_HOME = "CLOSE_WINDOW_AND_SWITCH_TO_${targetApplicationId.toUpperCase()}_HOME";
+    public static final String CLOSE_ALL_WINDOWS_AND_SWITCH_TO_${targetApplicationId.toUpperCase()}_HOME = "CLOSE_ALL_WINDOWS_AND_SWITCH_TO_${targetApplicationId.toUpperCase()}_HOME";
 
-    private String ${targetApplication}Home; // ${targetApplication.toUpperCase()} home url
+    private String ${targetApplicationId}Home; // ${targetApplicationId.toUpperCase()} home url
 
     /**
      * Constructor is useless because all attributes are static
@@ -41,17 +41,17 @@ public class ${robotName}Context extends Context {
         logger.info("${robotName}Context > initializeRobot()");
 
         // Urls configuration
-        ${targetApplication}Home = setProperty(${targetApplication.toUpperCase()}_KEY, applicationProperties);
+        ${targetApplicationId}Home = setProperty(${targetApplicationId.toUpperCase()}_KEY, applicationProperties);
 
         // Selectors configuration
-        initApplicationDom(loader, selectorsVersion, ${targetApplication.toUpperCase()}_KEY);
+        initApplicationDom(loader, selectorsVersion, ${targetApplicationId.toUpperCase()}_KEY);
  
         
-        exceptionCallbacks.put(GO_TO_${targetApplication.toUpperCase()}_HOME, STEPS_BROWSER_STEPS_CLASS_QUALIFIED_NAME, GO_TO_URL_METHOD_NAME, ${targetApplication.toUpperCase()}_HOME);
-        exceptionCallbacks.put(CLOSE_WINDOW_AND_SWITCH_TO_${targetApplication.toUpperCase()}_HOME, STEPS_BROWSER_STEPS_CLASS_QUALIFIED_NAME, "closeWindowAndSwitchTo", ${targetApplication.toUpperCase()}_KEY, ${targetApplication.toUpperCase()}_HOME);
-        exceptionCallbacks.put(CLOSE_ALL_WINDOWS_AND_SWITCH_TO_${targetApplication.toUpperCase()}_HOME, STEPS_BROWSER_STEPS_CLASS_QUALIFIED_NAME, "closeAllWindowsAndSwitchTo", ${targetApplication.toUpperCase()}_KEY);
+        exceptionCallbacks.put(GO_TO_${targetApplicationId.toUpperCase()}_HOME, STEPS_BROWSER_STEPS_CLASS_QUALIFIED_NAME, GO_TO_URL_METHOD_NAME, ${targetApplicationId.toUpperCase()}_HOME);
+        exceptionCallbacks.put(CLOSE_WINDOW_AND_SWITCH_TO_${targetApplicationId.toUpperCase()}_HOME, STEPS_BROWSER_STEPS_CLASS_QUALIFIED_NAME, "closeWindowAndSwitchTo", ${targetApplicationId.toUpperCase()}_KEY, ${targetApplicationId.toUpperCase()}_HOME);
+        exceptionCallbacks.put(CLOSE_ALL_WINDOWS_AND_SWITCH_TO_${targetApplicationId.toUpperCase()}_HOME, STEPS_BROWSER_STEPS_CLASS_QUALIFIED_NAME, "closeAllWindowsAndSwitchTo", ${targetApplicationId.toUpperCase()}_KEY);
 
-        applications.put(${targetApplication.toUpperCase()}_KEY, new Application(${targetApplication.toUpperCase()}_HOME, ${targetApplication}Home));
+        applications.put(${targetApplicationId.toUpperCase()}_KEY, new Application(${targetApplicationId.toUpperCase()}_HOME, ${targetApplicationId}Home));
     }
     
     /**
@@ -66,8 +66,8 @@ public class ${robotName}Context extends Context {
         return instance;
     }
 
-    public String get${targetApplication.substring(0,1).toUpperCase()}${targetApplication.substring(1)}Home() {
-        return ${targetApplication}Home;
+    public String get${targetApplicationId.substring(0,1).toUpperCase()}${targetApplicationId.substring(1)}Home() {
+        return ${targetApplicationId}Home;
     }
 
 }

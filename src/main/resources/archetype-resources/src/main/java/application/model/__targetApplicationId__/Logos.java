@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${package}.application.model.${targetApplication};
+package ${package}.application.model.${targetApplicationId};
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -12,21 +12,22 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
+import noraui.application.model.DemosModel;
 import noraui.model.Model;
 import noraui.model.ModelList;
 
-public class WorkParties extends ArrayList<WorkParty> implements ModelList {
+public class Logos extends DemosModel<Logo> implements ModelList {
 
     /**
      *
      */
     private static final long serialVersionUID = 9002528163560746878L;
 
-    public WorkParties() {
+    public Logos() {
         super();
     }
 
-    public WorkParties(WorkParties inputList) {
+    public Logos(DemosModel<Logo> inputList) {
         super(inputList);
     }
 
@@ -34,27 +35,15 @@ public class WorkParties extends ArrayList<WorkParty> implements ModelList {
      * {@inheritDoc}
      */
     @Override
-    public String serialize() {
-        final GsonBuilder builder = new GsonBuilder();
-        builder.excludeFieldsWithoutExposeAnnotation();
-        builder.disableHtmlEscaping();
-        final Gson gson = builder.create();
-        return gson.toJson(this);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
     public void deserialize(String jsonString) {
-        Type listType = new TypeToken<ArrayList<WorkParty>>() {
+        Type listType = new TypeToken<ArrayList<Logo>>() {
         }.getType();
 
         final GsonBuilder builder = new GsonBuilder();
         builder.excludeFieldsWithoutExposeAnnotation();
         final Gson gson = builder.create();
 
-        List<WorkParty> list = gson.fromJson(jsonString, listType);
+        List<Logo> list = gson.fromJson(jsonString, listType);
         this.addAll(list);
     }
 
@@ -63,7 +52,7 @@ public class WorkParties extends ArrayList<WorkParty> implements ModelList {
      */
     @Override
     public ModelList addModel(Model m) {
-        super.add((WorkParty) m);
+        super.add((Logo) m);
         return this;
     }
 
@@ -72,7 +61,7 @@ public class WorkParties extends ArrayList<WorkParty> implements ModelList {
      */
     @Override
     public void subtract(ModelList list) {
-        Iterator<?> iterator = ((WorkParties) list).iterator();
+        Iterator<?> iterator = ((Logos) list).iterator();
         while (iterator.hasNext()) {
             this.remove(iterator.next());
         }
@@ -84,8 +73,8 @@ public class WorkParties extends ArrayList<WorkParty> implements ModelList {
     @Override
     public List<Integer> getIds() {
         List<Integer> result = new ArrayList<>();
-        for (WorkParty workParty : this) {
-            result.add(workParty.getWid());
+        for (Logo article : this) {
+            result.add(article.getWid());
         }
         return result;
     }

@@ -8,11 +8,14 @@
 		<requiredProperty key="robotName">
 			<defaultValue>Rapid</defaultValue>
 		</requiredProperty>
-		<requiredProperty key="targetApplication">
-			<defaultValue>salto</defaultValue>
+		<requiredProperty key="targetApplicationId">
+			<defaultValue>logogame</defaultValue>
 		</requiredProperty>
+        <requiredProperty key="targetApplicationName">
+            <defaultValue>Logogame</defaultValue>
+        </requiredProperty>
         <requiredProperty key="targetApplicationUrl">
-            <defaultValue>http://xr42.renn.fr.sopra:50570/prweb/PRServlet/</defaultValue>
+            <defaultValue>https://noraui.github.io/demo/logogame/v1/</defaultValue>
         </requiredProperty>
 		<requiredProperty key="sonarUrl">
 			<defaultValue>http://172.0.0.1:10506</defaultValue>
