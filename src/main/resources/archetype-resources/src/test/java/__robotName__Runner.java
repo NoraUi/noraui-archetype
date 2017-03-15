@@ -14,8 +14,8 @@ import cucumber.api.junit.Cucumber;
 import noraui.utils.Context;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(monochrome = true, glue = { "noraui.application.steps", "${package}.application.steps" },
-        plugin = { "pretty", "html:target/reports/html", "json:target/reports/json/results.json" }, features = { "src/test/resources" })
+@CucumberOptions(monochrome = true, glue = { "noraui.application.steps", "noraui.browser.steps", "${package}.application.steps" }, plugin = { "html:target/reports/html" },
+features = { "src/test/resources" })
 public class ${robotName}Runner {
 
     /**
@@ -23,7 +23,8 @@ public class ${robotName}Runner {
      */
     @BeforeClass
     public static void setUpClass() {
-        ${robotName}Context.getInstance().initializeEnv(${robotName}Runner.class.getClassLoader(), "${targetApplication}.properties");
+        ${robotName}Context.getInstance().initializeEnv("${targetApplication}.properties");
+        ${robotName}Context.getInstance().initializeRobot(${robotName}Runner.class.getClassLoader());
     }
 
     /**

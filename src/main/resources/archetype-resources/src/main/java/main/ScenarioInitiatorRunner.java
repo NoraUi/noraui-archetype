@@ -10,7 +10,7 @@ import noraui.main.ScenarioInitiator;
 public class ScenarioInitiatorRunner {
 
     public static void main(String[] args) {
-        ${robotName}Context.getInstance().initializeEnv(ScenarioInitiatorRunner.class.getClassLoader(), "${applicationName.toLowerCase()}.properties");
+        ${robotName}Context.getInstance().initializeEnv("${robotName.toLowerCase()}.properties");
         new ScenarioInitiator().start(args);
     }
 

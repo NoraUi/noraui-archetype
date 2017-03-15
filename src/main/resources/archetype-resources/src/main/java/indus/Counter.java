@@ -10,6 +10,7 @@ import java.util.List;
 import ${package}.utils.${robotName}Context;
 
 import noraui.indus.MavenRunCounter;
+import noraui.utils.Context;
 
 public class Counter {
 
@@ -21,10 +22,10 @@ public class Counter {
         List<String> versionControlSystemsBlacklist = new ArrayList<>();
         versionControlSystemsBlacklist.add(".svn");
 
-        ${robotName}Context.getInstance().initializeEnv(Counter.class.getClassLoader(), "${applicationName.toLowerCase()}.properties");
+        ${robotName}Context.getInstance().initializeEnv("${robotName.toLowerCase()}.properties");
 
         MavenRunCounter mavenRunCounter = new MavenRunCounter();
-        List<MavenRunCounter.Counter> counters = mavenRunCounter.count(versionControlSystemsBlacklist, scenarioBlacklist, manager, new File("src/test/resources/steps"));
+        List<MavenRunCounter.Counter> counters = mavenRunCounter.count(versionControlSystemsBlacklist, scenarioBlacklist, manager, new File(Context.getResourcesPath() + "/steps"));
         mavenRunCounter.print(counters);
     }
 

@@ -8,7 +8,6 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 
 import noraui.application.Application;
-import noraui.gherkin.GherkinFactory;
 import noraui.utils.Context;
 
 public class ${robotName}Context extends Context {
@@ -39,30 +38,24 @@ public class ${robotName}Context extends Context {
      * {@inheritDoc}
      */
     @Override
-    public synchronized void initializeEnv(ClassLoader loader, String propertiesFile) {
-        super.initializeEnv(loader, propertiesFile);
-        logger.info("initializeEnv in ${robotName}Context");
-        Properties applicationProperties = initPropertyFile(propertiesFile, loader);
-
-        // Paths configuration
-        getDataInputProvider().setDataInPath(System.getProperty("resourcespath") + "/data/in/");
-        getDataOutputProvider().setDataOutPath(System.getProperty("resourcespath") + "/data/out/");
-        GherkinFactory.setResourcesPath(System.getProperty("resourcespath"));
+    public synchronized void initializeRobot(ClassLoader loader) {
+        super.initializeRobot(loader);
+        logger.info("${robotName}Context > initializeRobot()");
 
         // Urls configuration
         ${targetApplication}Home = setProperty(${targetApplication.toUpperCase()}_KEY, applicationProperties);
 
         // Selectors configuration
-        initApplicationDom(selectorsVersion, ${targetApplication.toUpperCase()}_KEY);
-
-        norauiExceptionCallbacks.put(GO_TO_${targetApplication.toUpperCase()}_HOME, STEPS_COMMON_STEPS_CLASS_QUALIFIED_NAME, GO_TO_URL_METHOD_NAME, ${targetApplication.toUpperCase()}_HOME);
-        norauiExceptionCallbacks.put(CLOSE_WINDOW_AND_SWITCH_TO_${targetApplication.toUpperCase()}_HOME, STEPS_COMMON_STEPS_CLASS_QUALIFIED_NAME, "closeWindowAndSwitchTo", ${targetApplication.toUpperCase()}_KEY, ${targetApplication.toUpperCase()}_HOME);
-        norauiExceptionCallbacks.put(CLOSE_ALL_WINDOWS_AND_SWITCH_TO_${targetApplication.toUpperCase()}_HOME, STEPS_COMMON_STEPS_CLASS_QUALIFIED_NAME, "closeAllWindowsAndSwitchTo", ${targetApplication.toUpperCase()}_KEY);
+        initApplicationDom(loader, selectorsVersion, ${targetApplication.toUpperCase()}_KEY);
+ 
+        
+        exceptionCallbacks.put(GO_TO_${targetApplication.toUpperCase()}_HOME, STEPS_BROWSER_STEPS_CLASS_QUALIFIED_NAME, GO_TO_URL_METHOD_NAME, ${targetApplication.toUpperCase()}_HOME);
+        exceptionCallbacks.put(CLOSE_WINDOW_AND_SWITCH_TO_${targetApplication.toUpperCase()}_HOME, STEPS_BROWSER_STEPS_CLASS_QUALIFIED_NAME, "closeWindowAndSwitchTo", ${targetApplication.toUpperCase()}_KEY, ${targetApplication.toUpperCase()}_HOME);
+        exceptionCallbacks.put(CLOSE_ALL_WINDOWS_AND_SWITCH_TO_${targetApplication.toUpperCase()}_HOME, STEPS_BROWSER_STEPS_CLASS_QUALIFIED_NAME, "closeAllWindowsAndSwitchTo", ${targetApplication.toUpperCase()}_KEY);
 
         applications.put(${targetApplication.toUpperCase()}_KEY, new Application(${targetApplication.toUpperCase()}_HOME, ${targetApplication}Home));
-
     }
-
+    
     /**
      * Get context singleton.
      *

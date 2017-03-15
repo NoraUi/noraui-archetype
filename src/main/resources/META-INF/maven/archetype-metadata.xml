@@ -6,7 +6,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<requiredProperties>
 		<requiredProperty key="robotName">
-			<defaultValue>yourRobotName</defaultValue>
+			<defaultValue>Rapid</defaultValue>
 		</requiredProperty>
 		<requiredProperty key="targetApplication">
 			<defaultValue>yourApplication</defaultValue>
