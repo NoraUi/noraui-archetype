@@ -22,7 +22,7 @@ public class Counter {
         List<String> versionControlSystemsBlacklist = new ArrayList<>();
         versionControlSystemsBlacklist.add(".svn");
 
-        ${robotName}Context.getInstance().initializeEnv("${robotName.toLowerCase()}.properties");
+        ${robotName}Context.getInstance().initializeEnv("${robotName}.properties");
 
         MavenRunCounter mavenRunCounter = new MavenRunCounter();
         List<MavenRunCounter.Counter> counters = mavenRunCounter.count(versionControlSystemsBlacklist, scenarioBlacklist, manager, new File(Context.getResourcesPath() + "/steps"));

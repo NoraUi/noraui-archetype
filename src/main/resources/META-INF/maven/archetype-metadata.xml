@@ -9,11 +9,23 @@
 			<defaultValue>Rapid</defaultValue>
 		</requiredProperty>
 		<requiredProperty key="targetApplication">
-			<defaultValue>yourApplication</defaultValue>
+			<defaultValue>salto</defaultValue>
 		</requiredProperty>
+        <requiredProperty key="targetApplicationUrl">
+            <defaultValue>http://xr42.renn.fr.sopra:50570/prweb/PRServlet/</defaultValue>
+        </requiredProperty>
 		<requiredProperty key="sonarUrl">
 			<defaultValue>http://172.0.0.1:10506</defaultValue>
 		</requiredProperty>
+        <requiredProperty key="repositoryId">
+            <defaultValue>sonatype-nexus</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="repositorySnapshotsUrl">
+            <defaultValue>https://oss.sonatype.org/content/repositories/snapshots/</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="repositoryReleaseUrl">
+            <defaultValue>https://oss.sonatype.org/service/local/staging/deploy/maven2/</defaultValue>
+        </requiredProperty>
 	</requiredProperties>
 	<fileSets>
 		<fileSet filtered="true" packaged="true" encoding="UTF-8">
@@ -26,6 +38,7 @@
 			<directory>src/main/resources</directory>
 			<includes>
 				<include>**/*.properties</include>
+                <include>**/*.ini</include>
 			</includes>
 		</fileSet>
 		<fileSet filtered="true" packaged="true" encoding="UTF-8">
@@ -40,6 +53,8 @@
 				<include>**/*.xml</include>
 				<include>**/*.html</include>
 				<include>**/*.properties</include>
+                <include>**/*.launch</include>
+                <include>**/*.feature</include>
 			</includes>
 		</fileSet>
 		<fileSet encoding="UTF-8">
@@ -50,10 +65,7 @@
 				<include>**/*.xlsx</include>
 				<include>**/*.css</include>
 				<include>**/*.exe</include>
-				<include>**/*.feature</include>
-				<include>**/*.ini</include>
 				<include>**/*.js</include>
-				<include>**/*.launch</include>
 				<include>**/*.bz2</include>
 				<include>**/*.sql</include>
 			</includes>
@@ -62,12 +74,6 @@
 			<directory>.settings</directory>
 			<includes>
 				<include>**/*.xml</include>
-			</includes>
-		</fileSet>
-		<fileSet encoding="UTF-8">
-			<directory>bin/com</directory>
-			<includes>
-				<include>**/*.class</include>
 			</includes>
 		</fileSet>
 		<fileSet encoding="UTF-8">

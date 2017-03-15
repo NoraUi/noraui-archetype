@@ -11,12 +11,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import ${package}.utils.${robotName}Context;
 
 import noraui.application.page.Page;
-import noraui.application.page.Page.PageElement;
 import noraui.browser.Auth;
 import noraui.utils.Context;
 import noraui.utils.Utilities;
 
-public abstract class PortalPage extends Page {
+public class PortalPage extends Page {
 
     private static Logger logger = Logger.getLogger(PortalPage.class.getName());
 
@@ -26,6 +25,7 @@ public abstract class PortalPage extends Page {
     public PortalPage() {
         super();
         this.application = ${targetApplication.toUpperCase()}_KEY;
+        this.pageKey = "SLT_CON_POR";
         this.callBack = Context.getCallBack(${robotName}Context.GO_TO_${targetApplication.toUpperCase()}_HOME);
     }
 

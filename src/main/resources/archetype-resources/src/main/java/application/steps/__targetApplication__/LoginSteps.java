@@ -31,7 +31,7 @@ public class LoginSteps extends Step {
     /**
      *
      */
-    @Then("^The ${targetApplication.toUpperCase()} login page is displayed${symbol_dollar}")
+    @Then("The ${targetApplication.toUpperCase()} login page is displayed")
     public void check${targetApplication.substring(0,1).toUpperCase()}${targetApplication.substring(1)}LoginPage() {
         this.${targetApplication}LoginPage.checkPage();
     }
@@ -46,7 +46,7 @@ public class LoginSteps extends Step {
      * @throws FailureException
      *             if the scenario encounters a functional error
      */
-    @When("^I log in to ${targetApplication.toUpperCase()} as '(.*)' '(.*)'${symbol_dollar}")
+    @When("I log in to ${targetApplication.toUpperCase()} as '(.*)' '(.*)'")
     public void logInTo${targetApplication.substring(0,1).toUpperCase()}${targetApplication.substring(1)}(String login, String password) throws FailureException {
         try {
             Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplication}LoginPage.submitButton)));
@@ -56,6 +56,7 @@ public class LoginSteps extends Step {
         } catch (Exception e) {
             new Result.Failure<>(e, Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS, true, ${targetApplication}LoginPage.getCallBack());
         }
+        Auth.setConnected(true);
     }
 
     /**
@@ -69,6 +70,8 @@ public class LoginSteps extends Step {
     private void logInTo${targetApplication.substring(0,1).toUpperCase()}${targetApplication.substring(1)}WithRapid() throws FailureException {
         String login = Auth.getLogin();
         String password = Auth.getPassword();
-        logInTo${targetApplication.substring(0,1).toUpperCase()}${targetApplication.substring(1)}(login, password);
+        if (!"".equals(login) && !"".equals(password)) {
+            logInTo${targetApplication.substring(0,1).toUpperCase()}${targetApplication.substring(1)}(login, password);
+        }
     }
 }

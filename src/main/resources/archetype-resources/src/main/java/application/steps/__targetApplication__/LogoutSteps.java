@@ -35,9 +35,8 @@ public class LogoutSteps extends Step {
     /**
      * Logout of ${targetApplication.substring(0,1).toUpperCase()}${targetApplication.substring(1)}.
      */
-    @When("^I log out of ${targetApplication.toUpperCase()}${symbol_dollar}")
+    @When("I log out of ${targetApplication.toUpperCase()}")
     public void logOutOf${targetApplication.substring(0,1).toUpperCase()}${targetApplication.substring(1)}() {
-        logger.info("Auth.isConnected()=" + Auth.isConnected());
         if (Auth.isConnected()) {
             Step.getDriver().switchTo().defaultContent();
             Utilities.findElement(portalPage.userMenu).click();
@@ -52,14 +51,6 @@ public class LogoutSteps extends Step {
                 }
             }
         }
-    }
-
-    /**
-     *
-     */
-    @Then("^The ${targetApplication.toUpperCase()} logout page is displayed${symbol_dollar}")
-    public void check${targetApplication.substring(0,1).toUpperCase()}${targetApplication.substring(1)}LoginPage() {
-        loginPage.checkPage();
     }
 
 }

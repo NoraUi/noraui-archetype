@@ -6,7 +6,7 @@
 <booleanAttribute key="M2_OFFLINE" value="false"/>
 <stringAttribute key="M2_PROFILES" value="scenarioInitiator,dev,${artifactId},postIC,preIC"/>
 <listAttribute key="M2_PROPERTIES">
-<listEntry value="cucumber.options=--tags @${applicationName.toUpperCase()}-${string_prompt:CU}"/>
+<listEntry value="cucumber.options=--tags @${symbol_dollar}{string_prompt:CU}"/>
 <listEntry value="http.proxyHost=127.0.0.1"/>
 <listEntry value="http.proxyPort=8080"/>
 <listEntry value="uid=user1"/>
@@ -23,5 +23,5 @@
 <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
 <listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${workspace_loc:/${applicationName.toLowerCase()}}"/>
+<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${symbol_dollar}{workspace_loc:/${artifactId}}"/>
 </launchConfiguration>

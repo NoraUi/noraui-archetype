@@ -23,7 +23,7 @@ public class ${robotName}Runner {
      */
     @BeforeClass
     public static void setUpClass() {
-        ${robotName}Context.getInstance().initializeEnv("${targetApplication}.properties");
+        ${robotName}Context.getInstance().initializeEnv("${robotName}.properties");
         ${robotName}Context.getInstance().initializeRobot(${robotName}Runner.class.getClassLoader());
     }
 

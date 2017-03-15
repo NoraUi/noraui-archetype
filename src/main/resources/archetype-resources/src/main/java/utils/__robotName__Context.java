@@ -3,8 +3,6 @@
 #set( $symbol_escape = '\' )
 package ${package}.utils;
 
-import java.util.Properties;
-
 import org.apache.log4j.Logger;
 
 import noraui.application.Application;
