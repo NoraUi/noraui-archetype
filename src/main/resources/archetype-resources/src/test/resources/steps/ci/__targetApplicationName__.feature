@@ -1,24 +1,23 @@
 @${targetApplicationName}
-Feature: ${targetApplicationName} (Scenario that plays logo game.) 
+Feature: ${targetApplicationName} (Scenario that 1st sample.) 
 
-	Scenario Outline:  Scenario that plays logo game.
+	Scenario Outline:  Scenario that 1st sample.
 	
-    Given I check that player '<player>' is not empty.
+    Given I check that user '<user>' is not empty.
+    Given I check that password '<password>' is not empty.
     
     Given '${targetApplicationId.toUpperCase()}_HOME' is opened.
+    Then The ${targetApplicationId.toUpperCase()} home page is displayed
+      
+    When I log in to ${targetApplicationId.toUpperCase()} as '<user>' '<password>'
     Then The ${targetApplicationId.toUpperCase()} portal is displayed
-    
-    Then I play with 'amazon'
-    Then I add '8' random brand
-    And I check alert message
-    
-    Then I play with my input file '<DataJson>'
-    Then I valide in ${targetApplicationId.toUpperCase()}
-    Then I save score
+      
+    When I log out of ${targetApplicationId.toUpperCase()}
+    Then The ${targetApplicationId.toUpperCase()} logout page is displayed
 
     And I go back to '${targetApplicationId.toUpperCase()}_HOME'
 		
 	Examples:
 	  #DATA
-	  |id|player|DataJson|
+	  |id|user|password|
     #END

@@ -7,7 +7,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
-import com.obs.rapid.utils.RapidContext;
+import ${package}.utils.${robotName}Context;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
