@@ -3,9 +3,6 @@
 #set( $symbol_escape = '\' )
 package ${package}.application.steps.${targetApplicationId};
 
-import org.apache.log4j.Logger;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import ${package}.application.model.${targetApplicationId}.Logo;
 import ${package}.application.pages.${targetApplicationId}.${targetApplicationName}Page;
 
