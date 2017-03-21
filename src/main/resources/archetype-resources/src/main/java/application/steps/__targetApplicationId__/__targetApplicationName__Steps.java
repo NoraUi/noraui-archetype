@@ -3,7 +3,8 @@
 #set( $symbol_escape = '\' )
 package ${package}.application.steps.${targetApplicationId};
 
-import ${package}.application.model.${targetApplicationId}.Logo;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import ${package}.application.pages.${targetApplicationId}.${targetApplicationName}Page;
 
 import cucumber.api.java.en.Then;
