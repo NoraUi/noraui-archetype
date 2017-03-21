@@ -4,21 +4,13 @@
 package ${package}.application.steps.${targetApplicationId};
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import ${package}.application.model.${targetApplicationId}.Logo;
-import ${package}.application.model.${targetApplicationId}.Logos;
 import ${package}.application.pages.${targetApplicationId}.${targetApplicationName}Page;
 
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import cucumber.api.java.fr.Alors;
-import cucumber.api.java.fr.Et;
-import cucumber.metrics.annotation.time.Time;
-import cucumber.metrics.annotation.time.TimeValue;
 import noraui.application.page.Page;
 import noraui.application.steps.Step;
 import noraui.browser.Auth;
@@ -31,8 +23,6 @@ import noraui.utils.Utilities;
 
 public class ${targetApplicationName}Steps extends Step {
 
-    private static Logger logger = Logger.getLogger(${targetApplicationName}Steps.class.getName());
-    
     public static final String ${targetApplicationId.toUpperCase()} = "${targetApplicationId.toUpperCase()}";
 
     private ${targetApplicationName}Page ${targetApplicationId}Page;

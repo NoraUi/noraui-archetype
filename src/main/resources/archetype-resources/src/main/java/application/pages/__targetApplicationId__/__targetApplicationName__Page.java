@@ -11,11 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import ${package}.utils.${robotName}Context;
 
 import noraui.application.page.Page;
-import noraui.browser.Auth;
-import noraui.exception.Callbacks;
-import noraui.exception.FailureException;
 import noraui.utils.Context;
-import noraui.utils.Utilities;
 
 public class ${targetApplicationName}Page extends Page {
 
