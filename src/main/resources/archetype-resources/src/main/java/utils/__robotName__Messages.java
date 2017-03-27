@@ -17,13 +17,13 @@ public class ${robotName}Messages extends Messages {
     /**
      * Functional fail messages.
      */
-    //public static final String FAIL_MESSAGE_ = FAIL_MESSAGE_DEFAULT + "....";
+    //public static final String FAIL_MESSAGE_ = "....";
 
     /**
      * Functional fail messages with parameters.
      */
-    //public static final String FAIL_MESSAGE_ = FAIL_MESSAGE_DEFAULT + "...... « %s » ....";
-    //public static final String FAIL_MESSAGE_ = FAIL_MESSAGE_DEFAULT + "...... « %s » .... %s.";
+    //public static final String FAIL_MESSAGE_ = "...... « %s » ....";
+    //public static final String FAIL_MESSAGE_ = "...... « %s » .... %s.";
 
     /**
      * Constructor is useless because all attributes are static

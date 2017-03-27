@@ -25,7 +25,7 @@ public class ${targetApplicationName}Page extends Page {
     public final PageElement signInButton = new PageElement("-sign-in-button", "Sign-in button");
     public final PageElement signInMessage = new PageElement("-sign-in-message");
 
-    private static final String TITLE_PAGE = "${targetApplicationId}";
+    private static final String TITLE_PAGE = "${targetApplicationTitle}";
 
     public ${targetApplicationName}Page() {
         super();

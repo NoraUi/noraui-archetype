@@ -34,8 +34,10 @@ public class ${targetApplicationName}Steps extends Step {
     *
     */
    @Then("The ${targetApplicationId.toUpperCase()} home page is displayed")
-   public void check${targetApplicationName}LoginPage() {
-       this.${targetApplicationId}Page.checkPage();
+   public void check${targetApplicationName}LoginPage() throws FailureException {
+       if (!${targetApplicationId}Page.checkPage()) {
+           new Result.Failure<>(${targetApplicationId.toUpperCase()}, Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS, true, ${targetApplicationId}Page.getCallBack());
+       }
    }
    
    /**
@@ -71,13 +73,17 @@ public class ${targetApplicationName}Steps extends Step {
     */
    @Then("The ${targetApplicationId.toUpperCase()} portal is displayed")
    public void check${targetApplicationName}Page() throws FailureException {
-       Context.waitUntil(ExpectedConditions.presenceOfElementLocated(noraui.utils.Utilities.getLocator(${targetApplicationId}Page.signInMessage)));
-       if (!${targetApplicationId}Page.isDisplayed()) {
-           logInTo${targetApplicationName}With${robotName}();
-       }
-       if (!${targetApplicationId}Page.checkPage()) {
+       try {
+           Context.waitUntil(ExpectedConditions.presenceOfElementLocated(noraui.utils.Utilities.getLocator(${targetApplicationId}Page.signInMessage)));
+           if (!${targetApplicationId}Page.isDisplayed()) {
+               logInTo${targetApplicationName}With${robotName}();
+           }
+           if (!${targetApplicationId}Page.checkPage()) {
+               new Result.Failure<>(${targetApplicationId.toUpperCase()}, Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS, true, ${targetApplicationId}Page.getCallBack());
+           }
+       } catch (Exception e) {
            new Result.Failure<>(${targetApplicationId.toUpperCase()}, Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS, true, ${targetApplicationId}Page.getCallBack());
-       }
+       }    
        Auth.setConnected(true);
    }
    
@@ -85,7 +91,7 @@ public class ${targetApplicationName}Steps extends Step {
     * Logout of ${targetApplicationName}.
     */
    @When("I log out of ${targetApplicationId.toUpperCase()}")
-   public void logOutOf${targetApplicationName}() {
+   public void logOutOf${targetApplicationName}() throws FailureException {
        if (Auth.isConnected()) {
            Step.getDriver().switchTo().defaultContent();
            Utilities.findElement(${targetApplicationId}Page.accountMenu).click();

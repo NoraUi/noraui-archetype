@@ -6,7 +6,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<requiredProperties>
 		<requiredProperty key="robotName">
-			<defaultValue>Rapid</defaultValue>
+			<defaultValue>NoraRobot</defaultValue>
 		</requiredProperty>
 		<requiredProperty key="targetApplicationId">
 			<defaultValue>logogame</defaultValue>
@@ -14,8 +14,11 @@
         <requiredProperty key="targetApplicationName">
             <defaultValue>Logogame</defaultValue>
         </requiredProperty>
+        <requiredProperty key="targetApplicationTitle">
+            <defaultValue>Logo Game</defaultValue>
+        </requiredProperty>
         <requiredProperty key="targetApplicationUrl">
-            <defaultValue>https://noraui.github.io/demo/logogame/v1/</defaultValue>
+            <defaultValue>https://noraui.github.io/demo/logogame/v3/</defaultValue>
         </requiredProperty>
 		<requiredProperty key="sonarUrl">
 			<defaultValue>http://172.0.0.1:10506</defaultValue>
@@ -63,33 +66,7 @@
 		<fileSet encoding="UTF-8">
 			<directory>src/test/resources</directory>
 			<includes>
-				<include>**/*.</include>
-				<include>**/*.zip</include>
-				<include>**/*.xlsx</include>
-				<include>**/*.css</include>
-				<include>**/*.exe</include>
-				<include>**/*.js</include>
-				<include>**/*.bz2</include>
-				<include>**/*.sql</include>
-			</includes>
-		</fileSet>
-		<fileSet filtered="true" encoding="UTF-8">
-			<directory>.settings</directory>
-			<includes>
-				<include>**/*.xml</include>
-			</includes>
-		</fileSet>
-		<fileSet encoding="UTF-8">
-			<directory>.settings</directory>
-			<includes>
-				<include>**/*.prefs</include>
-			</includes>
-		</fileSet>
-		<fileSet filtered="true" encoding="UTF-8">
-			<directory></directory>
-			<includes>
-				<include>.classpath</include>
-				<include>.project</include>
+				<include>**/*</include>
 			</includes>
 		</fileSet>
 	</fileSets>
