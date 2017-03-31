@@ -6,7 +6,7 @@ Maven archetype for use a NORA-UI project
 [Public website for NoraUi (Non-Regression Automation for User Interfaces)](https://noraui.github.io/).
 
 # Demonstration
-[![Demonstration](https://noraui.github.io/howToUse/1.png)](https://github.com/NoraUi/noraui.github.io/blob/master/howToUse/useNoraUiMavenArchetypeInEclipse.gif)
+[![Demonstration](https://noraui.github.io/howToUse/1play.gif)](https://github.com/NoraUi/noraui.github.io/blob/master/howToUse/useNoraUiMavenArchetypeInEclipse.gif)
 
 # License
 
