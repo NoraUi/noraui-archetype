@@ -1,9 +1,15 @@
 # NORA-UI Archetype
 Maven archetype for use a NORA-UI project
 
+# Continuous Integration status
+[![Build Status](https://travis-ci.org/NoraUi/noraui-archetype.svg?branch=master)](https://travis-ci.org/NoraUi/noraui-archetype)
+
 # Technical documentation
 
 [Public website for NoraUi (Non-Regression Automation for User Interfaces)](https://noraui.github.io/).
+
+# Demonstration
+[![Demonstration](https://noraui.github.io/howToUse/1play.gif)](https://github.com/NoraUi/noraui.github.io/blob/master/howToUse/useNoraUiMavenArchetypeInEclipse.gif)
 
 # License
 
