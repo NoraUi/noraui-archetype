@@ -1,9 +1,9 @@
 cd $(dirname $0)
 pwd
-ls- l
+ls -l
 cd ..
 pwd
-ls- l
+ls -l
 mvn clean install
 
 mkdir generate_app
@@ -11,7 +11,7 @@ cd generate_app
 mvn archetype:generate -DarchetypeGroupId=com.github.noraui -DarchetypeArtifactId=noraui-archetype -DarchetypeVersion=2.1.1-SNAPSHOT -DgroupId=com.your.company -DartifactId=robot -DinteractiveMode=false
 
 pwd
-ls- l
+ls -l
 cd robot
 
 mvn clean test javadoc:javadoc -Dcucumber.options="--tags @Logogame" -PscenarioInitiator,javadoc,unit-tests -Dmaven.test.failure.ignore=true
