@@ -42,8 +42,8 @@ if [ "$nb_failure" != "" ]; then
     exit 255
 fi
 
-# 3 = 1 (real) + 2 counters (Excel and CSV)
-if [ "$nb_counters" == "3" ]; then
+# 2 = 1 (real) + 1 counter (Excel)
+if [ "$nb_counters" == "2" ]; then
     echo "******** All counter is SUCCESS"
 else
     echo "******** All counter is FAIL"
