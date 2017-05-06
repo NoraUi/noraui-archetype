@@ -41,7 +41,7 @@ public class ${targetApplicationName}Page extends Page {
     public boolean checkPage(Object... elements) {
         try {
             Context.waitUntil(ExpectedConditions.not(ExpectedConditions.titleIs("")));
-            if (!TITLE_PAGE.equals(Page.getDriver().getTitle())) {
+            if (!TITLE_PAGE.equals(getDriver().getTitle())) {
                 logger.error("HTML title is not good");
                 return false;
             }
@@ -71,7 +71,7 @@ public class ${targetApplicationName}Page extends Page {
     public boolean isDisplayed(String titlePage) {
         try {
             Context.waitUntil(ExpectedConditions.not(ExpectedConditions.titleIs("")));
-            if (!titlePage.equals(Page.getDriver().getTitle())) {
+            if (!titlePage.equals(getDriver().getTitle())) {
                 return false;
             }
         } catch (Exception e) {

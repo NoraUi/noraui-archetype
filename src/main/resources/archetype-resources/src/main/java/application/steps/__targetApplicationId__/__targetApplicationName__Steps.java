@@ -98,7 +98,7 @@ public class ${targetApplicationName}Steps extends Step {
    @When("I log out of ${targetApplicationId.toUpperCase()}")
    public void logOutOf${targetApplicationName}() throws FailureException {
        if (Auth.isConnected()) {
-           Step.getDriver().switchTo().defaultContent();
+           getDriver().switchTo().defaultContent();
            Utilities.findElement(${targetApplicationId}Page.accountMenu).click();
            Context.waitUntil(ExpectedConditions.presenceOfElementLocated(noraui.utils.Utilities.getLocator(${targetApplicationId}Page.signoutMenu))).click();
        }

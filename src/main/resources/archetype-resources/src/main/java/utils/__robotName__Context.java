@@ -6,6 +6,7 @@ package ${package}.utils;
 import org.apache.log4j.Logger;
 
 import noraui.application.Application;
+import noraui.application.page.Page;
 import noraui.utils.Context;
 
 public class ${robotName}Context extends Context {
@@ -36,15 +37,15 @@ public class ${robotName}Context extends Context {
      * {@inheritDoc}
      */
     @Override
-    public synchronized void initializeRobot(ClassLoader loader) {
-        super.initializeRobot(loader);
+    public synchronized void initializeRobot(Class clazz) {
+        super.initializeRobot(clazz);
         logger.info("${robotName}Context > initializeRobot()");
 
         // Urls configuration
         ${targetApplicationId}Home = setProperty(${targetApplicationId.toUpperCase()}_KEY, applicationProperties);
 
         // Selectors configuration
-        initApplicationDom(loader, selectorsVersion, ${targetApplicationId.toUpperCase()}_KEY);
+        initApplicationDom(clazz.getClassLoader(), selectorsVersion, ${targetApplicationId.toUpperCase()}_KEY);
  
         
         exceptionCallbacks.put(GO_TO_${targetApplicationId.toUpperCase()}_HOME, STEPS_BROWSER_STEPS_CLASS_QUALIFIED_NAME, GO_TO_URL_METHOD_NAME, ${targetApplicationId.toUpperCase()}_HOME);
@@ -52,6 +53,8 @@ public class ${robotName}Context extends Context {
         exceptionCallbacks.put(CLOSE_ALL_WINDOWS_AND_SWITCH_TO_${targetApplicationId.toUpperCase()}_HOME, STEPS_BROWSER_STEPS_CLASS_QUALIFIED_NAME, "closeAllWindowsAndSwitchTo", ${targetApplicationId.toUpperCase()}_KEY);
 
         applications.put(${targetApplicationId.toUpperCase()}_KEY, new Application(${targetApplicationId.toUpperCase()}_HOME, ${targetApplicationId}Home));
+    
+        Page.setPageMainPackage("${package}.application.pages.");
     }
     
     /**

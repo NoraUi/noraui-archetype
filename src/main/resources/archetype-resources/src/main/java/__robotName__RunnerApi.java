@@ -24,7 +24,7 @@ public class ${robotName}RunnerApi {
     @BeforeClass
     public static void setUpClass() {
         ${robotName}Context.getInstance().initializeEnv("${robotName}.properties");
-        ${robotName}Context.getInstance().initializeRobot(${robotName}RunnerApi.class.getClassLoader());
+        ${robotName}Context.getInstance().initializeRobot(${robotName}RunnerApi.class);
     }
 
     /**
