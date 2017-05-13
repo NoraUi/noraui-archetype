@@ -30,8 +30,11 @@ public class ${targetApplicationName}Steps extends Step {
         this.${targetApplicationId}Page = (${targetApplicationName}Page) Page.getInstance(${targetApplicationName}Page.class);
     }
     
-    /**
+   /**
+    * Check Login page.
     *
+    * @throws FailureException
+    *             if the scenario encounters a functional error.
     */
    @Then("The ${targetApplicationId.toUpperCase()} home page is displayed")
    public void check${targetApplicationName}LoginPage() throws FailureException {
@@ -41,14 +44,14 @@ public class ${targetApplicationName}Steps extends Step {
    }
    
    /**
-    * Log in to ${targetApplicationId.toUpperCase()} without ${robotName} (login and password in Gherkin scenario)
+    * Log in to ${targetApplicationId.toUpperCase()} without ${robotName} (login and password in Gherkin scenario).
     *
     * @param login
-    *            Login to use
+    *            Login to use.
     * @param password
-    *            Password to use
+    *            Password to use.
     * @throws FailureException
-    *             if the scenario encounters a functional error
+    *             if the scenario encounters a functional error.
     */
    @When("I log in to ${targetApplicationId.toUpperCase()} as '(.*)' '(.*)'")
    public void logInTo${targetApplicationName}(String login, String password) throws FailureException {
@@ -69,7 +72,7 @@ public class ${targetApplicationName}Steps extends Step {
     * Check ${targetApplicationName} portal page.
     *
     * @throws FailureException
-    *             if the scenario encounters a functional error
+    *             if the scenario encounters a functional error.
     */
    @Then("The ${targetApplicationId.toUpperCase()} portal is displayed")
    public void check${targetApplicationName}Page() throws FailureException {
@@ -89,18 +92,20 @@ public class ${targetApplicationName}Steps extends Step {
    
    /**
     * Logout of ${targetApplicationName}.
+    * @throws FailureException
+    *             if the scenario encounters a functional error.
     */
    @When("I log out of ${targetApplicationId.toUpperCase()}")
    public void logOutOf${targetApplicationName}() throws FailureException {
        if (Auth.isConnected()) {
-           Step.getDriver().switchTo().defaultContent();
+           getDriver().switchTo().defaultContent();
            Utilities.findElement(${targetApplicationId}Page.accountMenu).click();
            Context.waitUntil(ExpectedConditions.presenceOfElementLocated(noraui.utils.Utilities.getLocator(${targetApplicationId}Page.signoutMenu))).click();
        }
    }
    
    /**
-   *
+   * Check Logout page.
    */
   @Then("The ${targetApplicationId.toUpperCase()} logout page is displayed")
   public void check${targetApplicationName}LogoutPage() {
@@ -108,12 +113,10 @@ public class ${targetApplicationName}Steps extends Step {
   }
   
   /**
-   * Log in to ${targetApplicationId.toUpperCase()} with ${robotName} (login and password in job parameters)
+   * Log in to ${targetApplicationId.toUpperCase()} with ${robotName} (login and password in job parameters).
    *
    * @throws FailureException
-   *             if the scenario encounters a functional error
-   * @
-   * With FAIL_MESSAGE_UNKNOWN_CREDENTIALS message (Screenshot no exception)
+   *             if the scenario encounters a functional error.
    */
   private void logInTo${targetApplicationName}With${robotName}() throws FailureException {
       String login = Auth.getLogin();
