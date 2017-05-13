@@ -1,5 +1,5 @@
-@${targetApplicationName}
-Feature: ${targetApplicationName} (Scenario that 1st sample.) 
+@LoginLogout
+Feature: LoginLogout (Scenario that 1st sample.) 
 
 	Scenario Outline:  Scenario that 1st sample.
 	
