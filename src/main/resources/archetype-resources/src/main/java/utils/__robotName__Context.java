@@ -6,6 +6,7 @@ package ${package}.utils;
 import org.apache.log4j.Logger;
 
 import noraui.application.Application;
+import noraui.application.page.Page;
 import noraui.utils.Context;
 
 public class ${robotName}Context extends Context {
@@ -52,6 +53,8 @@ public class ${robotName}Context extends Context {
         exceptionCallbacks.put(CLOSE_ALL_WINDOWS_AND_SWITCH_TO_${targetApplicationId.toUpperCase()}_HOME, STEPS_BROWSER_STEPS_CLASS_QUALIFIED_NAME, "closeAllWindowsAndSwitchTo", ${targetApplicationId.toUpperCase()}_KEY);
 
         applications.put(${targetApplicationId.toUpperCase()}_KEY, new Application(${targetApplicationId.toUpperCase()}_HOME, ${targetApplicationId}Home));
+        
+        Page.setPageMainPackage("${package}.application.pages.");
     }
     
     /**

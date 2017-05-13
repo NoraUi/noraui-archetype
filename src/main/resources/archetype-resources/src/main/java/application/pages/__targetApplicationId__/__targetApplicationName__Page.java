@@ -20,10 +20,10 @@ public class ${targetApplicationName}Page extends Page {
     public final PageElement accountMenu = new PageElement("-accountMenu", "Account menu");
     public final PageElement signinMenu = new PageElement("-signinMenu", "Sign-in menu");
     public final PageElement signoutMenu = new PageElement("-signoutMenu", "Sign-out menu");
-    public final PageElement login = new PageElement("-login-field", "Login");
-    public final PageElement password = new PageElement("-password-field", "Password");
-    public final PageElement signInButton = new PageElement("-sign-in-button", "Sign-in button");
-    public final PageElement signInMessage = new PageElement("-sign-in-message");
+    public final PageElement login = new PageElement("-login_field", "Login");
+    public final PageElement password = new PageElement("-password_field", "Password");
+    public final PageElement signInButton = new PageElement("-sign_in_button", "Sign-in button");
+    public final PageElement signInMessage = new PageElement("-sign_in_message");
 
     private static final String TITLE_PAGE = "${targetApplicationTitle}";
 
