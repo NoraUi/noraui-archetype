@@ -21,8 +21,6 @@ import noraui.utils.Utilities;
 
 public class ${targetApplicationName}Steps extends Step {
 
-    public static final String ${targetApplicationId.toUpperCase()} = "${targetApplicationId.toUpperCase()}";
-
     private ${targetApplicationName}Page ${targetApplicationId}Page;
 
     public ${targetApplicationName}Steps() throws TechnicalException {
@@ -39,7 +37,7 @@ public class ${targetApplicationName}Steps extends Step {
    @Then("The ${targetApplicationId.toUpperCase()} home page is displayed")
    public void check${targetApplicationName}LoginPage() throws FailureException {
        if (!${targetApplicationId}Page.checkPage()) {
-           new Result.Failure<>(${targetApplicationId.toUpperCase()}, Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS, true, ${targetApplicationId}Page.getCallBack());
+           new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS, true, ${targetApplicationId}Page.getCallBack());
        }
    }
    
@@ -82,10 +80,10 @@ public class ${targetApplicationName}Steps extends Step {
                logInTo${targetApplicationName}With${robotName}();
            }
            if (!${targetApplicationId}Page.checkPage()) {
-               new Result.Failure<>(${targetApplicationId.toUpperCase()}, Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS, true, ${targetApplicationId}Page.getCallBack());
+               new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS, true, ${targetApplicationId}Page.getCallBack());
            }
        } catch (Exception e) {
-           new Result.Failure<>(${targetApplicationId.toUpperCase()}, Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS, true, ${targetApplicationId}Page.getCallBack());
+           new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS, true, ${targetApplicationId}Page.getCallBack());
        }    
        Auth.setConnected(true);
    }
@@ -99,7 +97,7 @@ public class ${targetApplicationName}Steps extends Step {
    public void logOutOf${targetApplicationName}() throws FailureException {
        if (Auth.isConnected()) {
            getDriver().switchTo().defaultContent();
-           Utilities.findElement(${targetApplicationId}Page.accountMenu).click();
+           clickOn(${targetApplicationId}Page.accountMenu);
            Context.waitUntil(ExpectedConditions.presenceOfElementLocated(noraui.utils.Utilities.getLocator(${targetApplicationId}Page.signoutMenu))).click();
        }
    }
