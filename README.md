@@ -4,6 +4,10 @@ Maven archetype for use a NORA-UI project
 # Continuous Integration status
 [![Build Status](https://travis-ci.org/NoraUi/noraui-archetype.svg?branch=master)](https://travis-ci.org/NoraUi/noraui-archetype)
 
+# Last release
+
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.noraui/noraui-archetype/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.noraui/noraui-archetype)
+
 # Technical documentation
 
 [Public website for NoraUi (Non-Regression Automation for User Interfaces)](https://noraui.github.io/).
