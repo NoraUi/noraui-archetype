@@ -92,9 +92,11 @@ public class ${targetApplicationName}Steps extends Step {
     * Logout of ${targetApplicationName}.
     * @throws FailureException
     *             if the scenario encounters a functional error.
+    * @throws TechnicalException
+    *             is thrown if you have a technical error (format, configuration, datas, ...) in NoraUi.
     */
    @When("I log out of ${targetApplicationId.toUpperCase()}")
-   public void logOutOf${targetApplicationName}() throws FailureException {
+   public void logOutOf${targetApplicationName}() throws FailureException, TechnicalException {
        if (Auth.isConnected()) {
            getDriver().switchTo().defaultContent();
            clickOn(${targetApplicationId}Page.accountMenu);
