@@ -9,3 +9,6 @@ before_install:
  
 script:
 - test/run.sh
+
+after_success: 
+- test/after_success.sh
