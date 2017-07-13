@@ -375,9 +375,9 @@
             </properties>
         </profile>
         <profile>
-            <id>ic</id>
+            <id>ci</id>
             <properties>
-                <env>ic</env>
+                <env>ci</env>
             </properties>
         </profile>
         <profile>
