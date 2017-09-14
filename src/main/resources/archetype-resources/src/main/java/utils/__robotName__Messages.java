@@ -12,7 +12,7 @@ public class ${robotName}Messages extends Messages {
      */
     public static final String ${robotName.toUpperCase()}_ERROR_MESSAGE_DEFAULT = "Erreur dans le code ${robotName} : ";
     public static final String ${robotName.toUpperCase()}_ERROR_MESSAGE_APPLICATION_NOT_IMPLEMENTED = ${robotName.toUpperCase()}_ERROR_MESSAGE_DEFAULT + "l'application « %s » n'est pas implementée dans ${robotName}.";
-    public static final String SCENARIO_ERROR_MESSAGE_ILLEGAL_ARGUMENT = SCENARIO_ERROR_MESSAGE_DEFAULT + "les arguments autorisés sont ${symbol_escape}"ACT-${symbol_escape}", ${symbol_escape}"DPS-${symbol_escape}" et ${symbol_escape}"ALT-${symbol_escape}"";
+    public static final String SCENARIO_ERROR_MESSAGE_ILLEGAL_ARGUMENT = Messages.getMessage(Messages.FAIL_MESSAGE_DEFAULT) + "les arguments autorisés sont ${symbol_escape}"ACT-${symbol_escape}", ${symbol_escape}"DPS-${symbol_escape}" et ${symbol_escape}"ALT-${symbol_escape}"";
 
     /**
      * Functional fail messages.

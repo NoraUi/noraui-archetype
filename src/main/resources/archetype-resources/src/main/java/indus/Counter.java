@@ -27,7 +27,7 @@ public class Counter {
 
         MavenRunCounter mavenRunCounter = new MavenRunCounter();
         List<MavenRunCounter.Counter> counters = mavenRunCounter.count(versionControlSystemsBlacklist, scenarioBlacklist, manager, new File(Context.getResourcesPath() + "/steps"));
-        mavenRunCounter.print(counters);
+        mavenRunCounter.print(counters, args[0]);
     }
 
 }
