@@ -166,6 +166,9 @@
                                 </goals>
                                 <configuration>
                                     <mainClass>${package}.indus.Counter</mainClass>
+                                    <arguments>
+                                        <argument>Excel</argument>
+                                    </arguments>
                                     <systemProperties>
                                         <systemProperty>
                                             <key>resourcespath</key>
