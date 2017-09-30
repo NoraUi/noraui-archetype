@@ -18,7 +18,7 @@ echo "*                                              *"
 echo "*    generate a robot from noraui-archetype    *"
 echo "*                                              *"
 echo "************************************************"
-mvn archetype:generate -DarchetypeGroupId=com.github.noraui -DarchetypeArtifactId=noraui-archetype -DarchetypeVersion=3.0.0 -DgroupId=com.your.company -DartifactId=robot -DinteractiveMode=false
+mvn archetype:generate -DarchetypeGroupId=com.github.noraui -DarchetypeArtifactId=noraui-archetype -DarchetypeVersion=3.0.0-SNAPSHOT -DgroupId=com.your.company -DartifactId=robot -DinteractiveMode=false
 
 pwd
 ls -l
