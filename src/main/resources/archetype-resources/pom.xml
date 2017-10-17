@@ -120,7 +120,7 @@
                 <sonar.host.url>${sonarUrl}</sonar.host.url>
                 <sonar.sources>${project.basedir}/src/main/java</sonar.sources>
                 <sonar.scm.provider>svn</sonar.scm.provider>
-                <sonar.jacoco.reportPath>${project.build.directory}/coverage-reports/jacoco-ut.exec</sonar.jacoco.reportPath>
+                <sonar.jacoco.reportPaths>${project.build.directory}/coverage-reports/jacoco-ut.exec</sonar.jacoco.reportPaths>
             </properties>
             <build>
                 <pluginManagement>
