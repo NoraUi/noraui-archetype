@@ -5,7 +5,8 @@ package ${package}.application.pages.${targetApplicationId};
 
 import static ${package}.utils.${robotName}Context.${targetApplicationId.toUpperCase()}_KEY;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import ${package}.utils.${robotName}Context;
@@ -15,7 +16,10 @@ import noraui.utils.Context;
 
 public class ${targetApplicationName}Page extends Page {
 
-    private static Logger logger = Logger.getLogger(${targetApplicationName}Page.class.getName());
+    /**
+     * Specific logger
+     */
+    private static final Logger logger = LoggerFactory.getLogger(${targetApplicationName}Page.class);
 
     public final PageElement accountMenu = new PageElement("-accountMenu", "Account menu");
     public final PageElement signinMenu = new PageElement("-signinMenu", "Sign-in menu");
@@ -75,7 +79,7 @@ public class ${targetApplicationName}Page extends Page {
                 return false;
             }
         } catch (Exception e) {
-            logger.error("Exception in isDisplayed: " + e);
+            logger.error("Exception in isDisplayed", e);
             return false;
         }
         return true;

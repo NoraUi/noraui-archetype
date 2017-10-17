@@ -3,7 +3,8 @@
 #set( $symbol_escape = '\' )
 package ${package}.utils;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import noraui.application.Application;
 import noraui.application.page.Page;
@@ -12,9 +13,9 @@ import noraui.utils.Context;
 public class ${robotName}Context extends Context {
 
     /**
-     * Specific logger.
+     * Specific logger
      */
-    private static final Logger logger = Logger.getLogger(${robotName}Context.class);
+    private static final Logger logger = LoggerFactory.getLogger(${robotName}Context.class);
 
     public static final String ${targetApplicationId.toUpperCase()}_KEY = "${targetApplicationId}";
     public static final String ${targetApplicationId.toUpperCase()}_HOME = "${targetApplicationId.toUpperCase()}_HOME";
