@@ -5,6 +5,8 @@ package ${package}.application.steps.${targetApplicationId};
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import com.google.inject.Inject;
+
 import ${package}.application.pages.${targetApplicationId}.${targetApplicationName}Page;
 
 import cucumber.api.java.en.Then;
@@ -21,13 +23,9 @@ import noraui.utils.Utilities;
 
 public class ${targetApplicationName}Steps extends Step {
 
+    @Inject
     private ${targetApplicationName}Page ${targetApplicationId}Page;
-
-    public ${targetApplicationName}Steps() throws TechnicalException {
-        super();
-        this.${targetApplicationId}Page = (${targetApplicationName}Page) Page.getInstance(${targetApplicationName}Page.class);
-    }
-    
+   
    /**
     * Check Login page.
     *
