@@ -33,6 +33,37 @@
             <groupId>com.github.noraui</groupId>
             <artifactId>noraui</artifactId>
             <version>${noraui.version}</version>
+##inputprovider library code
+#set ($supportedLibs = ["EXCEL","CSV","ORACLE","MYSQL","POSTGRE","REST","GHERKIN"])
+#set ($validInputproviderLibraries = ["none"])
+#set ($dummyResult = $validInputproviderLibraries.addAll($supportedLibs))
+##
+#checkPropertyValid( "inputprovider" $inputprovider $validInputproviderLibraries )
+##
+#if ( $supportedLibs.contains($inputprovider))
+            <exclusions>
+#if ( $inputprovider != "ORACLE" )
+                <exclusions>
+			        <groupId>com.oracle.jdbc</groupId>
+			        <artifactId>ojdbc8</artifactId>
+			    </exclusions>
+#end
+#if ( $inputprovider != "MYSQL" )		
+                <exclusions>
+			        <groupId>mysql</groupId>
+			        <artifactId>mysql-connector-java</artifactId>
+			    </exclusions>
+#end
+#if ( $inputprovider != "POSTGRE" )		
+                <exclusions>
+			        <groupId>org.postgresql</groupId>
+			        <artifactId>postgresql</artifactId>
+			    </exclusions>
+#end
+		    </exclusions>
+#elseif ( $inputprovider == "none")
+		<!-- No exclusions: You import all lib for all data provider -->
+#end
         </dependency>
 
     </dependencies>
