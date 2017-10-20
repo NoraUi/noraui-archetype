@@ -10,6 +10,18 @@
     <!-- Output to jar format -->
     <packaging>jar</packaging>
 
+##macro for error messages
+#macro( checkPropertyValid $paramName $paramValue $legalValues )
+#if (!$legalValues.contains($paramValue))
+		-------
+		<ERROR>: "$paramName"=$paramValue, which is an invalid value!
+		Allowed values are: $legalValues.
+		See the archetype description and rerun archetype:generate
+		-------
+#end
+#end
+##
+
     <properties>
         <cucumber.options>--tags @TOSPECIFY</cucumber.options>
         <excelfilename>@TOSPECIFY</excelfilename>
