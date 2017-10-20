@@ -20,6 +20,8 @@ echo "*                                              *"
 echo "************************************************"
 mvn archetype:generate -DarchetypeGroupId=com.github.noraui -DarchetypeArtifactId=noraui-archetype -DarchetypeVersion=3.0.0-SNAPSHOT -DgroupId=com.your.company -DartifactId=robot -Dversion=0.0.1-SNAPSHOT -DinteractiveMode=false
 
+exit 0
+
 pwd
 ls -l
 cd robot
