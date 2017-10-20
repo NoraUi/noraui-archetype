@@ -21,7 +21,6 @@
 #end
 #end
 ##
-
     <properties>
         <cucumber.options>--tags @TOSPECIFY</cucumber.options>
         <excelfilename>@TOSPECIFY</excelfilename>
@@ -55,22 +54,22 @@
 #if ( $supportedLibs.contains($inputprovider))
             <exclusions>
 #if ( $inputprovider != "ORACLE" )
-                <exclusions>
+                <exclusion>
 			        <groupId>com.oracle.jdbc</groupId>
 			        <artifactId>ojdbc8</artifactId>
-			    </exclusions>
+			    </exclusion>
 #end
 #if ( $inputprovider != "MYSQL" )		
-                <exclusions>
+                <exclusion>
 			        <groupId>mysql</groupId>
 			        <artifactId>mysql-connector-java</artifactId>
-			    </exclusions>
+			    </exclusion>
 #end
 #if ( $inputprovider != "POSTGRE" )		
-                <exclusions>
+                <exclusion>
 			        <groupId>org.postgresql</groupId>
 			        <artifactId>postgresql</artifactId>
-			    </exclusions>
+			    </exclusion>
 #end
 		    </exclusions>
 #elseif ( $inputprovider == "none")
