@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import noraui.application.Application;
 import noraui.application.page.Page;
 import noraui.utils.Context;
+import noraui.utils.Messages;
 
 public class ${robotName}Context extends Context {
 
@@ -41,6 +42,9 @@ public class ${robotName}Context extends Context {
     public synchronized void initializeRobot(Class clazz) {
         super.initializeRobot(clazz);
         logger.info("${robotName}Context > initializeRobot()");
+        
+        // This line is here as an example to show how to do with internationalization using messages bundles.
+        logger.info(Messages.getMessage("HELLO", "${artifactId}"));
 
         // Urls configuration
         ${targetApplicationId}Home = setProperty(${targetApplicationId.toUpperCase()}_KEY, applicationProperties);
