@@ -20,6 +20,9 @@
         <requiredProperty key="targetApplicationUrl">
             <defaultValue>https://noraui.github.io/demo/logogame/v3/</defaultValue>
         </requiredProperty>
+        <requiredProperty key="inputprovider">
+			<defaultValue>EXCEL</defaultValue>
+		</requiredProperty>
 		<requiredProperty key="sonarUrl">
 			<defaultValue>http://172.0.0.1:10506</defaultValue>
 		</requiredProperty>

@@ -10,6 +10,17 @@
     <!-- Output to jar format -->
     <packaging>jar</packaging>
 
+##macro for error messages
+#macro( checkPropertyValid $paramName $paramValue $legalValues )
+#if (!$legalValues.contains($paramValue))
+		-------
+		<ERROR>: "$paramName"=$paramValue, which is an invalid value!
+		Allowed values are: $legalValues.
+		See the archetype description and rerun archetype:generate
+		-------
+#end
+#end
+##
     <properties>
         <cucumber.options>--tags @TOSPECIFY</cucumber.options>
         <excelfilename>@TOSPECIFY</excelfilename>
@@ -33,6 +44,37 @@
             <groupId>com.github.noraui</groupId>
             <artifactId>noraui</artifactId>
             <version>${noraui.version}</version>
+##inputprovider library code
+#set ($supportedLibs = ["EXCEL","CSV","ORACLE","MYSQL","POSTGRE","REST","GHERKIN"])
+#set ($validInputproviderLibraries = ["none"])
+#set ($dummyResult = $validInputproviderLibraries.addAll($supportedLibs))
+##
+#checkPropertyValid( "inputprovider" $inputprovider $validInputproviderLibraries )
+##
+#if ( $supportedLibs.contains($inputprovider))
+            <exclusions>
+#if ( $inputprovider != "ORACLE" )
+                <exclusion>
+			        <groupId>com.oracle.jdbc</groupId>
+			        <artifactId>ojdbc8</artifactId>
+			    </exclusion>
+#end
+#if ( $inputprovider != "MYSQL" )		
+                <exclusion>
+			        <groupId>mysql</groupId>
+			        <artifactId>mysql-connector-java</artifactId>
+			    </exclusion>
+#end
+#if ( $inputprovider != "POSTGRE" )		
+                <exclusion>
+			        <groupId>org.postgresql</groupId>
+			        <artifactId>postgresql</artifactId>
+			    </exclusion>
+#end
+		    </exclusions>
+#elseif ( $inputprovider == "none")
+		<!-- No exclusions: You import all lib for all data provider -->
+#end
         </dependency>
 
     </dependencies>
