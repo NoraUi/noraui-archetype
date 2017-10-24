@@ -17,8 +17,7 @@ Maven archetype for use a NORA-UI project
 
 # License
 
-[![license](https://img.shields.io/github/license/NoraUi/noraui-archetype.svg)](https://github.com/NoraUi/noraui-archetype/blob/master/LICENSE)
-BSD, See LICENSE for details
+[![license](https://img.shields.io/github/license/NoraUi/noraui-archetype.svg)](https://github.com/NoraUi/noraui-archetype/blob/master/LICENSE) See LICENSE for details
 
 # Contributing
 
