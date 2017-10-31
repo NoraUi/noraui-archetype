@@ -31,7 +31,7 @@ echo "**********************************************************"
 mvn clean test javadoc:javadoc -Dcucumber.options="--tags '@LoginLogout'" -Pjavadoc,preIC,scenarioInitiator,ci,unit-tests,postIC --settings ../../test/mvnsettings.xml -Dmaven.test.failure.ignore=true
 
 curl -s "https://api.travis-ci.org/jobs/${TRAVIS_JOB_ID}/log.txt?deansi=true" > nonaui.log
-
+sleep 5
 echo "***************************************************"
 
 counters1=$(sed -n 's:.*<EXPECTED_RESULTS_1>\(.*\)</EXPECTED_RESULTS_1>.*:\1:p' nonaui.log | head -n 1)
