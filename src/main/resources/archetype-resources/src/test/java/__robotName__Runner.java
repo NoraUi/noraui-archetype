@@ -11,6 +11,7 @@ import ${package}.utils.${robotName}Context;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
+import noraui.exception.TechnicalException;
 import noraui.utils.Context;
 
 @RunWith(Cucumber.class)
@@ -19,16 +20,18 @@ features = { "src/test/resources" })
 public class ${robotName}Runner {
 
     /**
-     * BeforeClass Read constants file
+     * BeforeClass Read constants file.
+     * 
+     * @throws TechnicalException is thrown if you have a technical error (format, configuration, datas, ...) in NoraUi.
      */
     @BeforeClass
-    public static void setUpClass() {
+    public static void setUpClass() throws TechnicalException {
         ${robotName}Context.getInstance().initializeEnv("${robotName}.properties");
         ${robotName}Context.getInstance().initializeRobot(${robotName}Runner.class);
     }
 
     /**
-     * AfterClass clear Context
+     * AfterClass clear Context.
      */
     @AfterClass
     public static void tearDownClass() {
