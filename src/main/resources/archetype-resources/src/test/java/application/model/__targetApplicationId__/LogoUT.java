@@ -8,7 +8,7 @@ import java.util.Collections;
 import org.junit.Assert;
 import org.junit.Test;
 
-import noraui.model.ModelList;
+import com.github.noraui.model.ModelList;
 
 public class LogoUT {
 

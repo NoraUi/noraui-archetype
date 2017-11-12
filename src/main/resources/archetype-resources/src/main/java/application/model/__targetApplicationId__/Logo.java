@@ -13,8 +13,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
 
-import noraui.annotation.Column;
-import noraui.application.model.DemoModel;
+import com.github.noraui.annotation.Column;
+import com.github.noraui.application.model.DemoModel;
 
 public class Logo extends DemoModel implements Comparable<Logo> {
 

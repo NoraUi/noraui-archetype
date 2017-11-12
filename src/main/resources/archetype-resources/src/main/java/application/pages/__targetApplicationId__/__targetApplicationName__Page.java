@@ -17,8 +17,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import ${package}.utils.${robotName}Context;
 
-import noraui.application.page.Page;
-import noraui.utils.Context;
+import com.github.noraui.application.page.Page;
+import com.github.noraui.utils.Context;
 
 public class ${targetApplicationName}Page extends Page {
 

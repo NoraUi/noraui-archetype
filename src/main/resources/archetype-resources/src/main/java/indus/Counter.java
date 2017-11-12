@@ -15,8 +15,8 @@ import java.util.List;
 
 import ${package}.utils.${robotName}Context;
 
-import noraui.indus.MavenRunCounter;
-import noraui.utils.Context;
+import com.github.noraui.indus.MavenRunCounter;
+import com.github.noraui.utils.Context;
 
 public class Counter {
 
