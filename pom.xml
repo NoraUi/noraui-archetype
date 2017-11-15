@@ -42,7 +42,7 @@
         <connection>scm:git:git://github.com/NoraUi/noraui-archetype.git</connection>
         <developerConnection>scm:git:git@github.com:NoraUi/noraui-archetype.git</developerConnection>
         <url>git://github.com/NoraUi/noraui-archetype.git</url>
-		<tag>v3.0.0</tag>
+		<tag>v3.0.2</tag>
     </scm>
 
     <repositories>
