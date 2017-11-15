@@ -18,9 +18,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-import noraui.application.model.DemosModel;
-import noraui.model.Model;
-import noraui.model.ModelList;
+import com.github.noraui.application.model.DemosModel;
+import com.github.noraui.model.Model;
+import com.github.noraui.model.ModelList;
 
 public class Logos extends DemosModel<Logo> implements ModelList {
 

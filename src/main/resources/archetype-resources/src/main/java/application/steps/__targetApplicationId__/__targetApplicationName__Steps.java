@@ -17,15 +17,14 @@ import ${package}.application.pages.${targetApplicationId}.${targetApplicationNa
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import noraui.application.page.Page;
-import noraui.application.steps.Step;
-import noraui.browser.Auth;
-import noraui.exception.FailureException;
-import noraui.exception.Result;
-import noraui.exception.TechnicalException;
-import noraui.utils.Context;
-import noraui.utils.Messages;
-import noraui.utils.Utilities;
+import com.github.noraui.application.steps.Step;
+import com.github.noraui.browser.Auth;
+import com.github.noraui.exception.FailureException;
+import com.github.noraui.exception.Result;
+import com.github.noraui.exception.TechnicalException;
+import com.github.noraui.utils.Context;
+import com.github.noraui.utils.Messages;
+import com.github.noraui.utils.Utilities;
 
 public class ${targetApplicationName}Steps extends Step {
 
@@ -59,7 +58,7 @@ public class ${targetApplicationName}Steps extends Step {
    public void logInTo${targetApplicationName}(String login, String password) throws FailureException {
        try {
            Utilities.findElement(${targetApplicationId}Page.accountMenu).click();
-           Context.waitUntil(ExpectedConditions.presenceOfElementLocated(noraui.utils.Utilities.getLocator(${targetApplicationId}Page.signinMenu))).click();
+           Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signinMenu))).click();
            
            Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signInButton)));
            Utilities.findElement(${targetApplicationId}Page.login).sendKeys(login);
@@ -79,7 +78,7 @@ public class ${targetApplicationName}Steps extends Step {
    @Then("The ${targetApplicationId.toUpperCase()} portal is displayed")
    public void check${targetApplicationName}Page() throws FailureException {
        try {
-           Context.waitUntil(ExpectedConditions.presenceOfElementLocated(noraui.utils.Utilities.getLocator(${targetApplicationId}Page.signInMessage)));
+           Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signInMessage)));
            if (!${targetApplicationId}Page.isDisplayed()) {
                logInTo${targetApplicationName}With${robotName}();
            }
@@ -104,7 +103,7 @@ public class ${targetApplicationName}Steps extends Step {
        if (Auth.isConnected()) {
            getDriver().switchTo().defaultContent();
            clickOn(${targetApplicationId}Page.accountMenu);
-           Context.waitUntil(ExpectedConditions.presenceOfElementLocated(noraui.utils.Utilities.getLocator(${targetApplicationId}Page.signoutMenu))).click();
+           Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signoutMenu))).click();
        }
    }
    

@@ -9,7 +9,7 @@
  */
 package ${package}.utils;
 
-import noraui.utils.Messages;
+import com.github.noraui.utils.Messages;
 
 public class ${robotName}Messages extends Messages {
 

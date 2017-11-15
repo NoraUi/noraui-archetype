@@ -11,7 +11,7 @@ package ${package}.main;
 
 import ${package}.utils.${robotName}Context;
 
-import noraui.main.ScenarioInitiator;
+import com.github.noraui.main.ScenarioInitiator;
 
 public class ScenarioInitiatorRunner {
 

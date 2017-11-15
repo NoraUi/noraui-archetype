@@ -12,11 +12,11 @@ package ${package}.utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import noraui.application.Application;
-import noraui.application.page.Page;
-import noraui.exception.TechnicalException;
-import noraui.utils.Context;
-import noraui.utils.Messages;
+import com.github.noraui.application.Application;
+import com.github.noraui.application.page.Page;
+import com.github.noraui.exception.TechnicalException;
+import com.github.noraui.utils.Context;
+import com.github.noraui.utils.Messages;
 
 public class ${robotName}Context extends Context {
 
