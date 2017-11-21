@@ -40,7 +40,7 @@ public class ${targetApplicationName}Steps extends Step {
    @Then("The ${targetApplicationId.toUpperCase()} home page is displayed")
    public void check${targetApplicationName}LoginPage() throws FailureException {
        if (!${targetApplicationId}Page.checkPage()) {
-           new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS, true, ${targetApplicationId}Page.getCallBack());
+           new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.getMessage(Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS), true, ${targetApplicationId}Page.getCallBack());
        }
    }
    
@@ -65,7 +65,7 @@ public class ${targetApplicationName}Steps extends Step {
            Utilities.findElement(${targetApplicationId}Page.password).sendKeys(password);
            Utilities.findElement(${targetApplicationId}Page.signInButton).click();
        } catch (Exception e) {
-           new Result.Failure<>(e, Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS, true, ${targetApplicationId}Page.getCallBack());
+           new Result.Failure<>(e, Messages.getMessage(Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS), true, ${targetApplicationId}Page.getCallBack());
        }
    }
    
@@ -83,10 +83,10 @@ public class ${targetApplicationName}Steps extends Step {
                logInTo${targetApplicationName}With${robotName}();
            }
            if (!${targetApplicationId}Page.checkPage()) {
-               new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS, true, ${targetApplicationId}Page.getCallBack());
+               new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.getMessage(Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS), true, ${targetApplicationId}Page.getCallBack());
            }
        } catch (Exception e) {
-           new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS, true, ${targetApplicationId}Page.getCallBack());
+           new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.getMessage(Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS), true, ${targetApplicationId}Page.getCallBack());
        }    
        Auth.setConnected(true);
    }
