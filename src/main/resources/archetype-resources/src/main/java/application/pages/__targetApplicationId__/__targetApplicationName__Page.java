@@ -40,7 +40,7 @@ public class ${targetApplicationName}Page extends Page {
     public ${targetApplicationName}Page() {
         super();
         this.application = ${targetApplicationId.toUpperCase()}_KEY;
-        this.pageKey = "APP_HOM";
+        this.pageKey = "${targetApplicationId.toUpperCase()}_HOM";
         this.callBack = Context.getCallBack(${robotName}Context.CLOSE_WINDOW_AND_SWITCH_TO_${targetApplicationId.toUpperCase()}_HOME);
     }
 
