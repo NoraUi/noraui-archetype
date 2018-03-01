@@ -3,9 +3,9 @@
 #set( $symbol_escape = '\' )
 /**
  * ${robotName} generated free by NoraUi Oraganization https://github.com/NoraUi
- * ${robotName} is licensed under the licence BSD.
+ * ${robotName} is licensed under the license BSD.
  * 
- * CAUTION: ${robotName} use NoraUi library. This project is licensed under the licence GNU AFFERO GENERAL PUBLIC LICENSE
+ * CAUTION: ${robotName} use NoraUi library. This project is licensed under the license GNU AFFERO GENERAL PUBLIC LICENSE
  */
 package ${package}.application.steps.${targetApplicationId};
 
