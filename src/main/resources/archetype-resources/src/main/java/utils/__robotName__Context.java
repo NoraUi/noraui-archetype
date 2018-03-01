@@ -27,7 +27,6 @@ public class ${robotName}Context extends Context {
 
     public static final String ${targetApplicationId.toUpperCase()}_KEY = "${targetApplicationId}";
     public static final String ${targetApplicationId.toUpperCase()}_HOME = "${targetApplicationId.toUpperCase()}_HOME";
-    public static final String ${targetApplicationId.toUpperCase()}_APP = "${targetApplicationId}.app";
 
     public static final String GO_TO_${targetApplicationId.toUpperCase()}_HOME = "GO_TO_${targetApplicationId.toUpperCase()}_HOME";
     public static final String CLOSE_WINDOW_AND_SWITCH_TO_${targetApplicationId.toUpperCase()}_HOME = "CLOSE_WINDOW_AND_SWITCH_TO_${targetApplicationId.toUpperCase()}_HOME";
