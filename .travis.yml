@@ -1,5 +1,10 @@
 language: java
-sudo: false
+sudo: required
+dist: trusty
+install: true
+
+addons:
+  chrome: stable
 
 jdk:
 - oraclejdk8
