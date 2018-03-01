@@ -54,7 +54,7 @@ public class ${robotName}Context extends Context {
         logger.info(Messages.format(Messages.getMessage("HELLO", "${artifactId}"), "${artifactId}"));
 
         // Urls configuration
-        ${targetApplicationId}Home = setProperty(${targetApplicationId.toUpperCase()}_KEY, applicationProperties);
+        ${targetApplicationId}Home = getProperty(${targetApplicationId.toUpperCase()}_KEY, applicationProperties);
 
         // Selectors configuration
         initApplicationDom(clazz.getClassLoader(), selectorsVersion, ${targetApplicationId.toUpperCase()}_KEY);
