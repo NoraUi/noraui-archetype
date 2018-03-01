@@ -366,7 +366,6 @@
                                 <uid>${uid}</uid>
                                 <password>${password}</password>
                                 <cookie>${cookie}</cookie>
-                                <clararole>${clararole}</clararole>
                             </systemPropertyVariables>
                             <includes>
                                 <include>**/*UT.java</include>
@@ -404,7 +403,6 @@
                                 <uid>${uid}</uid>
                                 <password>${password}</password>
                                 <cookie>${cookie}</cookie>
-                                <clararole>${clararole}</clararole>
                             </systemPropertyVariables>
                             <includes>
                                 <include>**/${robotName}Runner.java</include>
