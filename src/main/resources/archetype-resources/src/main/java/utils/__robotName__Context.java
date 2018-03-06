@@ -58,7 +58,6 @@ public class ${robotName}Context extends Context {
         // Selectors configuration
         initApplicationDom(clazz.getClassLoader(), selectorsVersion, ${targetApplicationId.toUpperCase()}_KEY);
  
-        
         exceptionCallbacks.put(GO_TO_${targetApplicationId.toUpperCase()}_HOME, STEPS_BROWSER_STEPS_CLASS_QUALIFIED_NAME, GO_TO_URL_METHOD_NAME, ${targetApplicationId.toUpperCase()}_HOME);
         exceptionCallbacks.put(CLOSE_WINDOW_AND_SWITCH_TO_${targetApplicationId.toUpperCase()}_HOME, STEPS_BROWSER_STEPS_CLASS_QUALIFIED_NAME, "closeWindowAndSwitchTo", ${targetApplicationId.toUpperCase()}_KEY, ${targetApplicationId.toUpperCase()}_HOME);
         exceptionCallbacks.put(CLOSE_ALL_WINDOWS_AND_SWITCH_TO_${targetApplicationId.toUpperCase()}_HOME, STEPS_BROWSER_STEPS_CLASS_QUALIFIED_NAME, "closeAllWindowsAndSwitchTo", ${targetApplicationId.toUpperCase()}_KEY);
