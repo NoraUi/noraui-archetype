@@ -19,7 +19,7 @@ import com.github.noraui.application.model.DemoModel;
 public class Logo extends DemoModel implements Comparable<Logo> {
 
     @Expose(serialize = false, deserialize = false)
-    private Integer wid;
+    private Integer nid;
 
     @Expose
     @Column(name = "brand")
@@ -30,13 +30,13 @@ public class Logo extends DemoModel implements Comparable<Logo> {
 
     // constructor by default for serialize/deserialize
     public Logo() {
-        this.wid = -1;
+        this.nid = -1;
         this.brand = "";
         this.score = "";
     }
 
-    public Logo(String wid, String brand, String score) {
-        this.wid = Integer.parseInt(wid);
+    public Logo(String nid, String brand, String score) {
+        this.nid = Integer.parseInt(nid);
         this.brand = brand;
         this.score = score;
     }
@@ -50,7 +50,7 @@ public class Logo extends DemoModel implements Comparable<Logo> {
         builder.excludeFieldsWithoutExposeAnnotation();
         final Gson gson = builder.create();
         Logo w = gson.fromJson(jsonString, Logo.class);
-        this.wid = w.wid;
+        this.nid = w.nid;
         this.brand = w.brand;
     }
 
@@ -106,12 +106,12 @@ public class Logo extends DemoModel implements Comparable<Logo> {
         return this.brand.compareTo(other.brand);
     }
 
-    public Integer getWid() {
-        return wid;
+    public Integer getNid() {
+        return nid;
     }
 
-    public void setWid(Integer wid) {
-        this.wid = wid;
+    public void setNid(Integer nid) {
+        this.nid = nid;
     }
 
     public String getBrand() {
