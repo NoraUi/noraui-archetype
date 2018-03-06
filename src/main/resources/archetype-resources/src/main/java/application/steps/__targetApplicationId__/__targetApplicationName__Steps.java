@@ -93,6 +93,7 @@ public class ${targetApplicationName}Steps extends Step {
    
    /**
     * Logout of ${targetApplicationName}.
+    *
     * @throws FailureException
     *             if the scenario encounters a functional error.
     * @throws TechnicalException
