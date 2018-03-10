@@ -80,6 +80,7 @@ public class ${robotName}Context extends Context {
         return instance;
     }
 
+    // home getters
     public String get${targetApplicationId.substring(0,1).toUpperCase()}${targetApplicationId.substring(1)}Home() {
         return ${targetApplicationId}Home;
     }
