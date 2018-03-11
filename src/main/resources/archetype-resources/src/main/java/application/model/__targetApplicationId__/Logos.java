@@ -2,7 +2,7 @@
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
 /**
- * ${robotName} generated free by NoraUi Oraganization https://github.com/NoraUi
+ * ${robotName} generated free by NoraUi Organization https://github.com/NoraUi
  * ${robotName} is licensed under the license BSD.
  * 
  * CAUTION: ${robotName} use NoraUi library. This project is licensed under the license GNU AFFERO GENERAL PUBLIC LICENSE
@@ -14,13 +14,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
-
 import com.github.noraui.application.model.DemosModel;
 import com.github.noraui.model.Model;
 import com.github.noraui.model.ModelList;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
 public class Logos extends DemosModel<Logo> implements ModelList {
 
@@ -50,6 +49,9 @@ public class Logos extends DemosModel<Logo> implements ModelList {
         final Gson gson = builder.create();
 
         List<Logo> list = gson.fromJson(jsonString, listType);
+        for (int i = 0; i < list.size(); i++) {
+            list.get(i).setNid(i + 1);
+        }
         this.addAll(list);
     }
 
@@ -83,6 +85,19 @@ public class Logos extends DemosModel<Logo> implements ModelList {
             result.add(logo.getNid());
         }
         return result;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        s.append("[");
+        for (Logo logo : this) {
+            s.append(logo.toString());
+            s.append(",");
+        }
+        s.deleteCharAt(s.length());
+        s.append("]");
+        return s.toString();
     }
 
 }

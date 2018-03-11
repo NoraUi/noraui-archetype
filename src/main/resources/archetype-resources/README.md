@@ -12,5 +12,5 @@ It ensures applications non-regression throughout their lifes taking into accoun
 
 # LICENSE
 
-* ${robotName} generated free by NoraUi Oraganization https://github.com/NoraUi
+* ${robotName} generated free by NoraUi Organization https://github.com/NoraUi
 * ${robotName} use NoraUi library. This project is licensed under the license GNU AFFERO GENERAL PUBLIC LICENSE

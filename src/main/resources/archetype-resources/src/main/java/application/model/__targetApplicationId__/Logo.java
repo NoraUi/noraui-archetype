@@ -2,19 +2,18 @@
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
 /**
- * ${robotName} generated free by NoraUi Oraganization https://github.com/NoraUi
+ * ${robotName} generated free by NoraUi Organization https://github.com/NoraUi
  * ${robotName} is licensed under the license BSD.
  * 
  * CAUTION: ${robotName} use NoraUi library. This project is licensed under the license GNU AFFERO GENERAL PUBLIC LICENSE
  */
 package ${package}.application.model.${targetApplicationId};
 
+import com.github.noraui.annotation.Column;
+import com.github.noraui.application.model.DemoModel;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
-
-import com.github.noraui.annotation.Column;
-import com.github.noraui.application.model.DemoModel;
 
 public class Logo extends DemoModel implements Comparable<Logo> {
 
@@ -67,10 +66,7 @@ public class Logo extends DemoModel implements Comparable<Logo> {
      */
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + (brand == null ? 0 : brand.hashCode());
-        return result;
+        return 31 + (brand == null ? 0 : brand.hashCode());
     }
 
     /**
@@ -106,6 +102,11 @@ public class Logo extends DemoModel implements Comparable<Logo> {
         return this.brand.compareTo(other.brand);
     }
 
+    @Override
+    public String toString() {
+        return "{nid:" + nid + ", brand:\"" + brand + "\", score:\"" + score + "\"}";
+    }
+
     public Integer getNid() {
         return nid;
     }
@@ -120,6 +121,14 @@ public class Logo extends DemoModel implements Comparable<Logo> {
 
     public void setBrand(String brand) {
         this.brand = brand;
+    }
+
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
     }
 
 }
