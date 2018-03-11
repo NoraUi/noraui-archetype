@@ -24,7 +24,7 @@
 			<defaultValue>EXCEL</defaultValue>
 		</requiredProperty>
 		<requiredProperty key="sonarUrl">
-			<defaultValue>http://172.0.0.1:10506</defaultValue>
+			<defaultValue>http://172.0.0.1:80</defaultValue>
 		</requiredProperty>
         <requiredProperty key="repositoryId">
             <defaultValue>sonatype-nexus</defaultValue>
