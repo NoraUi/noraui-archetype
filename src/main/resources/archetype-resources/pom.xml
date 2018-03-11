@@ -161,7 +161,7 @@
             <properties>
                 <sonar.host.url>${sonarUrl}</sonar.host.url>
                 <sonar.sources>${project.basedir}/src/main/java</sonar.sources>
-                <sonar.scm.provider>svn</sonar.scm.provider>
+                <sonar.scm.provider>git</sonar.scm.provider>
                 <sonar.jacoco.reportPaths>${project.build.directory}/coverage-reports/jacoco-ut.exec</sonar.jacoco.reportPaths>
             </properties>
             <build>
