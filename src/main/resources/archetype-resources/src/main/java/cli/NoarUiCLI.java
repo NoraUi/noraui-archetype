@@ -28,12 +28,14 @@ public class NoarUiCLI {
         System.out.println("  ██║ ╚████║╚██████╔╝██║  ██║██║  ██║╚██████╔╝██║     ╚██████╗███████╗██║ ");
         System.out.println("  ╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝      ╚═════╝╚══════╝╚═╝ ");
         System.out.println("");
+        System.out.println(" NoraUi Command Line Interface =>");
+        System.out.println("");
 
         if (args.length == 0 || args.length == 1 && args[0].equals("-h")) {
             System.out.println("-h: Display this help");
             System.out.println("--verbose: Add debug informations in console.");
-            System.out.println("-f: features 1 => add new application");
-            System.out.println(" 2 => add new scenario");
+            System.out.println("-f: features 1 => Add new application");
+            System.out.println(" 2 => Add new scenario");
         }
 
         for (int i = 0; i < args.length; i++) {
