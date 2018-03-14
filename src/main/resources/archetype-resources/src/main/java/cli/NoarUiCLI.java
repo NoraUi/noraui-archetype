@@ -10,15 +10,19 @@
 package ${package}.cli;
 
 import com.github.noraui.cli.Application;
-import ${package}.utils.NoraRobotContext;
+import com.github.noraui.cli.Scenario;
+
+import ${package}.utils.${robotName}Context;
 
 public class NoarUiCLI {
 
     public static void main(String[] args) {
         boolean verbose = false;
         String feature = null;
-        String name = null;
+        String applicationName = null;
+        String scenarioName = null;
         String url = null;
+        String description = null;
 
         System.out.println("");
         System.out.println("  ███╗   ██╗ ██████╗ ██████╗  █████╗ ██╗   ██╗██╗      ██████╗██╗     ██╗ ");
@@ -34,8 +38,12 @@ public class NoarUiCLI {
         if (args.length == 0 || args.length == 1 && args[0].equals("-h")) {
             System.out.println("-h: Display this help");
             System.out.println("--verbose: Add debug informations in console.");
-            System.out.println("-f: features 1 => Add new application");
-            System.out.println(" 2 => Add new scenario");
+            System.out.println("-f: features 1 => add new application");
+            System.out.println(" 2 => add new scenario");
+            System.out.println("-s: Scenario Name");
+            System.out.println("-u: Url");
+            System.out.println("-d: Description");
+            System.out.println("-a: Application Name");
         }
 
         for (int i = 0; i < args.length; i++) {
@@ -43,18 +51,31 @@ public class NoarUiCLI {
                 verbose = true;
             } else if ("-f".equals(args[i])) {
                 feature = args[i + 1];
-            } else if ("-n".equals(args[i])) {
-                name = args[i + 1];
+            } else if ("-s".equals(args[i])) {
+                scenarioName = args[i + 1];
             } else if ("-u".equals(args[i])) {
                 url = args[i + 1];
+            } else if ("-d".equals(args[i])) {
+                description = args[i + 1];
+            } else if ("-a".equals(args[i])) {
+                applicationName = args[i + 1];
             }
         }
 
+        if (verbose) {
+            System.out.print("Command Line: ");
+            for (String arg : args) {
+                System.out.print(" " + arg);
+            }
+            System.out.println("");
+        }
+        
         if ("1".equals(feature)) {
             Application application = new Application();
-            application.add(name, url, NoraRobotContext.class, "${robotName}", verbose);
+            application.add(applicationName, url, ${robotName}Context.class, "${robotName}", verbose);
         } else if ("2".equals(feature)) {
-
+            Scenario scenario = new Scenario();
+            scenario.add(scenarioName, description, applicationName, "${robotName}", verbose);
         }
 
     }
