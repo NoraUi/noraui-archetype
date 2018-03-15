@@ -16,6 +16,17 @@ import ${package}.utils.${robotName}Context;
 
 public class NoarUiCLI {
 
+    /**
+     * Java sample:
+     * > cd target\classes
+     * > java -cp . ${package}.NoarUiCLI -h
+     * 
+     * Maven sample:
+     * > mvn exec:java -Dexec.mainClass="${package}.cli.NoarUiCLI" -Dexec.args="-h"
+     * 
+     * @param args
+     *            is list of args (-h, --verbose, -f, -s, -u, -d and -a)
+     */
     public static void main(String[] args) {
         boolean verbose = false;
         String feature = null;
@@ -39,7 +50,7 @@ public class NoarUiCLI {
             System.out.println("-h: Display this help");
             System.out.println("--verbose: Add debug informations in console.");
             System.out.println("-f: features 1 => add new application");
-            System.out.println(" 2 => add new scenario");
+            System.out.println("             2 => add new scenario");
             System.out.println("-s: Scenario Name");
             System.out.println("-u: Url");
             System.out.println("-d: Description");
