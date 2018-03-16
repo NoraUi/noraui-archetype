@@ -24,7 +24,7 @@ public class Counter {
         List<String> manager = new ArrayList<>();
 
         List<String> scenarioBlacklist = new ArrayList<>();
-        scenarioBlacklist.add("yourFirstScenario");
+        // scenarioBlacklist.add("---  you can add not run scenario here ---");
 
         List<String> versionControlSystemsBlacklist = new ArrayList<>();
         versionControlSystemsBlacklist.add(".svn");

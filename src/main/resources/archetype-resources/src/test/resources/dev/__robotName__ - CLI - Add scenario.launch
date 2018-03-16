@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.m2e.Maven2LaunchConfigurationType">
 <booleanAttribute key="M2_DEBUG_OUTPUT" value="false"/>
-<stringAttribute key="M2_GOALS" value="clean verify"/>
+<stringAttribute key="M2_GOALS" value="exec:java"/>
 <booleanAttribute key="M2_NON_RECURSIVE" value="false"/>
 <booleanAttribute key="M2_OFFLINE" value="false"/>
-<stringAttribute key="M2_PROFILES" value="scenarioInitiator,${artifactId},unit-tests"/>
+<stringAttribute key="M2_PROFILES" value=""/>
 <listAttribute key="M2_PROPERTIES">
-<listEntry value="cucumber.options=--tags '@${symbol_dollar}{string_prompt:CU}'"/>
-<listEntry value="http.proxyHost="/>
-<listEntry value="http.proxyPort="/>
-<listEntry value="uid="/>
-<listEntry value="maven.test.failure.ignore=true"/>
-<listEntry value="password="/>
+<listEntry value="exec.args=-f 2 -s ${symbol_dollar}{string_prompt:scenario name} -d &amp;quot;${symbol_dollar}{string_prompt:scenario description}&amp;quot; -a ${symbol_dollar}{string_prompt:target application name} --verbose"/>
+<listEntry value="exec.mainClass=${package}.cli.NoarUiCLI"/>
 </listAttribute>
 <stringAttribute key="M2_RUNTIME" value="EMBEDDED"/>
 <booleanAttribute key="M2_SKIP_TESTS" value="false"/>

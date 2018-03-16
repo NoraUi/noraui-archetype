@@ -6,12 +6,12 @@
 <booleanAttribute key="M2_OFFLINE" value="false"/>
 <stringAttribute key="M2_PROFILES" value="scenarioInitiator,dev,${artifactId},postIC,preIC"/>
 <listAttribute key="M2_PROPERTIES">
-<listEntry value="cucumber.options=--tags '@${symbol_dollar}{string_prompt:CU}'"/>
-<listEntry value="http.proxyHost=127.0.0.1"/>
-<listEntry value="http.proxyPort=8080"/>
-<listEntry value="uid=user1"/>
+<listEntry value="cucumber.options=--tags '@${symbol_dollar}{string_prompt:tags}'"/>
+<listEntry value="http.proxyHost="/>
+<listEntry value="http.proxyPort="/>
+<listEntry value="uid="/>
 <listEntry value="maven.test.failure.ignore=true"/>
-<listEntry value="password=user1"/>
+<listEntry value="password="/>
 </listAttribute>
 <stringAttribute key="M2_RUNTIME" value="EMBEDDED"/>
 <booleanAttribute key="M2_SKIP_TESTS" value="false"/>
