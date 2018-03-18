@@ -11,6 +11,7 @@ package ${package}.cli;
 
 import com.github.noraui.cli.Application;
 import com.github.noraui.cli.Scenario;
+import com.your.company.utils.NoraRobotContext;
 
 import ${package}.utils.${robotName}Context;
 
@@ -51,6 +52,8 @@ public class NoarUiCLI {
             System.out.println("--verbose: Add debug informations in console.");
             System.out.println("-f: features 1 => add new application");
             System.out.println("             2 => add new scenario");
+            System.out.println("             3 => remove old scenario");
+            System.out.println("             4 => remove application");
             System.out.println("-s: Scenario Name");
             System.out.println("-u: Url");
             System.out.println("-d: Description");
@@ -87,6 +90,12 @@ public class NoarUiCLI {
         } else if ("2".equals(feature)) {
             Scenario scenario = new Scenario();
             scenario.add(scenarioName, description, applicationName, "${robotName}", verbose);
+        } else if ("3".equals(feature)) {
+            Scenario scenario = new Scenario();
+            scenario.remove(scenarioName, description, applicationName, "${robotName}", verbose);
+        } else if ("4".equals(feature)) {
+            Application application = new Application();
+            application.remove(applicationName, url, ${robotName}Context.class, "${robotName}", verbose);    
         }
 
     }
