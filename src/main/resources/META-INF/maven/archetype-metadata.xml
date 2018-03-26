@@ -68,10 +68,15 @@
                 <include>**/*</include>
             </includes>
         </fileSet>
-        <fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
             <directory></directory>
             <includes>
                 <include>README.md</include>
+            </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+            <directory></directory>
+            <includes>
                 <include>.gitignore</include>
             </includes>
         </fileSet>
