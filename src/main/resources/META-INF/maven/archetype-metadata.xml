@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<archetype-descriptor
-	xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
-	name="archetypeUxTesting"
-	xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<requiredProperties>
-		<requiredProperty key="robotName">
-			<defaultValue>NoraRobot</defaultValue>
-		</requiredProperty>
-		<requiredProperty key="targetApplicationId">
-			<defaultValue>logogame</defaultValue>
-		</requiredProperty>
+<archetype-descriptor xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" name="archetypeUxTesting" xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <requiredProperties>
+        <requiredProperty key="robotName">
+            <defaultValue>NoraRobot</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="targetApplicationId">
+            <defaultValue>logogame</defaultValue>
+        </requiredProperty>
         <requiredProperty key="targetApplicationName">
             <defaultValue>Logogame</defaultValue>
         </requiredProperty>
@@ -21,11 +17,11 @@
             <defaultValue>https://noraui.github.io/demo/logogame/v3/</defaultValue>
         </requiredProperty>
         <requiredProperty key="inputprovider">
-			<defaultValue>EXCEL</defaultValue>
-		</requiredProperty>
-		<requiredProperty key="sonarUrl">
-			<defaultValue>http://172.0.0.1:80</defaultValue>
-		</requiredProperty>
+            <defaultValue>EXCEL</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="sonarUrl">
+            <defaultValue>http://172.0.0.1:80</defaultValue>
+        </requiredProperty>
         <requiredProperty key="repositoryId">
             <defaultValue>sonatype-nexus</defaultValue>
         </requiredProperty>
@@ -35,42 +31,49 @@
         <requiredProperty key="repositoryReleaseUrl">
             <defaultValue>https://oss.sonatype.org/service/local/staging/deploy/maven2/</defaultValue>
         </requiredProperty>
-	</requiredProperties>
-	<fileSets>
-		<fileSet filtered="true" packaged="true" encoding="UTF-8">
-			<directory>src/main/java</directory>
-			<includes>
-				<include>**/*.java</include>
-			</includes>
-		</fileSet>
-		<fileSet filtered="true" encoding="UTF-8">
-			<directory>src/main/resources</directory>
-			<includes>
-				<include>**/*.properties</include>
+    </requiredProperties>
+    <fileSets>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+            <directory>src/main/java</directory>
+            <includes>
+                <include>**/*.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>src/main/resources</directory>
+            <includes>
+                <include>**/*.properties</include>
                 <include>**/*.ini</include>
-			</includes>
-		</fileSet>
-		<fileSet filtered="true" packaged="true" encoding="UTF-8">
-			<directory>src/test/java</directory>
-			<includes>
-				<include>**/*.java</include>
-			</includes>
-		</fileSet>
-		<fileSet filtered="true" encoding="UTF-8">
-			<directory>src/test/resources</directory>
-			<includes>
-				<include>**/*.xml</include>
-				<include>**/*.html</include>
-				<include>**/*.properties</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+            <directory>src/test/java</directory>
+            <includes>
+                <include>**/*.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>src/test/resources</directory>
+            <includes>
+                <include>**/*.xml</include>
+                <include>**/*.html</include>
+                <include>**/*.properties</include>
                 <include>**/*.launch</include>
                 <include>**/*.feature</include>
-			</includes>
-		</fileSet>
-		<fileSet encoding="UTF-8">
-			<directory>src/test/resources</directory>
-			<includes>
-				<include>**/*</include>
-			</includes>
-		</fileSet>
-	</fileSets>
+            </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+            <directory>src/test/resources</directory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory></directory>
+            <includes>
+                <include>README.md</include>
+                <include>.gitignore</include>
+            </includes>
+        </fileSet>
+    </fileSets>
 </archetype-descriptor>
