@@ -23,7 +23,7 @@
 ##
     <properties>
         <cucumber.options>--tags @TOSPECIFY</cucumber.options>
-        <excelfilename>@TOSPECIFY</excelfilename>
+        <scenario.name>@TOSPECIFY</scenario.name>
         <jenkinsresourcespath>src/test/resources</jenkinsresourcespath>
         <noraui.version>3.1.4-SNAPSHOT</noraui.version>
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
@@ -287,7 +287,7 @@
                                 <configuration>
                                     <mainClass>${package}.main.ScenarioInitiatorRunner</mainClass>
                                     <arguments>
-                                        <argument>${excelfilename}</argument>
+                                        <argument>${scenario.name}</argument>
                                     </arguments>
                                     <systemProperties>
                                         <systemProperty>
