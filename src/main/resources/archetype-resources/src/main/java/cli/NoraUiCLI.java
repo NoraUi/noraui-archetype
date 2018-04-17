@@ -13,7 +13,7 @@ import com.github.noraui.cli.NoraUiCommandLineInterface;
 import com.github.noraui.exception.TechnicalException;
 import ${package}.utils.${robotName}Context;
 
-public class NoarUiCLI {
+public class NoraUiCLI {
     
     /**
      * Java sample:
