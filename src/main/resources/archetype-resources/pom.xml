@@ -23,10 +23,10 @@
 ##
     <properties>
         <cucumber.options>--tags @TOSPECIFY</cucumber.options>
-        <excelfilename>@TOSPECIFY</excelfilename>
+        <scenario.name>@TOSPECIFY</scenario.name>
         <crypto.key></crypto.key>
         <jenkinsresourcespath>src/test/resources</jenkinsresourcespath>
-        <noraui.version>3.1.4-SNAPSHOT</noraui.version>
+        <noraui.version>3.2.0-SNAPSHOT</noraui.version>
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
@@ -292,7 +292,7 @@
                                 <configuration>
                                     <mainClass>${package}.main.ScenarioInitiatorRunner</mainClass>
                                     <arguments>
-                                        <argument>${excelfilename}</argument>
+                                        <argument>${scenario.name}</argument>
                                     </arguments>
                                     <systemProperties>
                                         <systemProperty>
