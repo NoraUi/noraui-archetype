@@ -10,6 +10,7 @@
 package ${package}.cli;
 
 import com.github.noraui.cli.NoraUiCommandLineInterface;
+import com.github.noraui.exception.TechnicalException;
 import ${package}.utils.${robotName}Context;
 
 public class NoarUiCLI {
@@ -22,9 +23,10 @@ public class NoarUiCLI {
      * > mvn exec:java -Dexec.mainClass="${package}.cli.NoarUiCLI" -Dexec.args="-h"
      * 
      * @param args
-     *            is list of args (-h, --verbose, --interactiveMode, -f, -s, -u, -d, -a, -m, -fi and -re (optional))
+     *            is list of args (-h, --verbose, --interactiveMode, -f, -s, -u, -d, -k, -a, -m, -fi and -re (optional))
+     * @throws TechnicalException
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws TechnicalException {
         new NoraUiCommandLineInterface().runCli(${robotName}Context.class, args);
     }
 

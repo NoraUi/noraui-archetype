@@ -24,6 +24,7 @@
     <properties>
         <cucumber.options>--tags @TOSPECIFY</cucumber.options>
         <excelfilename>@TOSPECIFY</excelfilename>
+        <crypto.key></crypto.key>
         <jenkinsresourcespath>src/test/resources</jenkinsresourcespath>
         <noraui.version>3.1.4-SNAPSHOT</noraui.version>
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
@@ -220,6 +221,10 @@
                                             <key>resourcespath</key>
                                             <value>${jenkinsresourcespath}</value>
                                         </systemProperty>
+                                        <systemProperty>
+                                            <key>crypto.key</key>
+                                            <value>${crypto.key}</value>
+                                        </systemProperty>
                                     </systemProperties>
                                 </configuration>
                             </execution>
@@ -293,6 +298,10 @@
                                         <systemProperty>
                                             <key>resourcespath</key>
                                             <value>${jenkinsresourcespath}</value>
+                                        </systemProperty>
+                                        <systemProperty>
+                                            <key>crypto.key</key>
+                                            <value>${crypto.key}</value>
                                         </systemProperty>
                                     </systemProperties>
                                 </configuration>

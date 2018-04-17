@@ -12,6 +12,7 @@
 <listEntry value="uid="/>
 <listEntry value="maven.test.failure.ignore=true"/>
 <listEntry value="password="/>
+<listEntry value="crypto.key=toDoChange"/>
 </listAttribute>
 <stringAttribute key="M2_RUNTIME" value="EMBEDDED"/>
 <booleanAttribute key="M2_SKIP_TESTS" value="false"/>
