@@ -10,13 +10,9 @@
 package ${package}.application.steps.${targetApplicationId};
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import com.google.inject.Inject;
-
-import ${package}.application.pages.${targetApplicationId}.${targetApplicationName}Page;
-
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import com.github.noraui.application.steps.Step;
 import com.github.noraui.browser.Auth;
 import com.github.noraui.exception.FailureException;
@@ -25,8 +21,18 @@ import com.github.noraui.exception.TechnicalException;
 import com.github.noraui.utils.Context;
 import com.github.noraui.utils.Messages;
 import com.github.noraui.utils.Utilities;
+import com.google.inject.Inject;
+import ${package}.application.pages.${targetApplicationId}.${targetApplicationName}Page;
+
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 public class ${targetApplicationName}Steps extends Step {
+    
+    /**
+     * Specific logger
+     */
+    private static final Logger logger = LoggerFactory.getLogger(${targetApplicationName}Steps.class);
 
     @Inject
     private ${targetApplicationName}Page ${targetApplicationId}Page;
@@ -56,10 +62,10 @@ public class ${targetApplicationName}Steps extends Step {
     */
    @When("I log in to ${targetApplicationId.toUpperCase()} as '(.*)' '(.*)'")
    public void logInTo${targetApplicationName}(String login, String password) throws FailureException {
+       logger.debug("logIn to ${targetApplicationName} with login [{}] and password [{}].");
        try {
            Utilities.findElement(${targetApplicationId}Page.accountMenu).click();
            Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signinMenu))).click();
-           
            Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signInButton)));
            Utilities.findElement(${targetApplicationId}Page.login).sendKeys(login);
            Utilities.findElement(${targetApplicationId}Page.password).sendKeys(password);
