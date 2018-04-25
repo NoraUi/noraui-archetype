@@ -1,0 +1,10 @@
+{
+  "name": "${targetApplicationName}",
+  "url": "${targetApplicationUrl}",
+  "scenarios": [
+    {
+      "name": "LoginLogout",
+      "description": "Scenario that 1st sample."
+    }
+  ]
+}
