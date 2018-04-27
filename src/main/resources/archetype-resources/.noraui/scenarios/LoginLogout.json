@@ -1,0 +1,5 @@
+{
+  "name": "LoginLogout",
+  "description": "Scenario that 1st sample."
+  "application": "${targetApplicationName}"
+}

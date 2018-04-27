@@ -1,0 +1,4 @@
+{
+  "name": "${targetApplicationName}",
+  "url": "${targetApplicationUrl}"
+}
