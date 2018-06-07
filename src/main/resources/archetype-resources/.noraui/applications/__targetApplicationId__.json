@@ -1,4 +1,5 @@
 {
   "name": "${targetApplicationId}",
-  "url": "${targetApplicationUrl}"
+  "url": "${targetApplicationUrl}",
+  "models":[]
 }

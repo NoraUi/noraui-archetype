@@ -1,0 +1,7 @@
+{
+  "name":"logogame",
+  "url":"https://noraui.github.io/demo/logogame/v3/",
+  "models":[
+    {"name":"logo"}
+  ]
+}

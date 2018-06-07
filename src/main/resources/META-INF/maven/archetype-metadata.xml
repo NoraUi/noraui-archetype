@@ -5,16 +5,16 @@
             <defaultValue>NoraRobot</defaultValue>
         </requiredProperty>
         <requiredProperty key="targetApplicationId">
-            <defaultValue>logogame</defaultValue>
+            <defaultValue>jhipstersample</defaultValue>
         </requiredProperty>
         <requiredProperty key="targetApplicationName">
-            <defaultValue>Logogame</defaultValue>
+            <defaultValue>Jhipstersample</defaultValue>
         </requiredProperty>
         <requiredProperty key="targetApplicationTitle">
-            <defaultValue>Logo Game</defaultValue>
+            <defaultValue>JHipster sample (for login/logout) in Continuous Integration of NoraUi</defaultValue>
         </requiredProperty>
         <requiredProperty key="targetApplicationUrl">
-            <defaultValue>https://noraui.github.io/demo/logogame/v3/</defaultValue>
+            <defaultValue>https://noraui.github.io/demo/jhipstersample/#/login</defaultValue>
         </requiredProperty>
         <requiredProperty key="inputprovider">
             <defaultValue>EXCEL</defaultValue>
