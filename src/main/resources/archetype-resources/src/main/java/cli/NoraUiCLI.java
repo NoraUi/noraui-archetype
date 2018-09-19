@@ -25,6 +25,9 @@ public class NoraUiCLI {
      * @param args
      *            is list of args (-h, --verbose, --interactiveMode, -f, -s, -u, -d, -k, -a, -m, -fi and -re (optional))
      * @throws TechnicalException
+	 *            is throws if you have a technical error (NoSuchAlgorithmException | NoSuchPaddingException |
+     *            InvalidKeyException | IllegalBlockSizeException | BadPaddingException | IOException,
+     *            ...) in NoraUi.
      */
     public static void main(String[] args) throws TechnicalException {
         new NoraUiCommandLineInterface().runCli(${robotName}Context.class, args);
