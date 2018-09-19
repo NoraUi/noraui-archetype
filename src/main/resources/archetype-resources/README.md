@@ -3,7 +3,7 @@
 # ${robotName} for ${targetApplicationId.toUpperCase()}
 
 NoraUi, for NOn-Regression Automation for User Interfaces, is a Java framework based on Selenium, Cucumber and Gherkin stack to create GUI testing projects that can be included in the continuous integration chain of single/multi applications web solution builds.
-It ensures applications non-regression throughout their lifes taking into account code evolutions and acceptance of defined business client criterias.
+It ensures applications non-regression throughout their life taking into account code evolutions and acceptance of defined business client criteria.
 
 # Exploitation
 
