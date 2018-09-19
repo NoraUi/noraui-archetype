@@ -1,4 +1,13 @@
-package com.your.company.application.business.logogame;
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+/**
+ * ${robotName} generated free by NoraUi Organization https://github.com/NoraUi
+ * ${robotName} is licensed under the license BSD.
+ * 
+ * CAUTION: ${robotName} use NoraUi library. This project is licensed under the license GNU AFFERO GENERAL PUBLIC LICENSE
+ */
+package ${package}.application.business.logogame;
 
 import java.util.ArrayList;
 import java.util.List;

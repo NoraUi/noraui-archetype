@@ -9,7 +9,7 @@
  */
 package ${package}.application.pages.google;
 
-import static com.your.company.utils.NoraRobotContext.GOOGLE_KEY;
+import static ${package}.utils.${robotName}Context.GOOGLE_KEY;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
@@ -33,7 +33,7 @@ public class GooglePage extends Page {
         super();
         this.application = GOOGLE_KEY;
         this.pageKey = "GOOGLE_HOME";
-        this.callBack = Context.getCallBack(NoraRobotContext.CLOSE_WINDOW_AND_SWITCH_TO_GOOGLE_HOME);
+        this.callBack = Context.getCallBack(${robotName}Context.CLOSE_WINDOW_AND_SWITCH_TO_GOOGLE_HOME);
     }
 
     /**

@@ -17,14 +17,17 @@ public class NoraUiCLI {
     
     /**
      * Java sample:
-     * > cd target\classes
-     * > java -cp . ${package}.cli.NoarUiCLI -h
+     * cd target\classes
+     * java -cp . ${package}.cli.NoarUiCLI -h
      * Maven sample:
-     * > mvn exec:java -Dexec.mainClass="${package}.cli.NoarUiCLI" -Dexec.args="-h"
+     * mvn exec:java -Dexec.mainClass="${package}.cli.NoarUiCLI" -Dexec.args="-h"
      * 
      * @param args
      *            is list of args (-h, --verbose, --interactiveMode, -f, -s, -u, -d, -k, -a, -m, -fi and -re (optional))
      * @throws TechnicalException
+	 *            is throws if you have a technical error (NoSuchAlgorithmException | NoSuchPaddingException |
+     *            InvalidKeyException | IllegalBlockSizeException | BadPaddingException | IOException,
+     *            ...) in NoraUi.
      */
     public static void main(String[] args) throws TechnicalException {
         new NoraUiCommandLineInterface().runCli(${robotName}Context.class, args);

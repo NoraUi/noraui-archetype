@@ -1,18 +1,20 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
 /**
- * NoraRobot generated free by NoraUi Organization https://github.com/NoraUi
- * NoraRobot is licensed under the license BSD.
+ * ${robotName} generated free by NoraUi Organization https://github.com/NoraUi
+ * ${robotName} is licensed under the license BSD.
  * 
- * CAUTION: NoraRobot use NoraUi library. This project is licensed under the license GNU AFFERO GENERAL PUBLIC LICENSE
+ * CAUTION: ${robotName} use NoraUi library. This project is licensed under the license GNU AFFERO GENERAL PUBLIC LICENSE
  */
-
-package com.your.company.application.steps.google;
+package ${package}.application.steps.google;
 
 import com.github.noraui.application.steps.Step;
 import com.github.noraui.exception.FailureException;
 import com.github.noraui.exception.Result;
 import com.github.noraui.utils.Messages;
 import com.google.inject.Inject;
-import com.your.company.application.pages.google.GooglePage;
+import ${package}.application.pages.google.GooglePage;
 
 import cucumber.api.java.en.Then;
 

@@ -1,10 +1,13 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
 /**
- * NoraRobot generated free by NoraUi Organization https://github.com/NoraUi
- * NoraRobot is licensed under the license BSD.
+ * ${robotName} generated free by NoraUi Organization https://github.com/NoraUi
+ * ${robotName} is licensed under the license BSD.
  * 
- * CAUTION: NoraRobot use NoraUi library. This project is licensed under the license GNU AFFERO GENERAL PUBLIC LICENSE
+ * CAUTION: ${robotName} use NoraUi library. This project is licensed under the license GNU AFFERO GENERAL PUBLIC LICENSE
  */
-package com.your.company.application.steps.logogame;
+package ${package}.application.steps.logogame;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -22,8 +25,8 @@ import com.github.noraui.utils.Context;
 import com.github.noraui.utils.Messages;
 import com.github.noraui.utils.Utilities;
 import com.google.inject.Inject;
-import com.your.company.application.business.logogame.ProhibitedBrands;
-import com.your.company.application.pages.logogame.LogogamePage;
+import ${package}.application.business.logogame.ProhibitedBrands;
+import ${package}.application.pages.logogame.LogogamePage;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;

@@ -9,7 +9,7 @@
  */
 package ${package}.application.pages.logogame;
 
-import static com.your.company.utils.NoraRobotContext.LOGOGAME_KEY;
+import static ${package}.utils.${robotName}Context.LOGOGAME_KEY;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
