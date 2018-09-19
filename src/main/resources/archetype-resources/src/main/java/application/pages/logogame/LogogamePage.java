@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ${package}.utils.NoraRobotContext;
+import ${package}.utils.${robotName}Context;
 
 import com.github.noraui.application.page.Page;
 import com.github.noraui.utils.Context;
@@ -43,7 +43,7 @@ public class LogogamePage extends Page {
         super();
         this.application = LOGOGAME_KEY;
         this.pageKey = "LOGOGAME_HOME";
-        this.callBack = Context.getCallBack(NoraRobotContext.CLOSE_WINDOW_AND_SWITCH_TO_LOGOGAME_HOME);
+        this.callBack = Context.getCallBack(${robotName}Context.CLOSE_WINDOW_AND_SWITCH_TO_LOGOGAME_HOME);
     }
 
     /**
