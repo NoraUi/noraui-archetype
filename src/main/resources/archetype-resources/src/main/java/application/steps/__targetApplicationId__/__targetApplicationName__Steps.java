@@ -68,7 +68,7 @@ public class ${targetApplicationName}Steps extends Step {
            Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signinMenu))).click();
            Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signInButton)));
            Utilities.findElement(${targetApplicationId}Page.login).sendKeys(login);
-           Utilities.findElement(${targetApplicationId}Page.password).sendKeys(password);
+           Utilities.findElement(${targetApplicationId}Page.password).sendKeys(getTextOrKey(password));
            Utilities.findElement(${targetApplicationId}Page.signInButton).click();
        } catch (Exception e) {
            new Result.Failure<>(e, Messages.getMessage(Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS), true, ${targetApplicationId}Page.getCallBack());
