@@ -11,6 +11,7 @@ package ${package}.cli;
 
 import com.github.noraui.cli.NoraUiCommandLineInterface;
 import com.github.noraui.exception.TechnicalException;
+import ${package}.indus.Counter;
 import ${package}.utils.${robotName}Context;
 
 public class NoraUiCLI {
@@ -30,7 +31,7 @@ public class NoraUiCLI {
      *            ...) in NoraUi.
      */
     public static void main(String[] args) throws TechnicalException {
-        new NoraUiCommandLineInterface().runCli(${robotName}Context.class, args);
+        new NoraUiCommandLineInterface().runCli(${robotName}Context.class, Counter.class, args);
     }
 
 }
