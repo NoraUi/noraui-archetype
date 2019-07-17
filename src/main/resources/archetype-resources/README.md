@@ -7,7 +7,7 @@ It ensures applications non-regression throughout their life taking into account
 
 # Exploitation
 
-* On "Goal" of Build part:  clean test javadoc:javadoc -Dcucumber.options="--tags '@LoginLogout'" -Pjavadoc,preIC,scenarioInitiator,ci,unit-tests,postIC,analyze -Dmaven.test.failure.ignore=true sonar:sonar
+* On "Goal" of Build part:  ```clean test javadoc:javadoc -Dcucumber.options="--tags '@LoginLogout'" -Pjavadoc,preIC,scenarioInitiator,ci,unit-tests,postIC,analyze -Dmaven.test.failure.ignore=true sonar:sonar```
 * More information on https://noraui.github.io
 
 # LICENSE
