@@ -13,12 +13,20 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import ${package}.utils.${robotName}Context;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;     
 
+import ${package}.utils.${robotName}Context;
+import com.github.noraui.exception.TechnicalException;
 import com.github.noraui.indus.MavenRunCounter;
 import com.github.noraui.utils.Context;
 
 public class Counter {
+    
+    /**
+     * Specific LOGGER
+     */
+    private static final Logger LOGGER = LoggerFactory.getLogger(Counter.class);
 
     public static void main(String[] args) {
         List<String> manager = new ArrayList<>();
@@ -33,8 +41,12 @@ public class Counter {
         ${robotName}Context.getInstance().initializeEnv("${robotName}.properties");
 
         MavenRunCounter mavenRunCounter = new MavenRunCounter();
-        List<MavenRunCounter.Counter> counters = mavenRunCounter.count(versionControlSystemsBlacklist, scenarioBlacklist, manager, new File(Context.getResourcesPath() + "/steps"));
-        mavenRunCounter.print(counters, args[0]);
+        try {
+            List<MavenRunCounter.Counter> counters = mavenRunCounter.count(versionControlSystemsBlacklist, scenarioBlacklist, manager, new File(Context.getResourcesPath() + "/steps"));
+            mavenRunCounter.print(counters, args[0]);
+        } catch (TechnicalException e) {
+            LOGGER.error("TechnicalException error: ", e);
+        }
     }
 
 }
