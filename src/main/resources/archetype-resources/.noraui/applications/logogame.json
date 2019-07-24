@@ -6,15 +6,12 @@
       "name": "logo",
       "fields": [
         {
-          "name": "field1"
-        },
-        {
-          "name": "field2"
+          "name": "brand"
         }
       ],
       "results": [
         {
-          "name": "result1"
+          "name": "score"
         }
       ]
     }
