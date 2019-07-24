@@ -10,7 +10,7 @@ Feature: playToLogoGame (Scenario that 1st sample. is it a scenario that plays o
     Then The LOGOGAME home page is displayed
 
     Then I play with 'amazon'
-    Then I add '8' random brand
+    Then I add 8 random brand
     And I check alert message
 
     Then I play with my input file '<DataJson>'
