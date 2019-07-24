@@ -14,8 +14,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.github.noraui.application.model.logogame.Logo;
-import com.github.noraui.application.model.logogame.Logos;
 import com.github.noraui.application.steps.Step;
 import com.github.noraui.exception.Callbacks;
 import com.github.noraui.exception.FailureException;
@@ -26,6 +24,8 @@ import com.github.noraui.utils.Messages;
 import com.github.noraui.utils.Utilities;
 import com.google.inject.Inject;
 import ${package}.application.business.logogame.ProhibitedBrands;
+import ${package}.application.model.logogame.Logo;
+import ${package}.application.model.logogame.Logos;
 import ${package}.application.pages.logogame.LogogamePage;
 
 import cucumber.api.java.en.And;
@@ -53,6 +53,7 @@ public class LogogameSteps extends Step {
      * @throws FailureException
      *             if the scenario encounters a functional error.
      */
+	@Alors("Le portail LOGOGAME est affiché")
     @Then("The LOGOGAME home page is displayed")
     public void checkLogogameHomePage() throws FailureException {
         if (!this.logoGamePage.checkPage()) {
@@ -75,8 +76,8 @@ public class LogogameSteps extends Step {
     }
 
     @Time()
-    @Alors("J'ajoute '(.*)' marque\\(s\\) aléatoire\\(s\\)")
-    @Then("I add '(.*)' random brand")
+    @Alors("J'ajoute {int} marque(s) aléatoire(s)")
+    @Then("I add {int} random brand")
     public void addRandomBrand(@TimeValue("nb") int nb) throws FailureException {
         for (int i = 0; i < nb; i++) {
             try {
@@ -105,8 +106,8 @@ public class LogogameSteps extends Step {
      * @throws FailureException
      *             if the scenario encounters a functional error
      */
-    @Lorsque("Je vérifie que toutes les marques '(.*)' ne sont pas interdites")
-    @Given("I check that all brands '(.*)' are not prohibited")
+    @Lorsque("Je vérifie que toutes les marques {string} ne sont pas interdites")
+    @Given("I check that all brands {string} are not prohibited")
     public void checkThatAllBrandsIsNotProhibited(String jsonLogos) throws TechnicalException, FailureException {
         Logos logos = new Logos();
         logos.deserialize(jsonLogos);
@@ -121,8 +122,8 @@ public class LogogameSteps extends Step {
         }
     }
 
-    @Alors("Je joue avec mon fichier d'entrée '(.*)'")
-    @Then("I play with my input file '(.*)'")
+    @Alors("Je joue avec mon fichier d'entrée {string}")
+    @Then("I play with my input file {string}")
     public void playWithMyInputFile(String jsonLogos) throws TechnicalException {
         Logos logos = new Logos();
         logos.deserialize(jsonLogos);

@@ -25,8 +25,8 @@
         <cucumber.options>--tags @TOSPECIFY</cucumber.options>
         <scenario.name>@TOSPECIFY</scenario.name>
         <crypto.key></crypto.key>
-        <jenkinsresourcespath>src/test/resources</jenkinsresourcespath>
-        <noraui.version>3.3.0-SNAPSHOT</noraui.version>
+        <ciToolResourcesPath>src/test/resources</ciToolResourcesPath>
+        <noraui.version>4.0.0-SNAPSHOT</noraui.version>
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
@@ -107,8 +107,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <useIncrementalCompilation>true</useIncrementalCompilation>
                 </configuration>
             </plugin>
@@ -219,7 +219,7 @@
                                     <systemProperties>
                                         <systemProperty>
                                             <key>resourcespath</key>
-                                            <value>${jenkinsresourcespath}</value>
+                                            <value>${ciToolResourcesPath}</value>
                                         </systemProperty>
                                         <systemProperty>
                                             <key>crypto.key</key>
@@ -297,7 +297,7 @@
                                     <systemProperties>
                                         <systemProperty>
                                             <key>resourcespath</key>
-                                            <value>${jenkinsresourcespath}</value>
+                                            <value>${ciToolResourcesPath}</value>
                                         </systemProperty>
                                         <systemProperty>
                                             <key>crypto.key</key>

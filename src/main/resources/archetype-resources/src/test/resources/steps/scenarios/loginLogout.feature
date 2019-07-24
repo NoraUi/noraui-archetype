@@ -3,10 +3,10 @@ Feature: loginLogout (Scenario that 1st sample. Is it a login and logout on a JH
 
   Scenario Outline:  Scenario that 1st sample. Is it a login and logout on a JHipster sample.
 
-    Given I check that user '<user>' is not empty.
-    Given I check that password '<password>' is not empty.
+    Given I check that 'user' '<user>' is not empty
+    Given I check that 'password' '<password>' is not empty
 
-    Given '${targetApplicationId.toUpperCase()}_HOME' is opened.
+    Given '${targetApplicationId.toUpperCase()}_HOME' is opened
     Then The ${targetApplicationId.toUpperCase()} home page is displayed
 
     When I log in to ${targetApplicationId.toUpperCase()} as '<user>' '<password>'

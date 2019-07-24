@@ -60,7 +60,7 @@ public class ${targetApplicationName}Steps extends Step {
     * @throws FailureException
     *             if the scenario encounters a functional error.
     */
-   @When("I log in to ${targetApplicationId.toUpperCase()} as '(.*)' '(.*)'")
+   @When("I log in to ${targetApplicationId.toUpperCase()} as {string} {string}")
    public void logInTo${targetApplicationName}(String login, String password) throws FailureException {
        logger.debug("logIn to ${targetApplicationName} with login [{}] and password [{}].");
        try {
