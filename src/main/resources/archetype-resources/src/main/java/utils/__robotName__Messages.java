@@ -18,8 +18,8 @@ public class ${robotName}Messages extends Messages {
     /**
      * Technical messages
      */
-    public static final String ${robotName.toUpperCase()}_ERROR_MESSAGE_DEFAULT = "Erreur dans le code ${robotName} : ";
-    public static final String ${robotName.toUpperCase()}_ERROR_MESSAGE_APPLICATION_NOT_IMPLEMENTED = ${robotName.toUpperCase()}_ERROR_MESSAGE_DEFAULT + "l'application « %s » n'est pas implementée dans ${robotName}.";
+    public static final String ${robotName.toUpperCase()}_ERROR_MESSAGE_DEFAULT = "${robotName.toUpperCase()}_ERROR_MESSAGE_DEFAULT";
+    public static final String ${robotName.toUpperCase()}_ERROR_MESSAGE_APPLICATION_NOT_IMPLEMENTED = NORAROBOT_ERROR_MESSAGE_DEFAULT + "${robotName.toUpperCase()}_ERROR_MESSAGE_APPLICATION_NOT_IMPLEMENTED";
 
 	/**
      * Generic messages.
