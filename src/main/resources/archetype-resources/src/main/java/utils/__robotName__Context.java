@@ -4,8 +4,10 @@
 /**
  * ${robotName} generated free by NoraUi Organization https://github.com/NoraUi
  * ${robotName} is licensed under the license BSD.
- * 
  * CAUTION: ${robotName} use NoraUi library. This project is licensed under the license GNU AFFERO GENERAL PUBLIC LICENSE
+ *
+ * @author Nicolas HALLOUIN
+ * @author Stéphane GRILLON
  */
 package ${package}.utils;
 
@@ -21,9 +23,9 @@ import com.github.noraui.utils.Messages;
 public class ${robotName}Context extends Context {
 
     /**
-     * Specific logger
+     * Specific LOGGER
      */
-    private static final Logger logger = LoggerFactory.getLogger(${robotName}Context.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(${robotName}Context.class);
 
     // applications
     public static final String ${targetApplicationId.toUpperCase()}_KEY = "${targetApplicationId}";
@@ -60,10 +62,10 @@ public class ${robotName}Context extends Context {
     @Override
     public synchronized void initializeRobot(Class clazz) throws TechnicalException {
         super.initializeRobot(clazz);
-        logger.info("${robotName}Context > initializeRobot()");
+        LOGGER.info("${robotName}Context > initializeRobot()");
         
         // This line is here as an example to show how to do with internationalization using messages bundles.
-        logger.info(Messages.format(Messages.getMessage("HELLO", "${artifactId}"), "${artifactId}"));
+        LOGGER.info(Messages.format(Messages.getMessage("HELLO", "${artifactId}"), "${artifactId}"));
 
         // Urls configuration
         ${targetApplicationId}Home = getProperty(${targetApplicationId.toUpperCase()}_KEY, applicationProperties);

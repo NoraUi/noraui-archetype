@@ -4,8 +4,10 @@
 /**
  * ${robotName} generated free by NoraUi Organization https://github.com/NoraUi
  * ${robotName} is licensed under the license BSD.
- * 
  * CAUTION: ${robotName} use NoraUi library. This project is licensed under the license GNU AFFERO GENERAL PUBLIC LICENSE
+ *
+ * @author Nicolas HALLOUIN
+ * @author Stéphane GRILLON
  */
 package ${package}.application.pages.logogame;
 
@@ -24,9 +26,9 @@ import com.github.noraui.utils.Context;
 public class LogogamePage extends Page {
 
     /**
-     * Specific logger
+     * Specific LOGGER
      */
-    private static final Logger logger = LoggerFactory.getLogger(LogogamePage.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(LogogamePage.class);
 
     public final PageElement bigTitle = new PageElement("-big-title", "Logo Game");
     public final PageElement amazonElement = new PageElement("-amazonElement", "Input Text Amazon");
@@ -54,12 +56,12 @@ public class LogogamePage extends Page {
         try {
             Context.waitUntil(ExpectedConditions.not(ExpectedConditions.titleIs("")));
             if (!TITLE_PAGE.equals(getDriver().getTitle())) {
-                logger.error("HTML title is not good");
+                LOGGER.error("HTML title is not good");
                 return false;
             }
             return true;
         } catch (Exception e) {
-            logger.error("HTML title Exception", e);
+            LOGGER.error("HTML title Exception", e);
             return false;
         }
     }
@@ -87,7 +89,7 @@ public class LogogamePage extends Page {
                 return false;
             }
         } catch (Exception e) {
-            logger.error("Exception in isDisplayed", e);
+            LOGGER.error("Exception in isDisplayed", e);
             return false;
         }
         return true;

@@ -4,8 +4,10 @@
 /**
  * ${robotName} generated free by NoraUi Organization https://github.com/NoraUi
  * ${robotName} is licensed under the license BSD.
- * 
  * CAUTION: ${robotName} use NoraUi library. This project is licensed under the license GNU AFFERO GENERAL PUBLIC LICENSE
+ *
+ * @author Nicolas HALLOUIN
+ * @author Stéphane GRILLON
  */
 package ${package}.application.pages.${targetApplicationId};
 
@@ -23,9 +25,9 @@ import com.github.noraui.utils.Context;
 public class ${targetApplicationName}Page extends Page {
 
     /**
-     * Specific logger
+     * Specific LOGGER
      */
-    private static final Logger logger = LoggerFactory.getLogger(${targetApplicationName}Page.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(${targetApplicationName}Page.class);
 
     public final PageElement accountMenu = new PageElement("-accountMenu", "Account menu");
     public final PageElement signinMenu = new PageElement("-signinMenu", "Sign-in menu");
@@ -52,12 +54,12 @@ public class ${targetApplicationName}Page extends Page {
         try {
             Context.waitUntil(ExpectedConditions.not(ExpectedConditions.titleIs("")));
             if (!TITLE_PAGE.equals(getDriver().getTitle())) {
-                logger.error("HTML title is not good");
+                LOGGER.error("HTML title is not good");
                 return false;
             }
             return true;
         } catch (Exception e) {
-            logger.error("HTML title Exception", e);
+            LOGGER.error("HTML title Exception", e);
             return false;
         }
     }
@@ -85,7 +87,7 @@ public class ${targetApplicationName}Page extends Page {
                 return false;
             }
         } catch (Exception e) {
-            logger.error("Exception in isDisplayed", e);
+            LOGGER.error("Exception in isDisplayed", e);
             return false;
         }
         return true;

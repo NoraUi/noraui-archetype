@@ -4,8 +4,10 @@
 /**
  * ${robotName} generated free by NoraUi Organization https://github.com/NoraUi
  * ${robotName} is licensed under the license BSD.
- * 
  * CAUTION: ${robotName} use NoraUi library. This project is licensed under the license GNU AFFERO GENERAL PUBLIC LICENSE
+ *
+ * @author Nicolas HALLOUIN
+ * @author Stéphane GRILLON
  */
 package ${package}.application.pages.google;
 
@@ -23,9 +25,9 @@ import com.github.noraui.utils.Context;
 public class GooglePage extends Page {
 
     /**
-     * Specific logger
+     * Specific LOGGER
      */
-    private static final Logger logger = LoggerFactory.getLogger(GooglePage.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(GooglePage.class);
 
     private static final String TITLE_PAGE = "Google";
 
@@ -44,12 +46,12 @@ public class GooglePage extends Page {
         try {
             Context.waitUntil(ExpectedConditions.not(ExpectedConditions.titleIs("")));
             if (!TITLE_PAGE.equals(getDriver().getTitle())) {
-                logger.error("HTML title is not good");
+                LOGGER.error("HTML title is not good");
                 return false;
             }
             return true;
         } catch (Exception e) {
-            logger.error("HTML title Exception", e);
+            LOGGER.error("HTML title Exception", e);
             return false;
         }
     }

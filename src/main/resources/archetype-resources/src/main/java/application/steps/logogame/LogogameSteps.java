@@ -4,8 +4,10 @@
 /**
  * ${robotName} generated free by NoraUi Organization https://github.com/NoraUi
  * ${robotName} is licensed under the license BSD.
- * 
  * CAUTION: ${robotName} use NoraUi library. This project is licensed under the license GNU AFFERO GENERAL PUBLIC LICENSE
+ *
+ * @author Nicolas HALLOUIN
+ * @author Stéphane GRILLON
  */
 package ${package}.application.steps.logogame;
 
@@ -40,9 +42,9 @@ import cucumber.metrics.annotation.time.TimeValue;
 public class LogogameSteps extends Step {
 
     /**
-     * Specific logger
+     * Specific LOGGER
      */
-    private static final Logger logger = LoggerFactory.getLogger(LogogameSteps.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(LogogameSteps.class);
 
     @Inject
     private LogogamePage logoGamePage;
@@ -166,7 +168,7 @@ public class LogogameSteps extends Step {
                 Context.getDataOutputProvider().writeDataResult("score", Context.getDataInputProvider()
                         .getIndexData(Context.getCurrentScenarioData()).getIndexes().get(0), message.getText());
             } catch (TechnicalException e) {
-                logger.error(Messages.getMessage(TechnicalException.TECHNICAL_ERROR_MESSAGE), e);
+                LOGGER.error(Messages.getMessage(TechnicalException.TECHNICAL_ERROR_MESSAGE), e);
             }
         } catch (Exception e) {
             new Result.Failure<>(e.getMessage(), "", true, this.logoGamePage.getCallBack());
