@@ -14,7 +14,7 @@ echo "*                                                        *"
 echo "*    run and test robot                                  *"
 echo "*                                                        *"
 echo "**********************************************************"
-mvn clean test javadoc:javadoc sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.login=$SONAR_TOKEN -B -Dcucumber.options="--tags '@loginLogout or @playToLogoGame or jouerAuJeuDesLogos or @search'" -Pjavadoc,preIC,scenarioInitiator,ci,unit-tests,postIC -Dmaven.test.failure.ignore=true
+mvn clean test javadoc:javadoc sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.login=$SONAR_TOKEN -B -Dcucumber.options="--tags '@loginLogout or @playToLogoGame or @jouerAuJeuDesLogos or @search'" -Pjavadoc,preIC,scenarioInitiator,ci,unit-tests,postIC -Dmaven.test.failure.ignore=true
 
 curl -s "https://api.travis-ci.org/jobs/${TRAVIS_JOB_ID}/log.txt?deansi=true" > nonaui.log
 sleep 15
