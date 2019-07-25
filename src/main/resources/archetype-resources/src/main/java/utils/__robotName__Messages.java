@@ -21,6 +21,16 @@ public class ${robotName}Messages extends Messages {
     public static final String ${robotName.toUpperCase()}_ERROR_MESSAGE_DEFAULT = "Erreur dans le code ${robotName} : ";
     public static final String ${robotName.toUpperCase()}_ERROR_MESSAGE_APPLICATION_NOT_IMPLEMENTED = ${robotName.toUpperCase()}_ERROR_MESSAGE_DEFAULT + "l'application « %s » n'est pas implementée dans ${robotName}.";
 
+	/**
+     * Generic messages.
+     */
+    public static final String HELLO = "HELLO";
+    
+    /**
+     * Functional fail messages.
+     */
+    public static final String USER_WAS_ALREADY_LOGOUT = "USER_WAS_ALREADY_LOGOUT";
+	
     /**
      * Functional fail messages.
      */
