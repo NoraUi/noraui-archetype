@@ -53,7 +53,7 @@ public class ${targetApplicationName}Page extends Page {
     public boolean checkPage(Object... elements) {
         try {
             Context.waitUntil(ExpectedConditions.not(ExpectedConditions.titleIs("")));
-            if (!TITLE_PAGE.equals(getDriver().getTitle())) {
+            if (!getDriver().getTitle().contains(TITLE_PAGE)) {
                 LOGGER.error("HTML title is not good");
                 return false;
             }
