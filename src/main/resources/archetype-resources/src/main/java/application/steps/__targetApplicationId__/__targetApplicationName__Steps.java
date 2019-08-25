@@ -27,8 +27,8 @@ import com.google.inject.Inject;
 import ${package}.application.pages.${targetApplicationId}.${targetApplicationName}Page;
 import ${package}.utils.${robotName}Messages;
 
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class ${targetApplicationName}Steps extends Step {
     

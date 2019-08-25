@@ -30,11 +30,11 @@ import ${package}.application.model.logogame.Logo;
 import ${package}.application.model.logogame.Logos;
 import ${package}.application.pages.logogame.LogogamePage;
 
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.fr.Alors;
-import cucumber.api.java.fr.Et;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.fr.Alors;
+import io.cucumber.java.fr.Et;
 import cucumber.api.java.fr.Lorsque;
 import cucumber.metrics.annotation.time.Time;
 import cucumber.metrics.annotation.time.TimeValue;
