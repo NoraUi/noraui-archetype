@@ -17,8 +17,8 @@ import org.junit.runner.RunWith;
 
 import ${package}.utils.${robotName}Context;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import io.cucumber.junit.Cucumber;
 import com.github.noraui.exception.TechnicalException;
 import com.github.noraui.utils.Context;
 

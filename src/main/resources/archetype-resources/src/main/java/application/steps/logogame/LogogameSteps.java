@@ -35,7 +35,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.fr.Alors;
 import io.cucumber.java.fr.Et;
-import cucumber.api.java.fr.Lorsque;
+import io.cucumber.java.fr.Lorsque;
 import cucumber.metrics.annotation.time.Time;
 import cucumber.metrics.annotation.time.TimeValue;
 
