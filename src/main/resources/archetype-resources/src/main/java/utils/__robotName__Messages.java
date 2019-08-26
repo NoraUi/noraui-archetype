@@ -29,11 +29,7 @@ public class ${robotName}Messages extends Messages {
     /**
      * Functional fail messages.
      */
-    public static final String USER_WAS_ALREADY_LOGOUT = "USER_WAS_ALREADY_LOGOUT";
-	
-    /**
-     * Functional fail messages.
-     */
+    public static final String FAIL_MESSAGE_USER_WAS_ALREADY_LOGOUT = "USER_WAS_ALREADY_LOGOUT";
     //public static final String FAIL_MESSAGE_ = "....";
 
     /**

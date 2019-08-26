@@ -117,8 +117,8 @@ public class ${targetApplicationName}Steps extends Step {
             clickOn(${targetApplicationId}Page.accountMenu);
             Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signoutMenu))).click();
         } else {
-            LOGGER.warn(Messages.getMessage(${robotName}Messages.USER_WAS_ALREADY_LOGOUT, "robot"));
-            Context.getCurrentScenario().write(Messages.getMessage(${robotName}Messages.USER_WAS_ALREADY_LOGOUT, "robot"));	   
+            LOGGER.warn(Messages.getMessage(${robotName}Messages.FAIL_MESSAGE_USER_WAS_ALREADY_LOGOUT, "robot"));
+            Context.getCurrentScenario().write(Messages.getMessage(${robotName}Messages.FAIL_MESSAGE_USER_WAS_ALREADY_LOGOUT, "robot"));	   
 	    }
     }
    
