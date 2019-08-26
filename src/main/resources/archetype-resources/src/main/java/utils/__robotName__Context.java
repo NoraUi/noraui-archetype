@@ -60,7 +60,7 @@ public class ${robotName}Context extends Context {
      * {@inheritDoc}
      */
     @Override
-    public synchronized void initializeRobot(Class clazz) throws TechnicalException {
+    public synchronized void initializeRobot(Class<?> clazz) throws TechnicalException {
         super.initializeRobot(clazz);
         LOGGER.info("${robotName}Context > initializeRobot()");
         
