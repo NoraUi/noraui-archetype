@@ -65,7 +65,7 @@ public class ${targetApplicationName}Steps extends Step {
      */
     @When("I log in to ${targetApplicationId.toUpperCase()} as {string} {string}")
     public void logInTo${targetApplicationName}(String login, String password) throws FailureException {
-        LOGGER.debug("logIn to ${targetApplicationName} with login [{}] and password [{}].");
+        LOGGER.debug("logIn to ${targetApplicationName} with login [{}] and password [{}].", login, password);
         try {
             Utilities.findElement(${targetApplicationId}Page.accountMenu).click();
             Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signinMenu))).click();
