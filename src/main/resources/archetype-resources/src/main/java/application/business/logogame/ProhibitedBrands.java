@@ -12,14 +12,12 @@
 package ${package}.application.business.logogame;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ProhibitedBrands {
 
-    private static List<String> tabaco;
-    private static List<String> alcool;
-
-    // Tabaco
+ // Tabaco
     private static final String MARLBORO = "Marlboro";
     private static final String CAMEL = "Camel";
     private static final String PHILIPPE_MORRIS = "philippe morris";
@@ -28,20 +26,9 @@ public class ProhibitedBrands {
     private static final String HEINEKEN = "heineken";
     private static final String ZUBROWKA = "zubrowka";
     private static final String JACK_DANIELS = "jack daniels";
-
-    public ProhibitedBrands() {
-        // Tabaco
-        tabaco = new ArrayList<>();
-        tabaco.add(MARLBORO);
-        tabaco.add(CAMEL);
-        tabaco.add(PHILIPPE_MORRIS);
-
-        // Alcool
-        alcool = new ArrayList<>();
-        alcool.add(HEINEKEN);
-        alcool.add(ZUBROWKA);
-        alcool.add(JACK_DANIELS);
-    }
+    
+    private List<String> tabaco = new ArrayList<>(Arrays.asList(MARLBORO,CAMEL,PHILIPPE_MORRIS));
+    private List<String> alcool = new ArrayList<>(Arrays.asList(HEINEKEN,ZUBROWKA,JACK_DANIELS));
 
     public List<String> getTabaco() {
         return tabaco;
