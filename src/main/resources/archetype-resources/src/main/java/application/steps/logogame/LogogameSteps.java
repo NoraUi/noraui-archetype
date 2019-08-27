@@ -38,6 +38,7 @@ import io.cucumber.java.fr.Et;
 import io.cucumber.java.fr.Lorsque;
 import cucumber.metrics.annotation.time.Time;
 import cucumber.metrics.annotation.time.TimeValue;
+import fr.decathlon.application.business.logogame.ProhibitedBrands;
 
 public class LogogameSteps extends Step {
 
@@ -111,11 +112,12 @@ public class LogogameSteps extends Step {
     @Lorsque("Je vérifie que toutes les marques {string} ne sont pas interdites")
     @Given("I check that all brands {string} are not prohibited")
     public void checkThatAllBrandsIsNotProhibited(String jsonLogos) throws TechnicalException, FailureException {
+        ProhibitedBrands prohibitedBrands = new ProhibitedBrands();
         Logos logos = new Logos();
         logos.deserialize(jsonLogos);
         for (int i = 0; i < logos.size(); i++) {
-            if (ProhibitedBrands.getAlcool().contains(logos.get(i).getBrand())
-                    || ProhibitedBrands.getTabaco().contains(logos.get(i).getBrand())) {
+            if (prohibitedBrands.getAlcool().contains(logos.get(i).getBrand())
+                    || prohibitedBrands.getTabaco().contains(logos.get(i).getBrand())) {
                 new Result.Failure<>(logos.get(i).getBrand(),
                         Messages.format("Brand « %s » is prohibited.", logos.get(i).getBrand()), false,
                         logos.get(i).getNid(),

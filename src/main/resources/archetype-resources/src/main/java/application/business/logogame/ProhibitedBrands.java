@@ -15,32 +15,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProhibitedBrands {
+
     private static List<String> tabaco;
     private static List<String> alcool;
 
     // Tabaco
-    private static String MARLBORO = "Marlboro";
-    private static String CAMEL = "Camel";
-    private static String PHILIPPE_MORRIS = "philippe morris";
+    private static final String MARLBORO = "Marlboro";
+    private static final String CAMEL = "Camel";
+    private static final String PHILIPPE_MORRIS = "philippe morris";
 
     // Alcool
-    private static String HEINEKEN = "heineken";
-    private static String ZUBROWKA = "zubrowka";
-    private static String JACK_DANIELS = "jack daniels";
+    private static final String HEINEKEN = "heineken";
+    private static final String ZUBROWKA = "zubrowka";
+    private static final String JACK_DANIELS = "jack daniels";
 
-    public static List<String> getTabaco() {
+    public ProhibitedBrands() {
+        // Tabaco
         tabaco = new ArrayList<>();
         tabaco.add(MARLBORO);
         tabaco.add(CAMEL);
         tabaco.add(PHILIPPE_MORRIS);
-        return tabaco;
-    }
 
-    public static List<String> getAlcool() {
+        // Alcool
         alcool = new ArrayList<>();
         alcool.add(HEINEKEN);
         alcool.add(ZUBROWKA);
         alcool.add(JACK_DANIELS);
+    }
+
+    public List<String> getTabaco() {
+        return tabaco;
+    }
+
+    public List<String> getAlcool() {
         return alcool;
     }
 
