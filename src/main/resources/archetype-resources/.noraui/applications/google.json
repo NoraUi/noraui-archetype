@@ -1,5 +1,6 @@
 {
   "name": "google",
   "url": "http://www.google.fr",
-  "models": []
+  "models": [],
+  "status": true
 }

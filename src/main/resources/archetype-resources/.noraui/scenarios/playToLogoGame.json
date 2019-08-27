@@ -1,5 +1,6 @@
 {
   "name": "playToLogoGame",
   "description": "Scenario that 1st sample. is it a scenario that plays on the game of logos.",
-  "application": "logogame"
+  "application": "logogame",
+  "status": true
 }
