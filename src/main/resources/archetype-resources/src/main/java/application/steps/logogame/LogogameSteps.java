@@ -38,7 +38,6 @@ import io.cucumber.java.fr.Et;
 import io.cucumber.java.fr.Lorsque;
 import cucumber.metrics.annotation.time.Time;
 import cucumber.metrics.annotation.time.TimeValue;
-import fr.decathlon.application.business.logogame.ProhibitedBrands;
 
 public class LogogameSteps extends Step {
 
