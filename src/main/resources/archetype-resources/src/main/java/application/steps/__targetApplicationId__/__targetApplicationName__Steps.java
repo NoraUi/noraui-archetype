@@ -29,6 +29,8 @@ import ${package}.utils.${robotName}Messages;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.fr.Alors;
+import io.cucumber.java.fr.Quand;
 
 public class ${targetApplicationName}Steps extends Step {
     
@@ -41,13 +43,14 @@ public class ${targetApplicationName}Steps extends Step {
     private ${targetApplicationName}Page ${targetApplicationId}Page;
    
     /**
-     * Check Login page.
+     * Check home page.
      *
      * @throws FailureException
      *             if the scenario encounters a functional error.
      */
+    @Alors("La page d'accueil BAKERY est affichée")
     @Then("The ${targetApplicationId.toUpperCase()} home page is displayed")
-    public void check${targetApplicationName}LoginPage() throws FailureException {
+    public void check${targetApplicationName}HomePage() throws FailureException {
         if (!${targetApplicationId}Page.checkPage()) {
             new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.getMessage(Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS), true, ${targetApplicationId}Page.getCallBack());
         }
@@ -63,6 +66,7 @@ public class ${targetApplicationName}Steps extends Step {
      * @throws FailureException
      *             if the scenario encounters a functional error.
      */
+    @Alors("Je me connecte sur ${targetApplicationId.toUpperCase()} avec {string} {string}")
     @When("I log in to ${targetApplicationId.toUpperCase()} as {string} {string}")
     public void logInTo${targetApplicationName}(String login, String password) throws FailureException {
         LOGGER.debug("logIn to ${targetApplicationName} with login [{}] and password [{}].", login, password);
@@ -86,6 +90,7 @@ public class ${targetApplicationName}Steps extends Step {
      * @throws FailureException
      *             if the scenario encounters a functional error.
      */
+    @Alors("Le portail ${targetApplicationId.toUpperCase()} est affiché")
     @Then("The ${targetApplicationId.toUpperCase()} portal is displayed")
     public void check${targetApplicationName}Page() throws FailureException {
         try {
@@ -98,7 +103,7 @@ public class ${targetApplicationName}Steps extends Step {
             }
         } catch (Exception e) {
             new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.getMessage(Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS), true, ${targetApplicationId}Page.getCallBack());
-        }    
+        }
         Auth.setConnected(true);
     }
    
@@ -110,24 +115,35 @@ public class ${targetApplicationName}Steps extends Step {
      * @throws TechnicalException
      *             is thrown if you have a technical error (format, configuration, datas, ...) in NoraUi.
      */
+    @Quand("Je me déconnecte de ${targetApplicationId.toUpperCase()}")
     @When("I log out of ${targetApplicationId.toUpperCase()}")
     public void logOutOf${targetApplicationName}() throws FailureException, TechnicalException {
         if (Auth.isConnected()) {
             getDriver().switchTo().defaultContent();
-            clickOn(${targetApplicationId}Page.accountMenu);
-            Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signoutMenu))).click();
+            try {
+                clickOn(${targetApplicationId}Page.accountMenu);
+                Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signoutMenu))).click();
+            } catch (Exception e) {
+                new Result.Failure<>(adminPage.getApplication(), Messages.getMessage(Messages.FAIL_MESSAGE_LOGOUT), true, adminPage.getCallBack());
+            }
         } else {
             LOGGER.warn(Messages.getMessage(${robotName}Messages.FAIL_MESSAGE_USER_WAS_ALREADY_LOGOUT, "robot"));
             Context.getCurrentScenario().write(Messages.getMessage(${robotName}Messages.FAIL_MESSAGE_USER_WAS_ALREADY_LOGOUT, "robot"));	   
-	    }
+        }
     }
    
     /**
      * Check Logout page.
+     * 
+     * @throws FailureException
+     *             if the scenario encounters a functional error.
      */
+    @Alors("La page de déconnexion de ${targetApplicationId.toUpperCase()} est affichée")
     @Then("The ${targetApplicationId.toUpperCase()} logout page is displayed")
-    public void check${targetApplicationName}LogoutPage() {
-        ${targetApplicationId}Page.checkPage();
+    public void check${targetApplicationName}LogoutPage() throws FailureException {
+        if (!${targetApplicationId}Page.checkPage()) {
+            new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.getMessage(Messages.FAIL_MESSAGE_LOGOUT), true, ${targetApplicationId}Page.getCallBack());
+        }
     }
   
     /**
