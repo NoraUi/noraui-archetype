@@ -8,6 +8,7 @@ addons:
 
 jdk:
 - oraclejdk8
+- openjdk8
 
 before_install:
 - chmod +x test/run.sh
