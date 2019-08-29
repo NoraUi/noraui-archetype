@@ -124,7 +124,7 @@ public class ${targetApplicationName}Steps extends Step {
                 clickOn(${targetApplicationId}Page.accountMenu);
                 Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signoutMenu))).click();
             } catch (Exception e) {
-                new Result.Failure<>(adminPage.getApplication(), Messages.getMessage(Messages.FAIL_MESSAGE_LOGOUT), true, adminPage.getCallBack());
+                new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.getMessage(Messages.FAIL_MESSAGE_LOGOUT), true, ${targetApplicationId}Page.getCallBack());
             }
         } else {
             LOGGER.warn(Messages.getMessage(${robotName}Messages.FAIL_MESSAGE_USER_WAS_ALREADY_LOGOUT, "robot"));
