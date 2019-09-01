@@ -21,6 +21,8 @@ import com.github.noraui.exception.Callbacks;
 import com.github.noraui.exception.FailureException;
 import com.github.noraui.exception.Result;
 import com.github.noraui.exception.TechnicalException;
+import com.github.noraui.metrics.annotation.time.Time;
+import com.github.noraui.metrics.annotation.time.TimeValue;
 import com.github.noraui.utils.Context;
 import com.github.noraui.utils.Messages;
 import com.github.noraui.utils.Utilities;
@@ -36,8 +38,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.fr.Alors;
 import io.cucumber.java.fr.Et;
 import io.cucumber.java.fr.Lorsque;
-import cucumber.metrics.annotation.time.Time;
-import cucumber.metrics.annotation.time.TimeValue;
 
 public class LogogameSteps extends Step {
 
