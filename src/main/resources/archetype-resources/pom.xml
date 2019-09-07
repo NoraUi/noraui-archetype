@@ -42,7 +42,8 @@
         <sonar.jacoco.reportPaths>${sonar.jacoco.directory}/jacoco.exec</sonar.jacoco.reportPaths>
         <sonar.tests>${project.basedir}/src/test/</sonar.tests>
         <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
-        <sonar.exclusions>**/noraui/model/**/*,*.css</sonar.exclusions>
+        <sonar.exclusions>**/${robotName}RunnerApi.java,**/ScenarioInitiatorRunner.java,**/NoraUiCLI.java,**/Counter.java</sonar.exclusions>
+        <sonar.test.exclusions>**/*.css</sonar.test.exclusions>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <env>dev</env>
     </properties>
