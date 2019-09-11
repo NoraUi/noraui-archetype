@@ -1,3 +1,9 @@
+#!/usr/bin/env bash
+
+#
+# display chrome version used on Travis-ci
+google-chrome --version
+
 cd $(dirname $0)
 pwd
 ls -l
