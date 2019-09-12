@@ -1,0 +1,26 @@
+language: java
+sudo: required
+dist: trusty
+install: true
+
+addons:
+  apt:
+    packages:
+      - dpkg
+  sonarcloud:
+    organization: "${groupId}"
+  chrome: stable
+
+jdk:
+- oraclejdk8
+- openjdk8
+
+before_script:
+- chmod +x ci/run.sh
+
+script:
+- ci/run.sh
+
+cache:
+  directories:
+    - $HOME/.m2/repository
