@@ -97,6 +97,10 @@ public class ${robotName}Context extends Context {
         applications.put(LOGOGAME_KEY, new Application(LOGOGAME_HOME, logogameHome));
 
         Page.setPageMainPackage("${package}.application.pages.");
+#if ( $share != "false" )
+
+        statistics.share(statisticsProcessor(clazz.getClassLoader(), "${package}.application.steps"));
+#end        
     }
     
     /**

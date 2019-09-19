@@ -19,6 +19,9 @@
         <requiredProperty key="inputprovider">
             <defaultValue>EXCEL</defaultValue>
         </requiredProperty>
+        <requiredProperty key="share">
+            <defaultValue>true</defaultValue>
+        </requiredProperty>
         <requiredProperty key="sonarUrl">
             <defaultValue>http://172.0.0.1:80</defaultValue>
         </requiredProperty>
