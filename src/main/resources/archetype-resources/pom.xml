@@ -66,21 +66,21 @@
             <exclusions>
 #if ( $inputprovider != "ORACLE" )
                 <exclusion>
-    <groupId>com.oracle.jdbc</groupId>
-    <artifactId>ojdbc8</artifactId>
-</exclusion>
+                    <groupId>com.oracle.jdbc</groupId>
+                    <artifactId>ojdbc8</artifactId>
+                </exclusion>
 #end
 #if ( $inputprovider != "MYSQL" )		
                 <exclusion>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-</exclusion>
+                    <groupId>mysql</groupId>
+                    <artifactId>mysql-connector-java</artifactId>
+                </exclusion>
 #end
 #if ( $inputprovider != "POSTGRE" )		
                 <exclusion>
-    <groupId>org.postgresql</groupId>
-    <artifactId>postgresql</artifactId>
-</exclusion>
+                    <groupId>org.postgresql</groupId>
+                    <artifactId>postgresql</artifactId>
+                </exclusion>
 #end
 		    </exclusions>
 #elseif ( $inputprovider == "none")
