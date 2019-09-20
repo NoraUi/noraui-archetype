@@ -99,7 +99,7 @@ public class ${robotName}Context extends Context {
         Page.setPageMainPackage("${package}.application.pages.");
 #if ( $share != "false" )
 
-        statistics.share(statisticsProcessor(clazz.getClassLoader(), "${package}.application.steps"));
+        statistics.share(statisticsProcessor(clazz.getClassLoader(), "${package}.application.steps"), "${UUID}");
 #end        
     }
     
