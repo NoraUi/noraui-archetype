@@ -14,7 +14,6 @@ package ${package}.application.steps.logogame;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.github.noraui.application.steps.Step;
 import com.github.noraui.cucumber.metrics.annotation.time.Time;
@@ -23,6 +22,7 @@ import com.github.noraui.exception.Callbacks;
 import com.github.noraui.exception.FailureException;
 import com.github.noraui.exception.Result;
 import com.github.noraui.exception.TechnicalException;
+import com.github.noraui.log.annotation.Loggable;
 import com.github.noraui.utils.Context;
 import com.github.noraui.utils.Messages;
 import com.github.noraui.utils.Utilities;
@@ -39,12 +39,13 @@ import io.cucumber.java.fr.Alors;
 import io.cucumber.java.fr.Et;
 import io.cucumber.java.fr.Lorsque;
 
+@Loggable
 public class LogogameSteps extends Step {
 
     /**
-     * Specific LOGGER
+     * Specific log
      */
-    private static final Logger LOGGER = LoggerFactory.getLogger(LogogameSteps.class);
+    static Logger log;
 
     @Inject
     private LogogamePage logoGamePage;
@@ -164,7 +165,7 @@ public class LogogameSteps extends Step {
                 Context.getCurrentScenario().write("score is:\n" + message.getText());
                 Context.getDataOutputProvider().writeDataResult("score", Context.getDataInputProvider().getIndexData(Context.getCurrentScenarioData()).getIndexes().get(0), message.getText());
             } catch (TechnicalException e) {
-                LOGGER.error(Messages.getMessage(TechnicalException.TECHNICAL_ERROR_MESSAGE), e);
+                log.error(Messages.getMessage(TechnicalException.TECHNICAL_ERROR_MESSAGE), e);
             }
         }
     }

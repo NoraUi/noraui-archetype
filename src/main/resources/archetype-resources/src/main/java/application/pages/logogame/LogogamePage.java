@@ -20,15 +20,16 @@ import org.slf4j.LoggerFactory;
 import ${package}.utils.${robotName}Context;
 
 import com.github.noraui.application.page.Page;
+import com.github.noraui.log.annotation.Loggable;
 import com.github.noraui.utils.Context;
 
-
+@Loggable
 public class LogogamePage extends Page {
 
     /**
-     * Specific LOGGER
+     * Specific log
      */
-    private static final Logger LOGGER = LoggerFactory.getLogger(LogogamePage.class);
+    static Logger log;
 
     public final PageElement bigTitle = new PageElement("-big-title", "Logo Game");
     public final PageElement amazonElement = new PageElement("-amazonElement", "Input Text Amazon");
@@ -56,12 +57,12 @@ public class LogogamePage extends Page {
         try {
             Context.waitUntil(ExpectedConditions.not(ExpectedConditions.titleIs("")));
             if (!TITLE_PAGE.equals(getDriver().getTitle())) {
-                LOGGER.error("HTML title is not good");
+                log.error("HTML title is not good");
                 return false;
             }
             return true;
         } catch (Exception e) {
-            LOGGER.error("HTML title Exception", e);
+            log.error("HTML title Exception", e);
             return false;
         }
     }
@@ -89,7 +90,7 @@ public class LogogamePage extends Page {
                 return false;
             }
         } catch (Exception e) {
-            LOGGER.error("Exception in isDisplayed", e);
+            log.error("Exception in isDisplayed", e);
             return false;
         }
         return true;

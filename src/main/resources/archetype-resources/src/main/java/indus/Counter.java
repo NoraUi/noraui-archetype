@@ -21,14 +21,16 @@ import org.slf4j.LoggerFactory;
 import ${package}.utils.${robotName}Context;
 import com.github.noraui.exception.TechnicalException;
 import com.github.noraui.indus.MavenRunCounter;
+import com.github.noraui.log.annotation.Loggable;
 import com.github.noraui.utils.Context;
 
+@Loggable
 public class Counter {
     
     /**
-     * Specific LOGGER
+     * Specific log
      */
-    private static final Logger LOGGER = LoggerFactory.getLogger(Counter.class);
+    static Logger log;
 
     public static void main(String[] args) {
         List<String> manager = new ArrayList<>();
@@ -47,7 +49,7 @@ public class Counter {
             List<MavenRunCounter.Counter> counters = mavenRunCounter.count(versionControlSystemsBlacklist, scenarioBlacklist, manager, new File(Context.getResourcesPath() + "/steps"));
             mavenRunCounter.print(counters, args[0]);
         } catch (TechnicalException e) {
-            LOGGER.error("TechnicalException error: ", e);
+            log.error("TechnicalException error: ", e);
         }
     }
 

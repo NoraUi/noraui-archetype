@@ -15,19 +15,21 @@ import static ${package}.utils.${robotName}Context.GOOGLE_KEY;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import ${package}.utils.${robotName}Context;
 
 import com.github.noraui.application.page.Page;
+import com.github.noraui.log.annotation.Loggable;
+
 import com.github.noraui.utils.Context;
 
+@Loggable
 public class GooglePage extends Page {
 
     /**
-     * Specific LOGGER
+     * Specific log
      */
-    private static final Logger LOGGER = LoggerFactory.getLogger(GooglePage.class);
+    static Logger log;
 
     private static final String TITLE_PAGE = "Google";
 
@@ -46,12 +48,12 @@ public class GooglePage extends Page {
         try {
             Context.waitUntil(ExpectedConditions.not(ExpectedConditions.titleIs("")));
             if (!TITLE_PAGE.equals(getDriver().getTitle())) {
-                LOGGER.error("HTML title is not good");
+                log.error("HTML title is not good");
                 return false;
             }
             return true;
         } catch (Exception e) {
-            LOGGER.error("HTML title Exception", e);
+            log.error("HTML title Exception", e);
             return false;
         }
     }

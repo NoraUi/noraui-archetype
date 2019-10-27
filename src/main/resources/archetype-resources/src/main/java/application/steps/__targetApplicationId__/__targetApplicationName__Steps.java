@@ -13,13 +13,13 @@ package ${package}.application.steps.${targetApplicationId};
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.github.noraui.application.steps.Step;
 import com.github.noraui.browser.Auth;
 import com.github.noraui.exception.FailureException;
 import com.github.noraui.exception.Result;
 import com.github.noraui.exception.TechnicalException;
+import com.github.noraui.log.annotation.Loggable;
 import com.github.noraui.utils.Context;
 import com.github.noraui.utils.Messages;
 import com.github.noraui.utils.Utilities;
@@ -32,12 +32,13 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.fr.Alors;
 import io.cucumber.java.fr.Quand;
 
+@Loggable
 public class ${targetApplicationName}Steps extends Step {
     
     /**
-     * Specific LOGGER
+     * Specific log
      */
-    private static final Logger LOGGER = LoggerFactory.getLogger(${targetApplicationName}Steps.class);
+    static Logger log;
 
     @Inject
     private ${targetApplicationName}Page ${targetApplicationId}Page;
@@ -69,7 +70,7 @@ public class ${targetApplicationName}Steps extends Step {
     @Alors("Je me connecte sur ${targetApplicationId.toUpperCase()} avec {string} {string}")
     @When("I log in to ${targetApplicationId.toUpperCase()} as {string} {string}")
     public void logInTo${targetApplicationName}(String login, String password) throws FailureException {
-        LOGGER.debug("logIn to ${targetApplicationName} with login [{}] and password [{}].", login, password);
+        log.debug("logIn to ${targetApplicationName} with login [{}] and password [{}].", login, password);
         try {
             Utilities.findElement(${targetApplicationId}Page.accountMenu).click();
             Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signinMenu))).click();
@@ -127,7 +128,7 @@ public class ${targetApplicationName}Steps extends Step {
                 new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.getMessage(Messages.FAIL_MESSAGE_LOGOUT), true, ${targetApplicationId}Page.getCallBack());
             }
         } else {
-            LOGGER.warn(Messages.getMessage(${robotName}Messages.FAIL_MESSAGE_USER_WAS_ALREADY_LOGOUT, "robot"));
+            log.warn(Messages.getMessage(${robotName}Messages.FAIL_MESSAGE_USER_WAS_ALREADY_LOGOUT, "robot"));
             Context.getCurrentScenario().write(Messages.getMessage(${robotName}Messages.FAIL_MESSAGE_USER_WAS_ALREADY_LOGOUT, "robot"));	   
         }
     }

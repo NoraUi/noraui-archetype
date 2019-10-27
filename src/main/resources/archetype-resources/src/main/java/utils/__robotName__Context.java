@@ -15,20 +15,25 @@ import static com.github.noraui.browser.steps.BrowserSteps.CLOSE_WINDOW_AND_SWIT
 import static com.github.noraui.browser.steps.BrowserSteps.CLOSE_ALL_WINDOWS_AND_SWITCH_TO;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.github.noraui.application.Application;
 import com.github.noraui.application.page.Page;
 import com.github.noraui.exception.TechnicalException;
+import com.github.noraui.log.NoraUiLoggingInjector;
+import com.github.noraui.log.annotation.Loggable;
+import com.github.noraui.utils.Constants;
 import com.github.noraui.utils.Context;
 import com.github.noraui.utils.Messages;
 
+@Loggable
 public class ${robotName}Context extends Context {
 
     /**
-     * Specific LOGGER
+     * Specific log
      */
-    private static final Logger LOGGER = LoggerFactory.getLogger(${robotName}Context.class);
+    static Logger log;
+    
+    public static final String MAIN_PACKAGE = "${package}";
 
     // applications
     public static final String ${targetApplicationId.toUpperCase()}_KEY = "${targetApplicationId}";
@@ -57,6 +62,7 @@ public class ${robotName}Context extends Context {
      */
     private ${robotName}Context() {
         super();
+        NoraUiLoggingInjector.addInjector(MAIN_PACKAGE);
     }
 
     /**
@@ -65,10 +71,10 @@ public class ${robotName}Context extends Context {
     @Override
     public synchronized void initializeRobot(Class<?> clazz) throws TechnicalException {
         super.initializeRobot(clazz);
-        LOGGER.info("${robotName}Context > initializeRobot()");
+        log.info("${robotName}Context > initializeRobot()");
         
         // This line is here as an example to show how to do with internationalization using messages bundles.
-        LOGGER.info(Messages.format(Messages.getMessage("HELLO", "${artifactId}"), "${artifactId}"));
+        log.info(Messages.format(Messages.getMessage("HELLO", "${artifactId}"), "${artifactId}"));
 
         // Urls configuration
         ${targetApplicationId}Home = getProperty(${targetApplicationId.toUpperCase()}_KEY, applicationProperties);
