@@ -9,7 +9,7 @@
  * @author Nicolas HALLOUIN
  * @author Stéphane GRILLON
  */
-package ${package}.model.logogame;
+package ${package}.application.model.logogame;
 
 import java.util.Collections;
 
