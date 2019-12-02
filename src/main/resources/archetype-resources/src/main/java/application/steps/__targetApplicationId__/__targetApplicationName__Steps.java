@@ -49,7 +49,7 @@ public class ${targetApplicationName}Steps extends Step {
      * @throws FailureException
      *             if the scenario encounters a functional error.
      */
-    @Alors("La page d'accueil BAKERY est affichée")
+    @Alors("La page d'accueil ${targetApplicationId.toUpperCase()} est affichée")
     @Then("The ${targetApplicationId.toUpperCase()} home page is displayed")
     public void check${targetApplicationName}HomePage() throws FailureException {
         if (!${targetApplicationId}Page.checkPage()) {
