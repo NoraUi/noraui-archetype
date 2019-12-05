@@ -11,8 +11,8 @@
  */
 package ${package}.utils;
 
-import static com.github.noraui.browser.steps.BrowserSteps.CLOSE_WINDOW_AND_SWITCH_TO;
 import static com.github.noraui.browser.steps.BrowserSteps.CLOSE_ALL_WINDOWS_AND_SWITCH_TO;
+import static com.github.noraui.browser.steps.BrowserSteps.CLOSE_WINDOW_AND_SWITCH_TO;
 
 import org.slf4j.Logger;
 
