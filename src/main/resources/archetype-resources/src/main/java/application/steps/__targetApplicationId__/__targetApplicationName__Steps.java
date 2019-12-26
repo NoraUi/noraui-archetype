@@ -128,8 +128,8 @@ public class ${targetApplicationName}Steps extends Step {
                 new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.getMessage(Messages.FAIL_MESSAGE_LOGOUT), true, ${targetApplicationId}Page.getCallBack());
             }
         } else {
-            log.warn(Messages.getMessage(${robotName}Messages.FAIL_MESSAGE_USER_WAS_ALREADY_LOGOUT, "robot"));
-            Context.getCurrentScenario().write(Messages.getMessage(${robotName}Messages.FAIL_MESSAGE_USER_WAS_ALREADY_LOGOUT, "robot"));	   
+            log.warn(Messages.getMessage(${robotName}Messages.FAIL_MESSAGE_USER_WAS_ALREADY_LOGOUT, "${artifactId}"));
+            Context.getCurrentScenario().write(Messages.getMessage(${robotName}Messages.FAIL_MESSAGE_USER_WAS_ALREADY_LOGOUT, "${artifactId}"));	   
         }
     }
    
