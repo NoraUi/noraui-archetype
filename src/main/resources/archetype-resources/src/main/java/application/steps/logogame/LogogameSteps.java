@@ -27,7 +27,7 @@ import com.github.noraui.utils.Context;
 import com.github.noraui.utils.Messages;
 import com.github.noraui.utils.Utilities;
 import com.google.inject.Inject;
-import ${package}.application.business.logogame.ProhibitedBrands;
+import ${package}.application.business.service.ProhibitedBrandsService;
 import ${package}.application.model.logogame.Logo;
 import ${package}.application.model.logogame.Logos;
 import ${package}.application.pages.logogame.LogogamePage;
@@ -49,6 +49,9 @@ public class LogogameSteps extends Step {
 
     @Inject
     private LogogamePage logoGamePage;
+    
+    @Inject
+    private ProhibitedBrandsService prohibitedBrandsService;
 
     /**
      * Check home page.
@@ -111,11 +114,10 @@ public class LogogameSteps extends Step {
     @Lorsque("Je vérifie que toutes les marques {string} ne sont pas interdites")
     @Given("I check that all brands {string} are not prohibited")
     public void checkThatAllBrandsIsNotProhibited(String jsonLogos) throws TechnicalException, FailureException {
-        ProhibitedBrands prohibitedBrands = new ProhibitedBrands();
         Logos logos = new Logos();
         logos.deserialize(jsonLogos);
         for (int i = 0; i < logos.size(); i++) {
-            if (prohibitedBrands.getAlcool().contains(logos.get(i).getBrand()) || prohibitedBrands.getTabaco().contains(logos.get(i).getBrand())) {
+            if (prohibitedBrandsService.getAlcool().contains(logos.get(i).getBrand()) || prohibitedBrandsService.getTabaco().contains(logos.get(i).getBrand())) {
                 new Result.Failure<>(logos.get(i).getBrand(), Messages.format("Brand « %s » is prohibited.", logos.get(i).getBrand()), false, logos.get(i).getNid(),
                         Context.getCallBack(Callbacks.RESTART_WEB_DRIVER));
             }
