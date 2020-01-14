@@ -27,9 +27,6 @@ import com.github.noraui.utils.Context;
 @Loggable
 public class Counter {
     
-    /**
-     * Specific log
-     */
     static Logger log;
 
     public static void main(String[] args) {

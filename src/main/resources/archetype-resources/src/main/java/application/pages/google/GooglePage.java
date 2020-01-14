@@ -20,15 +20,13 @@ import ${package}.utils.${robotName}Context;
 
 import com.github.noraui.application.page.Page;
 import com.github.noraui.log.annotation.Loggable;
-
 import com.github.noraui.utils.Context;
+import com.google.inject.Singleton;
 
 @Loggable
+@Singleton
 public class GooglePage extends Page {
 
-    /**
-     * Specific log
-     */
     static Logger log;
 
     private static final String TITLE_PAGE = "Google";

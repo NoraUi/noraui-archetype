@@ -42,9 +42,6 @@ import io.cucumber.java.fr.Lorsque;
 @Loggable
 public class LogogameSteps extends Step {
 
-    /**
-     * Specific log
-     */
     static Logger log;
 
     @Inject

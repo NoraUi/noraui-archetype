@@ -21,13 +21,12 @@ import ${package}.utils.${robotName}Context;
 import com.github.noraui.application.page.Page;
 import com.github.noraui.log.annotation.Loggable;
 import com.github.noraui.utils.Context;
+import com.google.inject.Singleton;
 
 @Loggable
+@Singleton
 public class ${targetApplicationName}Page extends Page {
 
-    /**
-     * Specific log
-     */
     static Logger log;
 
     public final PageElement accountMenu = new PageElement("-accountMenu", "Account menu");

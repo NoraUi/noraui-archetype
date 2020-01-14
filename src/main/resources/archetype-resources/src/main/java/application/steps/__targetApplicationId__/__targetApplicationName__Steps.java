@@ -35,9 +35,6 @@ import io.cucumber.java.fr.Quand;
 @Loggable
 public class ${targetApplicationName}Steps extends Step {
     
-    /**
-     * Specific log
-     */
     static Logger log;
 
     @Inject

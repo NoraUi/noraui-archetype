@@ -15,20 +15,18 @@ import static ${package}.utils.${robotName}Context.LOGOGAME_KEY;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import ${package}.utils.${robotName}Context;
 
 import com.github.noraui.application.page.Page;
 import com.github.noraui.log.annotation.Loggable;
 import com.github.noraui.utils.Context;
+import com.google.inject.Singleton;
 
 @Loggable
+@Singleton
 public class LogogamePage extends Page {
 
-    /**
-     * Specific log
-     */
     static Logger log;
 
     public final PageElement bigTitle = new PageElement("-big-title", "Logo Game");

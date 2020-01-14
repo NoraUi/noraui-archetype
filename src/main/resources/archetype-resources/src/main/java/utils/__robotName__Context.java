@@ -27,9 +27,6 @@ import com.github.noraui.utils.Messages;
 @Loggable
 public class ${robotName}Context extends Context {
 
-    /**
-     * Specific log
-     */
     static Logger log;
     
     public static final String MAIN_PACKAGE = "${package}";
