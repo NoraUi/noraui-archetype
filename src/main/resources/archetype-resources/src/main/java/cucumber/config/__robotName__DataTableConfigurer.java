@@ -18,7 +18,7 @@ import org.slf4j.Logger;
 
 import com.github.noraui.cucumber.config.DataTableConfigurer;
 import com.github.noraui.log.annotation.Loggable;
-import com.id2s.gherkin.Sample;
+import ${package}.gherkin.Sample;
 
 import io.cucumber.core.api.TypeRegistry;
 import io.cucumber.datatable.DataTableType;
