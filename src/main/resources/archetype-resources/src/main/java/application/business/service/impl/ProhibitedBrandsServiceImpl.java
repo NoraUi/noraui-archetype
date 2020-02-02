@@ -28,14 +28,14 @@ public class ProhibitedBrandsServiceImpl implements ProhibitedBrandsService {
     public static final Logger log;
 
     // Tabaco
-    private static final String MARLBORO = "Marlboro";
-    private static final String CAMEL = "Camel";
-    private static final String PHILIPPE_MORRIS = "philippe morris";
+    public static final String MARLBORO = "Marlboro";
+    public static final String CAMEL = "Camel";
+    public static final String PHILIPPE_MORRIS = "philippe morris";
 
     // Alcool
-    private static final String HEINEKEN = "heineken";
-    private static final String ZUBROWKA = "zubrowka";
-    private static final String JACK_DANIELS = "jack daniels";
+    public static final String HEINEKEN = "heineken";
+    public static final String ZUBROWKA = "zubrowka";
+    public static final String JACK_DANIELS = "jack daniels";
 
     private List<String> tabaco = new ArrayList<>(Arrays.asList(MARLBORO, CAMEL, PHILIPPE_MORRIS));
     private List<String> alcool = new ArrayList<>(Arrays.asList(HEINEKEN, ZUBROWKA, JACK_DANIELS));
