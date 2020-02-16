@@ -17,8 +17,6 @@ import java.lang.reflect.Modifier;
 import org.junit.Assert;
 import org.junit.Test;
 
-import ${package}.utils.${robotName}Context;
-
 public class ${robotName}ContextUT {
 
     @Test
