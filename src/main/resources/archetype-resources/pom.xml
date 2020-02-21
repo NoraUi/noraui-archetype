@@ -26,12 +26,13 @@
         <scenario.name>@TOSPECIFY</scenario.name>
         <crypto.key></crypto.key>
         <ciToolResourcesPath>src/test/resources</ciToolResourcesPath>
-        <noraui.version>4.1.0-SNAPSHOT</noraui.version>
+        <noraui.version>4.1.4</noraui.version>
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <maven-javadoc-plugin.version>3.0.0-M1</maven-javadoc-plugin.version>
+        <download-maven-plugin.version>1.5.0</download-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
         <sonar-maven-plugin.version>3.3.0.603</sonar-maven-plugin.version>
         <project.testresult.directory>${project.build.directory}/test-results</project.testresult.directory>
@@ -190,6 +191,52 @@
             <build>
                 <plugins>
                     <plugin>
+						<groupId>com.googlecode.maven-download-plugin</groupId>
+						<artifactId>download-maven-plugin</artifactId>
+						<version>${download-maven-plugin.version}</version>
+						<executions>
+							<execution>
+								<id>download-googlechrome-webdriver4win</id>
+								<phase>compile</phase>
+								<goals>
+									<goal>wget</goal>
+								</goals>
+								<configuration>
+									<unpack>true</unpack>
+									<url>https://chromedriver.storage.googleapis.com/80.0.3987.106/chromedriver_win32.zip</url>
+									<outputDirectory>src/test/resources/drivers/windows/googlechrome/64bit/</outputDirectory>
+									<md5>d5fee78fdcb9c2c3af9a2ce1299a8621</md5>
+								</configuration>
+							</execution>
+							<execution>
+								<id>download-googlechrome-webdriver4linux</id>
+								<phase>compile</phase>
+								<goals>
+									<goal>wget</goal>
+								</goals>
+								<configuration>
+									<unpack>true</unpack>
+									<url>https://chromedriver.storage.googleapis.com/80.0.3987.106/chromedriver_linux64.zip</url>
+									<outputDirectory>src/test/resources/drivers/linux/googlechrome/64bit/</outputDirectory>
+									<md5>caf2eb7148c03617f264b99743e2051c</md5>
+								</configuration>
+							</execution>
+							<execution>
+								<id>download-googlechrome-webdriver4mac</id>
+								<phase>compile</phase>
+								<goals>
+									<goal>wget</goal>
+								</goals>
+								<configuration>
+									<unpack>true</unpack>
+									<url>https://chromedriver.storage.googleapis.com/80.0.3987.106/chromedriver_mac64.zip</url>
+									<outputDirectory>src/test/resources/drivers/mac/googlechrome/64bit/</outputDirectory>
+									<md5>675a673c111fdcc9678d11df0e69b334</md5>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+                    <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
                         <version>${exec-maven-plugin.version}</version>
@@ -245,6 +292,10 @@
                                             file="src/test/resources/dev/formatter.js"
                                             tofile="target/reports/html/formatter.js"
                                             overwrite="true" />
+                                        <copy
+                                            file="src/test/resources/dev/style.css"
+                                            tofile="target/reports/html/style.css"
+                                            overwrite="true" />    
                                         <copy
                                             file="src/test/resources/dev/index.html"
                                             tofile="target/reports/html/index.html"
@@ -342,7 +393,6 @@
                             <systemPropertyVariables>
                                 <resourcespath>src/test/resources</resourcespath>
                                 <cucumber.options>${cucumber.options}</cucumber.options>
-                                <phantomjs.binary.path>src/test/resources/drivers/%s/phantomjs/%s/phantomjs%s</phantomjs.binary.path>
                                 <webdriver.ie.driver>src/test/resources/drivers/%s/internetexplorer/%s/IEDriverServer%s</webdriver.ie.driver>
                                 <webdriver.chrome.driver>src/test/resources/drivers/%s/googlechrome/%s/chromedriver.exe</webdriver.chrome.driver>
                                 <uid>${uid}</uid>
@@ -377,7 +427,6 @@
                             <systemPropertyVariables>
                                 <cucumber.options>${cucumber.options}</cucumber.options>
                                 <resourcespath>src/test/resources</resourcespath>
-                                <phantomjs.binary.path>src/test/resources/drivers/%s/phantomjs/%s/phantomjs%s</phantomjs.binary.path>
                                 <webdriver.ie.driver>src/test/resources/drivers/%s/internetexplorer/%s/IEDriverServer%s</webdriver.ie.driver>
                                 <webdriver.chrome.driver>src/test/resources/drivers/%s/googlechrome/%s/chromedriver.exe</webdriver.chrome.driver>
                                 <SpeedRegulator.annotation.enable>false</SpeedRegulator.annotation.enable>
