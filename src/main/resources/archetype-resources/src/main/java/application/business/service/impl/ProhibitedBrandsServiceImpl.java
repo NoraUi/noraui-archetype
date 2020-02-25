@@ -25,7 +25,7 @@ import ${package}.application.business.service.ProhibitedBrandsService;
 @Singleton
 public class ProhibitedBrandsServiceImpl implements ProhibitedBrandsService {
 
-    public static final Logger log;
+    public static Logger log;
 
     // Tabaco
     public static final String MARLBORO = "Marlboro";
