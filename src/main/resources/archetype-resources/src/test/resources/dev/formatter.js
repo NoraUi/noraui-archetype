@@ -78,7 +78,7 @@ CucumberHTML.DOMFormatter = function(rootNode) {
 
   this.result = function(result) {
     currentStep.addClass(result.status);
-    if (result.status == 'failed') {
+    if (result.error_message != '') {
       populateStepError(currentStep, result.error_message);
     }
     currentElement.addClass(result.status);
@@ -86,46 +86,75 @@ CucumberHTML.DOMFormatter = function(rootNode) {
     if (isLastStep) {
       //if (currentSteps.find('.failed').length == 0) {
         // No failed steps. Collapse it.
-        currentElement.find('details').removeAttr('open');
+        currentElement.find('details').prop('open', false);
       //} else {
       //  currentElement.find('details').attr('open', 'open');
       //}
     }
   };
 
-  this.embedding = function(mimeType, data) {
-    if (mimeType.match(/^image\//)) 
-    {
-      currentStep.append('<img src="' + data + '">');
+  this.embedding = function(mediaType, data, name) {
+    var nameHtml;
+    if (!name) {
+      nameHtml = "";
+    } else {
+      nameHtml = "<h4>" + name + "</h4>";
     }
-    else if (mimeType.match(/^video\//)) 
-    {
-      currentStep.append('<video src="' + data + '" type="' + mimeType + '" autobuffer controls>Your browser doesn\'t support video.</video>');
+    if (currentStepIndex == 1) {
+      this.dummyStep();
     }
-    else if (mimeType.match(/^text\//)) 
+    if (mediaType.match(/^image\//))
     {
-      this.write(data);
+      currentStep.append(nameHtml + '<img src="' + data + '">');
+    }
+    else if (mediaType.match(/^video\//))
+    {
+      currentStep.append(nameHtml + '<video src="' + data + '" type="' + mediaType + '" autobuffer controls>Your browser doesn\'t support video.</video>');
+    }
+    else if (mediaType.match(/^text\//))
+    {
+      this.write(nameHtml + data);
     }
   };
 
   this.write = function(text) {
-    currentStep.append('<pre class="embedded-text">' + text + '</pre>');
+    if (currentStepIndex == 1) {
+      this.dummyStep();
+    }
+    currentStep.append('<pre class="embedded-text">' + String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;') + '</pre>');
   };
 
   this.before = function(before) {
-    if(before.status != 'passed') {
-      currentElement = featureElement({keyword: 'Before', name: '', description: ''}, 'before');
-      currentStepIndex = 1;
-      populateStepError($('details', currentElement), before.error_message);
-    }
+    this.handleHookResult(before);
   };
 
   this.after = function(after) {
-    if(after.status != 'passed') {
-      currentElement = featureElement({keyword: 'After', name: '', description: ''}, 'after');
-      currentStepIndex++;
-      populateStepError($('details', currentElement), after.error_message);
+    this.handleHookResult(after);
+  };
+
+  this.beforestep = function(beforestep) {
+    this.handleHookResult(beforestep);
+  };
+
+  this.afterstep = function(afterstep) {
+    this.handleHookResult(afterstep);
+  };
+
+  this.handleHookResult = function(hook) {
+      if (hook.status != 'passed' && hook.error_message != '') {
+      this.dummyStep();
+      currentStep.addClass(hook.status);
+      currentElement.addClass(hook.status);
+      populateStepError(currentStep, hook.error_message);
     }
+  };
+
+  this.dummyStep = function() {
+    var stepElement = $('.step', $templates).clone();
+    stepElement.appendTo(currentSteps);
+    populate(stepElement, {keyword: '', name: ''}, 'step');
+    currentStep = currentSteps.find('li:nth-child(' + currentStepIndex + ')');
+    currentStepIndex++;
   };
 
   function featureElement(statement, itemtype) {
@@ -184,7 +213,7 @@ CucumberHTML.DOMFormatter = function(rootNode) {
 
 CucumberHTML.templates = '<div>\
   <section class="blockelement" itemscope>\
-    <details >\
+    <details>\
       <summary class="header">\
         <span class="keyword" itemprop="keyword">Keyword</span>: <span itemprop="name" class="name">This is the block name</span>\
       </summary>\
@@ -195,7 +224,7 @@ CucumberHTML.templates = '<div>\
   <ol class="steps"></ol>\
 \
   <ol>\
-    <li class="step"><span class="keyword" itemprop="keyword">Keyword</span><span class="name" itemprop="name">Name</span></li>\
+    <li class="step"><div class="header"></div><span class="keyword" itemprop="keyword">Keyword</span><span class="name" itemprop="name">Name</span></li>\
   </ol>\
 \
   <pre class="doc_string"></pre>\
