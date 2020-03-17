@@ -8,7 +8,7 @@ Feature: search (Scenario that 1st sample. Is it a search on Google search motor
     Given 'GOOGLE_HOME' is opened
     Then The GOOGLE home page is displayed
 
-    And I update text 'google.GooglePage-searchField' and type ENTER with '<search>'
+    And I update text $google.GooglePage-searchField and type ENTER with '<search>'
 
     And I wait 5 seconds
 
