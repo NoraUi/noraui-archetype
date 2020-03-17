@@ -16,7 +16,7 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 
-import com.github.noraui.cucumber.config.DataTableConfigurer;
+import com.github.noraui.cucumber.config.CucumberTypeRegistryConfigurer;
 import com.github.noraui.log.annotation.Loggable;
 import ${package}.gherkin.Sample;
 
@@ -25,7 +25,7 @@ import io.cucumber.datatable.DataTableType;
 import io.cucumber.datatable.TableEntryTransformer;
 
 @Loggable
-public class ${robotName}DataTableConfigurer extends DataTableConfigurer {
+public class ${robotName}DataTableConfigurer extends CucumberTypeRegistryConfigurer {
 
     static Logger log;
 
@@ -36,6 +36,7 @@ public class ${robotName}DataTableConfigurer extends DataTableConfigurer {
 
     @Override
     public void configureTypeRegistry(TypeRegistry registry) {
+        super.configureTypeRegistry(registry);
         registry.defineDataTableType(new DataTableType(Sample.class, new TableEntryTransformer<Sample>() {
             @Override
             public Sample transform(Map<String, String> entry) {

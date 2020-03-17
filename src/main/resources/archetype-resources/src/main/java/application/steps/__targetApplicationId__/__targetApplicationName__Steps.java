@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 
 import com.github.noraui.application.steps.Step;
 import com.github.noraui.browser.Auth;
+import com.github.noraui.browser.waits.Wait;
 import com.github.noraui.exception.FailureException;
 import com.github.noraui.exception.Result;
 import com.github.noraui.exception.TechnicalException;
@@ -70,12 +71,12 @@ public class ${targetApplicationName}Steps extends Step {
         log.debug("logIn to ${targetApplicationName} with login [{}] and password [{}].", login, password);
         try {
             Utilities.findElement(${targetApplicationId}Page.accountMenu).click();
-            Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signinMenu))).click();
-            Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.login)));
-            Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.password)));
+            Wait.until(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signinMenu))).click();
+            Wait.until(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.login)));
+            Wait.until(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.password)));
             Utilities.findElement(${targetApplicationId}Page.login).sendKeys(login);
             Utilities.findElement(${targetApplicationId}Page.password).sendKeys(getTextOrKey(password));
-            Context.waitUntil(ExpectedConditions.elementToBeClickable(Utilities.getLocator(${targetApplicationId}Page.signInButton)));
+            Wait.until(ExpectedConditions.elementToBeClickable(Utilities.getLocator(${targetApplicationId}Page.signInButton)));
             Utilities.findElement(${targetApplicationId}Page.signInButton).click();
         } catch (Exception e) {
             new Result.Failure<>(e, Messages.getMessage(Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS), true, ${targetApplicationId}Page.getCallBack());
@@ -92,7 +93,7 @@ public class ${targetApplicationName}Steps extends Step {
     @Then("The ${targetApplicationId.toUpperCase()} portal is displayed")
     public void check${targetApplicationName}Page() throws FailureException {
         try {
-            Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signInMessage)));
+            Wait.until(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signInMessage)));
             if (!${targetApplicationId}Page.isDisplayed()) {
                 logInTo${targetApplicationName}With${robotName}();
             }
@@ -120,7 +121,7 @@ public class ${targetApplicationName}Steps extends Step {
             getDriver().switchTo().defaultContent();
             try {
                 clickOn(${targetApplicationId}Page.accountMenu);
-                Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signoutMenu))).click();
+                Wait.until(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signoutMenu))).click();
             } catch (Exception e) {
                 new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.getMessage(Messages.FAIL_MESSAGE_LOGOUT), true, ${targetApplicationId}Page.getCallBack());
             }

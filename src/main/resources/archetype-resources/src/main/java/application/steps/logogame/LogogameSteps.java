@@ -16,12 +16,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 
 import com.github.noraui.application.steps.Step;
+import com.github.noraui.browser.waits.Wait;
 import com.github.noraui.cucumber.metrics.annotation.time.Time;
 import com.github.noraui.cucumber.metrics.annotation.time.TimeValue;
 import com.github.noraui.exception.Callbacks;
 import com.github.noraui.exception.FailureException;
 import com.github.noraui.exception.Result;
 import com.github.noraui.exception.TechnicalException;
+import com.github.noraui.exception.WarningException;
 import com.github.noraui.log.annotation.Loggable;
 import com.github.noraui.utils.Context;
 import com.github.noraui.utils.Messages;
@@ -123,7 +125,7 @@ public class LogogameSteps extends Step {
 
     @Alors("Je joue avec mon fichier d'entrée {string}")
     @Then("I play with my input file {string}")
-    public void playWithMyInputFile(String jsonLogos) throws TechnicalException {
+    public void playWithMyInputFile(String jsonLogos) throws TechnicalException, WarningException {
         Logos logos = new Logos();
         logos.deserialize(jsonLogos);
         for (int i = 0; i < logos.size(); i++) {
@@ -155,7 +157,7 @@ public class LogogameSteps extends Step {
     public void saveScore() throws FailureException {
         WebElement message = null;
         try {
-            message = Context.waitUntil(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(this.logoGamePage.scoreMessage)));
+            message = Wait.until(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(this.logoGamePage.scoreMessage)));
         } catch (Exception e) {
             new Result.Failure<>(e.getMessage(), "", true, this.logoGamePage.getCallBack());
         }

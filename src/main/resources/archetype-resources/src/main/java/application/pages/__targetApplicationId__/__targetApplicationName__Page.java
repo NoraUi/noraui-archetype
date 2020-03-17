@@ -19,6 +19,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import ${package}.utils.${robotName}Context;
 
 import com.github.noraui.application.page.Page;
+import com.github.noraui.browser.waits.Wait;
 import com.github.noraui.log.annotation.Loggable;
 import com.github.noraui.utils.Context;
 import com.google.inject.Singleton;
@@ -52,7 +53,7 @@ public class ${targetApplicationName}Page extends Page {
     @Override
     public boolean checkPage(Object... elements) {
         try {
-            Context.waitUntil(ExpectedConditions.not(ExpectedConditions.titleIs("")));
+            Wait.until(ExpectedConditions.not(ExpectedConditions.titleIs("")));
             if (!getDriver().getTitle().contains(TITLE_PAGE)) {
                 log.error("HTML title is not good");
                 return false;
@@ -82,7 +83,7 @@ public class ${targetApplicationName}Page extends Page {
      */
     public boolean isDisplayed(String titlePage) {
         try {
-            Context.waitUntil(ExpectedConditions.not(ExpectedConditions.titleIs("")));
+            Wait.until(ExpectedConditions.not(ExpectedConditions.titleIs("")));
             if (!titlePage.equals(getDriver().getTitle())) {
                 return false;
             }
