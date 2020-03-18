@@ -45,7 +45,7 @@ public class ${robotName}RunnerApi {
      */
     @AfterClass
     public static void tearDownClass() {
-        Context.clear();
+        Context.quit();
     }
 
 }
