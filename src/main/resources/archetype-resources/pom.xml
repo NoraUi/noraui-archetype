@@ -26,12 +26,12 @@
         <scenario.name>@TOSPECIFY</scenario.name>
         <crypto.key></crypto.key>
         <ciToolResourcesPath>src/test/resources</ciToolResourcesPath>
-        <noraui.version>4.2.0-SNAPSHOT</noraui.version>
+        <noraui.version>4.2.1</noraui.version>
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-        <maven-javadoc-plugin.version>3.0.0-M1</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
         <download-maven-plugin.version>1.5.0</download-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
         <sonar-maven-plugin.version>3.3.0.603</sonar-maven-plugin.version>
@@ -177,6 +177,8 @@
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <version>${maven-javadoc-plugin.version}</version>
                         <configuration>
+                            <source>8</source>
+							<doclint>none</doclint>
                             <aggregate>true</aggregate>
                             <stylesheetfile>${basedir}/src/test/resources/dev/stylesheet.css</stylesheetfile>
                         </configuration>
