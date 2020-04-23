@@ -1,4 +1,4 @@
-@search
+﻿@search
 Feature: search (Scenario that 1st sample. Is it a search on Google search motor.)
 
   Scenario Outline:  Scenario that 1st sample. Is it a search on Google search motor.

@@ -1,4 +1,4 @@
-# language: fr
+﻿# language: fr
 @jouerAuJeuDesLogos 
 Fonctionnalité: jouerAuJeuDesLogos (Scénario qui joue au jeu des logos) 
 

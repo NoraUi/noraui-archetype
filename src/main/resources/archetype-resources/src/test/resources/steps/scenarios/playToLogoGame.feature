@@ -1,4 +1,4 @@
-@playToLogoGame
+﻿@playToLogoGame
 Feature: playToLogoGame (Scenario that 1st sample. is it a scenario that plays on the game of logos.)
 
   Scenario Outline:  Scenario that 1st sample. is it a scenario that plays on the game of logos.

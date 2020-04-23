@@ -1,4 +1,4 @@
-@loginLogout
+﻿@loginLogout
 Feature: loginLogout (Scenario that 1st sample. Is it a login and logout on a JHipster sample.) 
 
   Scenario Outline:  Scenario that 1st sample. Is it a login and logout on a JHipster sample.
@@ -10,7 +10,7 @@ Feature: loginLogout (Scenario that 1st sample. Is it a login and logout on a JH
     Then The ${targetApplicationId.toUpperCase()} home page is displayed
 
     When I log in to ${targetApplicationId.toUpperCase()} as '<user>' '<password>'
-    Then The ${targetApplicationId.toUpperCase()} portal is displayed
+    Then The ${targetApplicationId.toUpperCase()} portal is displayed with the login '<user>'
 
     When I log out of ${targetApplicationId.toUpperCase()}
     Then The ${targetApplicationId.toUpperCase()} logout page is displayed
