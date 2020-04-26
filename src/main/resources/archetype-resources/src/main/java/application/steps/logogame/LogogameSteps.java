@@ -48,7 +48,7 @@ public class LogogameSteps extends Step {
 
     @Inject
     private LogogamePage logoGamePage;
-    
+
     @Inject
     private ProhibitedBrandsService prohibitedBrandsService;
 
