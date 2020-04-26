@@ -35,69 +35,27 @@ import io.cucumber.java.fr.Quand;
 
 @Loggable
 public class ${targetApplicationName}Steps extends Step {
-    
+
     static Logger log;
 
     @Inject
     private ${targetApplicationName}Page ${targetApplicationId}Page;
-   
-    /**
-     * Check home page.
-     *
-     * @throws FailureException
-     *             if the scenario encounters a functional error.
-     */
-    @Alors("La page d'accueil ${targetApplicationId.toUpperCase()} est affichée")
-    @Then("The ${targetApplicationId.toUpperCase()} home page is displayed")
-    public void check${targetApplicationName}HomePage() throws FailureException {
-        if (!${targetApplicationId}Page.checkPage()) {
-            new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.getMessage(Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS), true, ${targetApplicationId}Page.getCallBack());
-        }
-    }
-   
-    /**
-     * Log in to ${targetApplicationId.toUpperCase()} without ${robotName} (login and password in Gherkin scenario).
-     *
-     * @param login
-     *            Login to use.
-     * @param password
-     *            Password to use.
-     * @throws FailureException
-     *             if the scenario encounters a functional error.
-     */
-    @Alors("Je me connecte sur ${targetApplicationId.toUpperCase()} avec {string} {string}")
-    @When("I log in to ${targetApplicationId.toUpperCase()} as {string} {string}")
-    public void logInTo${targetApplicationName}(String login, String password) throws FailureException {
-        log.debug("logIn to ${targetApplicationName} with login [{}] and password [{}].", login, password);
-        try {
-            Utilities.findElement(${targetApplicationId}Page.accountMenu).click();
-            Wait.until(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signinMenu))).click();
-            Wait.until(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.login)));
-            Wait.until(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.password)));
-            Utilities.findElement(${targetApplicationId}Page.login).sendKeys(login);
-            Utilities.findElement(${targetApplicationId}Page.password).sendKeys(getTextOrKey(password));
-            Wait.until(ExpectedConditions.elementToBeClickable(Utilities.getLocator(${targetApplicationId}Page.signInButton)));
-            Utilities.findElement(${targetApplicationId}Page.signInButton).click();
-        } catch (Exception e) {
-            new Result.Failure<>(e, Messages.getMessage(Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS), true, ${targetApplicationId}Page.getCallBack());
-        }
-   }
-   
+
     /**
      * Check ${targetApplicationName} portal page.
+     * 
+     * @param login
+     *             login display on portal page.
      *
      * @throws FailureException
      *             if the scenario encounters a functional error.
      */
-    @Alors("Le portail ${targetApplicationId.toUpperCase()} est affiché")
-    @Then("The ${targetApplicationId.toUpperCase()} portal is displayed")
-    public void check${targetApplicationName}Page() throws FailureException {
+    @Alors("Le portail ${targetApplicationId.toUpperCase()} est affiché avec le login {string}")
+    @Then("The ${targetApplicationId.toUpperCase()} portal is displayed with the login {string}")
+    public void check${targetApplicationName}Page(String login) throws FailureException {
         try {
-            Wait.until(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signInMessage)));
-            if (!${targetApplicationId}Page.isDisplayed()) {
-                logInTo${targetApplicationName}With${robotName}();
-            }
-            if (!${targetApplicationId}Page.checkPage()) {
+            Wait.until(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}Page.signInMessage, login)));
+            if (!${targetApplicationId}Page.checkPage(login)) {
                 new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.getMessage(Messages.FAIL_MESSAGE_UNKNOWN_CREDENTIALS), true, ${targetApplicationId}Page.getCallBack());
             }
         } catch (Exception e) {
@@ -105,7 +63,7 @@ public class ${targetApplicationName}Steps extends Step {
         }
         Auth.setConnected(true);
     }
-   
+
     /**
      * Logout of ${targetApplicationName}.
      *
@@ -127,35 +85,7 @@ public class ${targetApplicationName}Steps extends Step {
             }
         } else {
             log.warn(Messages.getMessage(${robotName}Messages.FAIL_MESSAGE_USER_WAS_ALREADY_LOGOUT, "${artifactId}"));
-            Context.getCurrentScenario().write(Messages.getMessage(${robotName}Messages.FAIL_MESSAGE_USER_WAS_ALREADY_LOGOUT, "${artifactId}"));	   
-        }
-    }
-   
-    /**
-     * Check Logout page.
-     * 
-     * @throws FailureException
-     *             if the scenario encounters a functional error.
-     */
-    @Alors("La page de déconnexion de ${targetApplicationId.toUpperCase()} est affichée")
-    @Then("The ${targetApplicationId.toUpperCase()} logout page is displayed")
-    public void check${targetApplicationName}LogoutPage() throws FailureException {
-        if (!${targetApplicationId}Page.checkPage()) {
-            new Result.Failure<>(${targetApplicationId}Page.getApplication(), Messages.getMessage(Messages.FAIL_MESSAGE_LOGOUT), true, ${targetApplicationId}Page.getCallBack());
-        }
-    }
-  
-    /**
-     * Log in to ${targetApplicationId.toUpperCase()} with ${robotName} (login and password in job parameters).
-     *
-     * @throws FailureException
-     *             if the scenario encounters a functional error.
-     */
-    private void logInTo${targetApplicationName}With${robotName}() throws FailureException {
-        String login = Auth.getLogin();
-        String password = Auth.getPassword();
-        if (!"".equals(login) && !"".equals(password)) {
-            logInTo${targetApplicationName}(login, password);
+            Context.getCurrentScenario().write(Messages.getMessage(${robotName}Messages.FAIL_MESSAGE_USER_WAS_ALREADY_LOGOUT, "${artifactId}"));
         }
     }
 
