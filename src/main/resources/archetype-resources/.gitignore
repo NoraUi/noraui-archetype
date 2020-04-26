@@ -1,6 +1,7 @@
 .settings/
 downloadFiles/
 target/
+src/test/resources/drivers
 .classpath
 .project
 .iml
