@@ -235,7 +235,20 @@
 									<md5>675a673c111fdcc9678d11df0e69b334</md5>
 								</configuration>
 							</execution>
-						</executions>
+							<execution>
+                                <id>download-geckodriver-webdriver4win</id>
+		                        <phase>compile</phase>
+		                        <goals>
+		                            <goal>wget</goal>
+		                        </goals>
+		                        <configuration>
+		                            <unpack>true</unpack>
+		                            <url>https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-win64.zip</url>
+		                            <outputDirectory>src/test/resources/drivers/windows/firefox/64bit/</outputDirectory>
+		                            <md5>1d70a4fad9997d1d912a8b7dd1e89bda</md5>
+		                        </configuration>
+		                    </execution>
+					    </executions>
 					</plugin>
                 </plugins>
             </build>
