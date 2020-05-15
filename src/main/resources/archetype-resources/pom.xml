@@ -260,52 +260,6 @@
             <build>
                 <plugins>
                     <plugin>
-						<groupId>com.googlecode.maven-download-plugin</groupId>
-						<artifactId>download-maven-plugin</artifactId>
-						<version>${download-maven-plugin.version}</version>
-						<executions>
-							<execution>
-								<id>download-googlechrome-webdriver4win</id>
-								<phase>compile</phase>
-								<goals>
-									<goal>wget</goal>
-								</goals>
-								<configuration>
-									<unpack>true</unpack>
-									<url>https://chromedriver.storage.googleapis.com/80.0.3987.106/chromedriver_win32.zip</url>
-									<outputDirectory>src/test/resources/drivers/windows/googlechrome/64bit/</outputDirectory>
-									<md5>d5fee78fdcb9c2c3af9a2ce1299a8621</md5>
-								</configuration>
-							</execution>
-							<execution>
-								<id>download-googlechrome-webdriver4linux</id>
-								<phase>compile</phase>
-								<goals>
-									<goal>wget</goal>
-								</goals>
-								<configuration>
-									<unpack>true</unpack>
-									<url>https://chromedriver.storage.googleapis.com/80.0.3987.106/chromedriver_linux64.zip</url>
-									<outputDirectory>src/test/resources/drivers/linux/googlechrome/64bit/</outputDirectory>
-									<md5>caf2eb7148c03617f264b99743e2051c</md5>
-								</configuration>
-							</execution>
-							<execution>
-								<id>download-googlechrome-webdriver4mac</id>
-								<phase>compile</phase>
-								<goals>
-									<goal>wget</goal>
-								</goals>
-								<configuration>
-									<unpack>true</unpack>
-									<url>https://chromedriver.storage.googleapis.com/80.0.3987.106/chromedriver_mac64.zip</url>
-									<outputDirectory>src/test/resources/drivers/mac/googlechrome/64bit/</outputDirectory>
-									<md5>675a673c111fdcc9678d11df0e69b334</md5>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-                    <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
                         <version>${exec-maven-plugin.version}</version>
@@ -462,8 +416,6 @@
                             <systemPropertyVariables>
                                 <resourcespath>src/test/resources</resourcespath>
                                 <cucumber.options>${cucumber.options}</cucumber.options>
-                                <webdriver.ie.driver>src/test/resources/drivers/%s/internetexplorer/%s/IEDriverServer%s</webdriver.ie.driver>
-                                <webdriver.chrome.driver>src/test/resources/drivers/%s/googlechrome/%s/chromedriver.exe</webdriver.chrome.driver>
                                 <uid>${uid}</uid>
                                 <password>${password}</password>
                                 <cookie>${cookie}</cookie>
@@ -496,8 +448,6 @@
                             <systemPropertyVariables>
                                 <cucumber.options>${cucumber.options}</cucumber.options>
                                 <resourcespath>src/test/resources</resourcespath>
-                                <webdriver.ie.driver>src/test/resources/drivers/%s/internetexplorer/%s/IEDriverServer%s</webdriver.ie.driver>
-                                <webdriver.chrome.driver>src/test/resources/drivers/%s/googlechrome/%s/chromedriver.exe</webdriver.chrome.driver>
                                 <SpeedRegulator.annotation.enable>false</SpeedRegulator.annotation.enable>
                                 <SpeedRegulators.annotation.enable>false</SpeedRegulators.annotation.enable>
                                 <Time.annotation.enable>false</Time.annotation.enable>
