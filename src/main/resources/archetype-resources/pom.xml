@@ -22,7 +22,7 @@
 #end
 ##
     <properties>
-        <cucumber.options>--tags @TOSPECIFY</cucumber.options>
+        <cucumber.options>--tags '@TOSPECIFY'</cucumber.options>
         <scenario.name>@TOSPECIFY</scenario.name>
         <crypto.key></crypto.key>
         <ciToolResourcesPath>src/test/resources</ciToolResourcesPath>
