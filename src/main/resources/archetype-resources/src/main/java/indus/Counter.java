@@ -15,8 +15,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;     
+import org.slf4j.Logger;  
 
 import ${package}.utils.${robotName}Context;
 import com.github.noraui.exception.TechnicalException;
@@ -26,7 +25,7 @@ import com.github.noraui.utils.Context;
 
 @Loggable
 public class Counter {
-    
+
     static Logger log;
 
     public static void main(String[] args) {
@@ -34,7 +33,7 @@ public class Counter {
 
         List<String> scenarioBlacklist = new ArrayList<>();
         // you can add not run scenario here
-        // scenarioBlacklist.add("---  you can add not run scenario here ---");
+        // scenarioBlacklist.add("--- you can add not run scenario here ---");
 
         List<String> versionControlSystemsBlacklist = new ArrayList<>();
         versionControlSystemsBlacklist.add(".svn");
