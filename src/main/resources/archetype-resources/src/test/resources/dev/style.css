@@ -1,3 +1,15 @@
+.noraui-report-title {
+  margin: 30px;
+  font-weight: bold;
+  font-size: 40px;
+  color: #00c3b1;
+}
+
+.noraui-build-date{
+  margin: 20px;
+  font-style: italic;
+}
+
 .cucumber-report .body {
   font-family: Helvetica,Arial,sans-serif;
 }

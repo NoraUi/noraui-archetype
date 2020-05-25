@@ -59,6 +59,7 @@ CucumberHTML.DOMFormatter = function(rootNode) {
 
   this.examples = function(examples) {
     var examplesElement = blockElement(currentElement.children('details'), examples, 'examples');
+    examplesElement.find('details').prop('open', false);
     var examplesTable = $('.examples_table', $templates).clone();
     examplesTable.appendTo(examplesElement.children('details'));
 
@@ -159,7 +160,7 @@ CucumberHTML.DOMFormatter = function(rootNode) {
 
   function featureElement(statement, itemtype) {
     var e = blockElement(currentFeature.children('details'), statement, itemtype);
-
+    e.find('details').prop('open', false);
     currentSteps = $('.steps', $templates).clone();
     currentSteps.appendTo(e.children('details'));
 
@@ -213,7 +214,7 @@ CucumberHTML.DOMFormatter = function(rootNode) {
 
 CucumberHTML.templates = '<div>\
   <section class="blockelement" itemscope>\
-    <details>\
+    <details open>\
       <summary class="header">\
         <span class="keyword" itemprop="keyword">Keyword</span>: <span itemprop="name" class="name">This is the block name</span>\
       </summary>\

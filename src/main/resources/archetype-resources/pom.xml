@@ -45,6 +45,8 @@
         <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
         <sonar.exclusions>**/${robotName}RunnerApi.java,**/ScenarioInitiatorRunner.java,**/NoraUiCLI.java,**/Counter.java</sonar.exclusions>
         <sonar.test.exclusions>**/*.css</sonar.test.exclusions>
+        <build.date>${maven.build.timestamp}</build.date>
+        <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <env>dev</env>
     </properties>
@@ -327,6 +329,12 @@
                                             file="src/test/resources/dev/counter.js"
                                             tofile="target/reports/html/counter.js"
                                             overwrite="true" />
+                                        <replace file="target/reports/html/index.html">
+										    <replacefilter>
+										        <replacetoken>@build-date@</replacetoken>
+										        <replacevalue>${build.date}</replacevalue>
+										  </replacefilter>
+										</replace>
                                     </target>
                                 </configuration>
                             </execution>
