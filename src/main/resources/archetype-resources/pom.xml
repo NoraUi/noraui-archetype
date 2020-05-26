@@ -206,9 +206,9 @@
 								</goals>
 								<configuration>
 									<unpack>true</unpack>
-									<url>https://chromedriver.storage.googleapis.com/80.0.3987.106/chromedriver_win32.zip</url>
+									<url>https://chromedriver.storage.googleapis.com/83.0.4103.39/chromedriver_win32.zip</url>
 									<outputDirectory>src/test/resources/drivers/windows/googlechrome/64bit/</outputDirectory>
-									<md5>d5fee78fdcb9c2c3af9a2ce1299a8621</md5>
+									<md5>437630bbad9193f71af596bda21155ae</md5>
 								</configuration>
 							</execution>
 							<execution>
@@ -219,9 +219,9 @@
 								</goals>
 								<configuration>
 									<unpack>true</unpack>
-									<url>https://chromedriver.storage.googleapis.com/80.0.3987.106/chromedriver_linux64.zip</url>
+									<url>https://chromedriver.storage.googleapis.com/83.0.4103.39/chromedriver_linux64.zip</url>
 									<outputDirectory>src/test/resources/drivers/linux/googlechrome/64bit/</outputDirectory>
-									<md5>caf2eb7148c03617f264b99743e2051c</md5>
+									<md5>4e9d74f71a97470e59c1c0d311be49f6</md5>
 								</configuration>
 							</execution>
 							<execution>
@@ -232,9 +232,9 @@
 								</goals>
 								<configuration>
 									<unpack>true</unpack>
-									<url>https://chromedriver.storage.googleapis.com/80.0.3987.106/chromedriver_mac64.zip</url>
+									<url>https://chromedriver.storage.googleapis.com/83.0.4103.39/chromedriver_mac64.zip</url>
 									<outputDirectory>src/test/resources/drivers/mac/googlechrome/64bit/</outputDirectory>
-									<md5>675a673c111fdcc9678d11df0e69b334</md5>
+									<md5>640d3c63b3e8e7899f4a3aa6eebd22f4</md5>
 								</configuration>
 							</execution>
 							<execution>
