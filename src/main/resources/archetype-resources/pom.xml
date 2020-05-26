@@ -190,7 +190,7 @@
         </profile>
         
         <profile>
-            <id>driver</id>
+            <id>drivers</id>
             <build>
                 <plugins>
                     <plugin>
