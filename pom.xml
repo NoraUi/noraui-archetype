@@ -4,7 +4,7 @@
 
     <groupId>com.github.noraui</groupId>
     <artifactId>noraui-archetype</artifactId>
-    <version>4.3.0.0</version>
+    <version>4.4.0.0-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <name>NORAUI Archetype</name>
