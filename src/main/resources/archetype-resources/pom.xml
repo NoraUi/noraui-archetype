@@ -26,7 +26,8 @@
         <scenario.name>@TOSPECIFY</scenario.name>
         <crypto.key></crypto.key>
         <ciToolResourcesPath>src/test/resources</ciToolResourcesPath>
-        <noraui.version>4.3.0</noraui.version>
+        <noraui.version>4.4.0</noraui.version>
+        <noraui-material-plugin.version>1.0.0</noraui-material-plugin.version>
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
@@ -90,6 +91,19 @@
 		<!-- No exclusions: You import all lib for all data provider -->
 #end
         </dependency>
+        
+        <!-- Material-plugin for Non-Regression Automation for User Interfaces -->
+        <dependency>
+			<groupId>com.github.noraui</groupId>
+			<artifactId>noraui-material-plugin</artifactId>
+			<version>${noraui-material-plugin.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.github.noraui</groupId>
+					<artifactId>noraui</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 
     </dependencies>
 
