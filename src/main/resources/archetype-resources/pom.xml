@@ -28,6 +28,8 @@
         <ciToolResourcesPath>src/test/resources</ciToolResourcesPath>
         <noraui.version>4.4.0-SNAPSHOT</noraui.version>
         <noraui-material-plugin.version>1.0.0</noraui-material-plugin.version>
+        <noraui-bootstrap-plugin.version>1.0.0</noraui-bootstrap-plugin.version>
+        <noraui-select2-plugin.version>1.0.0</noraui-select2-plugin.version>
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
@@ -194,7 +196,7 @@
                         <version>${maven-javadoc-plugin.version}</version>
                         <configuration>
                             <source>8</source>
-							<doclint>none</doclint>
+							              <doclint>none</doclint>
                             <aggregate>true</aggregate>
                             <stylesheetfile>${basedir}/src/test/resources/dev/stylesheet.css</stylesheetfile>
                         </configuration>
@@ -252,19 +254,19 @@
 								</configuration>
 							</execution>
 							<execution>
-                                <id>download-geckodriver-webdriver4win</id>
-		                        <phase>compile</phase>
-		                        <goals>
-		                            <goal>wget</goal>
-		                        </goals>
-		                        <configuration>
-		                            <unpack>true</unpack>
-		                            <url>https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-win64.zip</url>
-		                            <outputDirectory>src/test/resources/drivers/windows/firefox/64bit/</outputDirectory>
-		                            <md5>1d70a4fad9997d1d912a8b7dd1e89bda</md5>
-		                        </configuration>
-		                    </execution>
-					    </executions>
+                <id>download-geckodriver-webdriver4win</id>
+		            <phase>compile</phase>
+		            <goals>
+		              <goal>wget</goal>
+		            </goals>
+		            <configuration>
+		              <unpack>true</unpack>
+		              <url>https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-win64.zip</url>
+		              <outputDirectory>src/test/resources/drivers/windows/firefox/64bit/</outputDirectory>
+		              <md5>1d70a4fad9997d1d912a8b7dd1e89bda</md5>
+		            </configuration>
+		          </execution>
+					  </executions>
 					</plugin>
                 </plugins>
             </build>
