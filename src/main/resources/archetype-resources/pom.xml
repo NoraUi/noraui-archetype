@@ -26,7 +26,7 @@
         <scenario.name>@TOSPECIFY</scenario.name>
         <crypto.key></crypto.key>
         <ciToolResourcesPath>src/test/resources</ciToolResourcesPath>
-        <noraui.version>4.4.0-SNAPSHOT</noraui.version>
+        <noraui.version>4.4.0</noraui.version>
         <noraui-material-plugin.version>1.0.0</noraui-material-plugin.version>
         <noraui-bootstrap-plugin.version>1.0.0</noraui-bootstrap-plugin.version>
         <noraui-select2-plugin.version>1.0.0</noraui-select2-plugin.version>
