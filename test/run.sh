@@ -39,7 +39,7 @@ mvn clean test javadoc:javadoc -B -Dcucumber.options="--tags '@loginLogout or @p
 curl -s "https://api.travis-ci.com/jobs/${TRAVIS_JOB_ID}/log.txt?deansi=true" > nonaui.log
 sleep 15
 
-echo "Log url is https://api.travis-ci.org/jobs/${TRAVIS_JOB_ID}/log.txt?deansi=true"
+echo "Log url is https://api.travis-ci.org/v3/job/${TRAVIS_JOB_ID}/log.txt?deansi=true"
 echo "***************************************************"
 
 counters1=$(sed -n 's:.*<EXPECTED_RESULTS_1>\(.*\)</EXPECTED_RESULTS_1>.*:\1:p' nonaui.log | head -n 1)
