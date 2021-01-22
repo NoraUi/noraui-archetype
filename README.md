@@ -2,7 +2,7 @@
 Maven archetype for use a NORA-UI project
 
 # Continuous Integration status
-[![Build Status](https://travis-ci.org/NoraUi/noraui-archetype.svg?branch=master)](https://travis-ci.org/NoraUi/noraui-archetype)
+[![Build Status](https://travis-ci.com/NoraUi/noraui-archetype.svg?branch=master)](https://travis-ci.org/NoraUi/noraui-archetype)
 
 # Last release
 
