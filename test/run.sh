@@ -36,10 +36,10 @@ echo "*                                                        *"
 echo "**********************************************************"
 mvn clean test javadoc:javadoc -B -Dcucumber.options="--tags '@loginLogout or @playToLogoGame or @jouerAuJeuDesLogos or @search'" -Pjavadoc,drivers,preIC,scenarioInitiator,ci,unit-tests,postIC --settings ../../test/mvnsettings.xml -Dmaven.test.failure.ignore=true -Dcrypto.key=${CRYPTO_KEY}
 
+echo "Log url is https://api.travis-ci.com/v3/job/${TRAVIS_JOB_ID}/log.txt?deansi=true"
 curl -s "https://api.travis-ci.com/jobs/${TRAVIS_JOB_ID}/log.txt?deansi=true" > nonaui.log
 sleep 15
 
-echo "Log url is https://api.travis-ci.org/v3/job/${TRAVIS_JOB_ID}/log.txt?deansi=true"
 echo "***************************************************"
 
 counters1=$(sed -n 's:.*<EXPECTED_RESULTS_1>\(.*\)</EXPECTED_RESULTS_1>.*:\1:p' nonaui.log | head -n 1)
