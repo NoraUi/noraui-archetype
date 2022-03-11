@@ -109,7 +109,7 @@ public class ${targetApplicationName}HomeSteps extends Step {
      */
     @Alors("Une erreur de connexion est affichée")
     @Then("A login error is displayed")
-    public void checkEpideLoginError() throws FailureException {
+    public void check${targetApplicationName}LoginError() throws FailureException {
         log.debug("Check login error page.");
         try {
             Wait.until(ExpectedConditions.presenceOfElementLocated(Utilities.getLocator(${targetApplicationId}HomePage.signInError)));
