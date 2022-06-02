@@ -21,7 +21,7 @@ public class NoraUiCLI {
     /**
      * Java sample:
      * cd target\classes
-     * java -cp . ${package}.cli.NoarUiCLI -h
+     * java -cp . ${package}.cli.NoraUiCLI -h
      * Maven sample:
      * mvn exec:java -Dexec.mainClass="${package}.cli.NoraUiCLI" -Dexec.args="-h"
      *
